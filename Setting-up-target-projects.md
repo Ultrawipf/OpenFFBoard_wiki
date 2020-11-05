@@ -8,7 +8,7 @@ Then you can select the linked folder as a source location.
 
 For the headers use a relative path with `../../../` prefix.
 
-<div align="center">
+<div align="right">
   <img src="img/link_folder.PNG">
 	<br>
 	<img src="img/convert_path.PNG">
