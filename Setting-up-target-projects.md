@@ -8,19 +8,19 @@ Then you can select the linked folder as a source location.
 
 For the headers use a relative path with `../../../` prefix.
 
-<div align="right">
-  <img src="img/link_folder.PNG">
-	<br>
-	<img src="img/convert_path.PNG">
-  <br>
+<div align="center">
+ <img src="img/link_folder.PNG">
+
+<img src="img/convert_path.PNG">
+
   Convert path to relative
-  <br>
+
   <img src="img/source_folder_window.PNG">
-  <br>
+
   Add as source
-  <br>
+ 
   <img src="img/includes_window.PNG">
-  <br>
+
   Add header paths as relative
 </div>
 <br>
