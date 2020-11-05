@@ -8,6 +8,23 @@ Then you can select the linked folder as a source location.
 
 For the headers use a relative path with `../../../` prefix.
 
+<div align="center">
+  <img width="100" height="100" src="img/link_folder.PNG">
+	<br>
+	<img width="100" height="100" src="img/convert_path.PNG">
+  <br>
+  Convert path to relative
+  <br>
+  <img width="100" height="100" src="img/source_folder_window.PNG">
+  <br>
+  Add as source
+  <br>
+  <img width="100" height="100" src="img/includes_window.PNG">
+  <br>
+  Add header paths as relative
+</div>
+<br>
+
 ### Buildsettings:
 * enable float for printf
 * disable -fno-rtti
