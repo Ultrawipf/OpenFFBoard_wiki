@@ -50,12 +50,11 @@ Hardware design of the TMC-driverboard can be found here: [Motordriver-Board](ht
 The git includes the pcb design and the bill of materials to manufacture one for yourself.
 
 ## STM USB Interface:
-### 1.1.1:
-Renaming some pins
-Added FFBoard logo
-Changed USB diode to SMC
-Added zener pad on 5V
-Removed encoder buffer
-Higher value pwr led resistor
-Added pads for SW
-Minor routing changes
+### 1.2:
+Switched from F411RE to F407VE for now (More pins and better availability)<br>
+Added FFBoard logo<br>
+Changed USB diode to SMC<br>
+Added CAN transceiver<br>
+SPI3 on ext header<br>
+Added 3 CS pins for each of the SPI ports<br>
+Added reserved emergency stop pin<br>
