@@ -1,5 +1,20 @@
-![Logo](img/ffboard_logo.svg)
-# Open FFBoard
+<div align="center">
+    <a href="https://github.com/Ultrawipf/OpenFFBoard">
+        <img width="200" height="200" src="img/ffboard_logo.svg">
+    </a>
+	<br>
+	<br>
+	<div style="display: flex;">
+		<a href="https://discord.gg/gHtnEcP">
+            <img src="https://img.shields.io/discord/704355326291607614">
+		</a>
+		<a href="https://github.com/Ultrawipf/OpenFFBoard/stargazers">
+            <img src="https://img.shields.io/github/stars/Ultrawipf/OpenFFBoard">
+		</a>
+	</div>
+</div>
+
+# Open FFBoard Wiki
 
 The _Open FFBoard_ is an open source firmware (and hardware) project for DIY force feedback devices like for example simracing steering wheels ranging from budget DC motor builds up to high end servo direct drive wheels.
 
