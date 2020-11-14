@@ -30,4 +30,6 @@ For the headers use a relative path with `../../../` prefix.
 * disable -fno-rtti
 
 
-Some constants and defines to be set in the target headers
+Some constants and defines to be set in the target headers.
+
+Also take good care of the flash/ram linker settings for the eeprom emulation. Look at the official targets for examples.
