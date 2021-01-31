@@ -26,7 +26,7 @@ will print back:
 
 Note the ":" separator after the command. Can be easily split by splitting replies by \n and then by splitting the first ":" match into command and reply.
 
-
+## HID
 Some HID relevant values can also be used via HID IN and OUT reports.
 The report contains a type, address and value.
 See `hid_cmd_defs.h` for available ids.
