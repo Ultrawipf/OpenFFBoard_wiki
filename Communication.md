@@ -45,8 +45,8 @@ Some HID relevant values can also be used via HID IN and OUT reports.
 
 The report contains a type, address and value.
 ```
-        uint8_t	reportId = HID_ID_CUSTOMCMD; //= 0xAF
-	HidCmdType	type = HidCmdType::err;	// 0x01. Type of report. 0 = error, 1 = write, 2 = request
+        uint8_t	reportId = HID_ID_CUSTOMCMD;                    //= 0xAF
+	HidCmdType	type = HidCmdType::err;	                // 0x01. Type of report. 0 = error, 1 = write, 2 = request
 	uint32_t	cmd = 0;				// 0x02 Use this as an identifier for the command
 	uint32_t	addr = 0;				// 0x03 Use this to transfer an optional address (CAN for example)
 	uint64_t	data = 0;				// 0x04 Use this to transfer data
