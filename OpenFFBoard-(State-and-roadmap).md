@@ -39,6 +39,10 @@ Analog joystick style shifters like the G29, G27 and G25 for example can connect
 An E-Stop pin can be pulled down on the STM board to stop the FFB
 For added security the enable pin on the tmc can also be pulled down externally.
 
+#### ODrive support:
+An ODrive can receive torque commands and report the encoder position via a CAN bus for FFB.
+Manual configuration of the ODrive required!
+
 
 ## Planned features:
 
