@@ -36,8 +36,8 @@ Analog joystick style shifters like the G29, G27 and G25 for example can connect
 6 analog pins are available as gamepad axes (pedals...) with optional autoranging and can be disabled individually.
 
 #### Emergency stop:
-An E-Stop pin can be pulled down on the STM board to stop the FFB
-For added security the enable pin on the tmc can also be pulled down externally.
+An E-Stop pin can be pulled down on the STM board to stop the FFB.
+For added security, the enable pin on the TMC can also be pulled down externally.
 
 #### ODrive support:
 An ODrive can receive torque commands and report the encoder position via a CAN bus for FFB.
@@ -60,25 +60,25 @@ Complex. Will take time but planned in the future
 Interesting for multi axis ffb.
 
 #### CAN bus:
-Using the FFBoard as a canbus interface or adding analog/digital inputs via CAN.
+Using the FFBoard as a CAN bus interface or adding analog/digital inputs via CAN.
 
-#### External encoder support for tmc:
-Tunneling biss-c or endat through the STM to the TMC as a position source. Would be very flexible but adds communication overhead
+#### External encoder support for TMC:
+Tunneling BISS-C or EnDat through the STM to the TMC as a position source. Would be very flexible but adds communication overhead
 
 #### Writing and dumping setups into and from flash:
 Back up of settings or quick start presets
 
-#### Simhub integration via HID:
-Auto change steering degrees and intensity
+#### SimHub integration via HID:
+Auto change steering degrees and intensity depending on game. Motor stats as overlay etc.
 
 #### Predefined settings and limiting options for specialized setups:
-The FFBoard firmware is flexible so for different hardware features have to be disabled or predefined
+The FFBoard firmware is flexible so for different hardware, features have to be disabled or predefined
 
 #### Improving GUI stability and setup procedures:
 The setup is still a bit unstable depending on how its done. Maybe a wizard could help.
 
 #### Improving TMC Debug bridge mainclass:
-The tmc debug mainclass is very helpful for testing the driver with the trinamic IDE. The mainclass is hacky and not stable with the newest TMC ide.
+The TMC debug mainclass is very helpful for testing the driver with the Trinamic IDE (TMCL-IDE). The mainclass is hacky and not stable with the newest TMC ide.
 
 #### Autoalignment of steering wheels at startup:
-With absolute encoders or encoders with home pulse an absolute position can be searched at powerup and automatically set the center offset. Not possible with all encoders and may require slow rotations.
+With absolute encoders or encoders with home pulse, an absolute position can be searched at powerup and automatically set the center offset. Not possible with all encoders and may require slow rotations.

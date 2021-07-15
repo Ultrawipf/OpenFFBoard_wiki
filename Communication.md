@@ -44,12 +44,12 @@ Sometimes a prefix can be used to address a specific instance of an axis for exa
 Some HID relevant values can also be used via HID IN and OUT reports.
 
 The report contains a type, address and value.
-```
-        uint8_t	reportId = HID_ID_CUSTOMCMD;                    //= 0xAF
-	HidCmdType	type = HidCmdType::err;	                // 0x01. Type of report. 0 = error, 1 = write, 2 = request
-	uint32_t	cmd = 0;				// 0x02 Use this as an identifier for the command
-	uint32_t	addr = 0;				// 0x03 Use this to transfer an optional address (CAN for example)
-	uint64_t	data = 0;				// 0x04 Use this to transfer data
+```C
+    uint8_t	reportId = HID_ID_CUSTOMCMD;    // 0xAF
+	HidCmdType	type = HidCmdType::err;	    // 0x01. Type of report. 0 = error, 1 = write, 2 = request
+	uint32_t	cmd = 0;				    // 0x02 Use this as an identifier for the command
+	uint32_t	addr = 0;				    // 0x03 Use this to transfer an optional address (CAN for example)
+	uint64_t	data = 0;				    // 0x04 Use this to transfer data
 ```
 The ID of the report is 0xAF.
 To write a value set the type to write (1) and set cmd as the command id (for example 0x20 for strength) and data as the actual data. Addr is an optional field which can contain additional data like an identifier. This is normally not used.
@@ -58,7 +58,7 @@ The device will respond by echoing the packet back so every listener on the syst
 For requesting a value use the type "read" = 2 and set the cmd id accordingly. The data field is ignored. The device will respond with a packet containing the actual data in the data field and the requested cmd id with the same packet.
 
 Python example:
-```
+```Py
 import pywinusb.hid as hid
 import sys,time
 import struct
