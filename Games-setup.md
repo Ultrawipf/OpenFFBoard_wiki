@@ -22,8 +22,11 @@
 ## All Dirt games:
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
 
-Add this like to `device_defines.xml`:
+
+Add this line to `device_defines.xml`:
+
 `<device id="{FFB01209-0000-0000-0000-504944564944}" name="openffboard" priority="100" type="wheel" official="false" />`
+
 
 And you can also add a `openffboard.xml` to the actionmaps folder:
 ```
