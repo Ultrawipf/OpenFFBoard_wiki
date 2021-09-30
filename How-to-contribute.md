@@ -8,7 +8,7 @@ Being an open source project you are allowed and encouraged to submit issues, bu
 5. Your code gets squash merged if approved
 
 ### Branches
-If you directly push a branch to the project as a developer your branch name should contain your username and the type of feature.
+If you directly push a branch to the project as a developer your branch name should contain your username or the type of feature. Like `ultrawipf/warpspeed` or `feature/pwmdriver`.
 Set your git author name correctly before committing.
 
 ### Code style
