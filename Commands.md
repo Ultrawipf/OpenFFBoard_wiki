@@ -35,9 +35,9 @@ The lsactive command will report a list of active classes.
 - data(0x05 64b): the first data value to send
 - addr(0x06 64b): the second data value to send
 
-
 <details>
     <summary>Python example</summary>
+    <code class="language-python">
 
     import pywinusb.hid as hid
     import time
@@ -84,9 +84,7 @@ The lsactive command will report a list of active classes.
 
     if __name__ == '__main__':
         main()
-
-
-</details>
+</code></details>
 
 
 
