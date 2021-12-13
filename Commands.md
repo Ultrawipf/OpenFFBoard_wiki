@@ -35,6 +35,9 @@ The lsactive command will report a list of active classes.
 - data(0x05 64b): the first data value to send
 - addr(0x06 64b): the second data value to send
 
+HID commands only work when the HID command interface is active and the according fields present in the HID report.
+This is by default the case for the FFB class but not in the failsafe fallback and other non HID classes.
+
 <details>
     <summary>Python example</summary>
     <code class="language-python">
