@@ -90,9 +90,10 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 </code></details>
 
 
+## Command list
 
 
-
+### System commands
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |sys.0 |0x0                          |System Commands                                          |
@@ -119,6 +120,7 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### FFB Wheel
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |main.0|0x1                          |FFB Wheel: Force feedback HID game controller            |
@@ -144,6 +146,7 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### FFB effects
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |fx.0  |0xA02                        |Effects: Controls internal FFB effects                   |
@@ -165,6 +168,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |effects|0x2                          |List effects                                             |
 
 ---
+
+### FFB axis
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -194,6 +199,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### MT SPI encoder
+
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |mtenc.0|0x62                         |MT6825 SPI3                                              |
@@ -210,6 +217,7 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### Digital pin buttons
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -227,6 +235,9 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |polarity|0x1                          |Pin polarity                                             |
 |pins  |0x2                          |Available pins                                           |
 
+---
+
+### Analog pin axes
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -247,6 +258,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### PWM motor driver
+
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |pwmdrv.0|0x84                         |PWM: PWM output motor driver                             |
@@ -263,6 +276,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |mode  |0x0                          |PWM mode                                                 |
 
 ---
+
+### TMC4671 motor driver
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -304,6 +319,9 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ---
 
+### ODrive motor driver (CAN)
+Example here is only M0. M1 is available too.
+
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |odrv.0|0x85                         |ODrive (M0): ODrive motor driver with CAN                |
@@ -325,6 +343,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |anticogging|0x6                          |Set 1 to start anticogging calibration                   |
 
 ---
+
+### VESC motor driver
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -353,6 +373,7 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ## Other mainclasses:
 
+### CAN debug bridge
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -373,6 +394,8 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 
 ---
+
+### TMC debug bridge
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
