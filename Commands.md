@@ -13,7 +13,7 @@ Values can be supplied as hex (`x4d2`) or base 10 (`1234`).
 Commands with 2 values are rarely used. One example is setting a register in the TMC or passing a CAN frame with a target address and value.
 
 #### Reply format:
-`[cls.instance.cmd?|val]` or `[cls.instance.cmd?|adr,val]` for get commands
+`[cls.instance.cmd?|val]` or `[cls.instance.cmd?|val:adr]` for get commands
 
 `[cls.instance.cmd=val|OK]` or `[cls.instance.cmd=val?adr|OK]`  for set commands
 
