@@ -92,31 +92,35 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 
 ## Command list
 
+Commands marked as "Debug mode only" are treated as invalid if the sys.debug variable is not set to 1 first.
+They can be (even more) dangerous and possibly damage hardware if misused. That does not mean all others are safe! 
+Be careful when changing motor parameters. Incorrect settings can damage the hardware or cause injury.
 
 ### System commands
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
 |sys.0 |0x0                          |System Commands                                          |
 
-|Command name|CMD ID  | Description                           |
-|------|-----------------------------|---------------------------------------------------------|
-|help        |0x0     |Print system help                      |
-|save        |0x1     |Write all settings to flash            |
-|reboot      |0x2     |Reset chip                             |
-|dfu         |0x3     |reboot into DFU bootloader             |
-|lsmain      |0x6     |List available mainclasses             |
-|lsactive    |0x8     |List active classes (Fullname:clsname:inst:clsid:idx)|
-|vint        |0xE     |Internal voltage(mV)                   |
-|vext        |0xF     |External voltage(mV)                   |
-|main        |0x7     |Query or change mainclass              |
-|swver       |0x4     |Firmware version                       |
-|hwtype      |0x5     |Hardware type                          |
-|flashraw    |0xD     |Write value to flash address           |
-|flashdump   |0xC     |Read all flash variables               |
-|errors      |0xA     |Read error states                      |
-|errorsclr   |0xB     |Reset errors                           |
-|heapfree    |0x11    |Memory info                            |
-|format      |0x9     |set format=1 to erase all stored values|
+|Command name|CMD ID|Description                                          |
+|------------|------|-----------------------------------------------------|
+|help        |0x0   |Print system help                                    |
+|save        |0x1   |Write all settings to flash                          |
+|reboot      |0x2   |Reset chip                                           |
+|dfu         |0x3   |reboot into DFU bootloader                           |
+|lsmain      |0x6   |List available mainclasses                           |
+|lsactive    |0x8   |List active classes (Fullname:clsname:inst:clsid:idx)|
+|vint        |0xE   |Internal voltage(mV)                                 |
+|vext        |0xF   |External voltage(mV)                                 |
+|main        |0x7   |Query or change mainclass                            |
+|swver       |0x4   |Firmware version                                     |
+|hwtype      |0x5   |Hardware type                                        |
+|flashraw    |0xD   |Write value to flash address                         |
+|flashdump   |0xC   |Read all flash variables                             |
+|errors      |0xA   |Read error states                                    |
+|errorsclr   |0xB   |Reset errors                                         |
+|heapfree    |0x11  |Memory info                                          |
+|format      |0x9   |set format=1 to erase all stored values              |
+|debug       |0x13  |Enable or disable debug commands                     |
 
 
 ---
@@ -284,39 +288,39 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |------|-----------------------------|---------------------------------------------------------|
 |tmc.0 |0x81                         |TMC4671: TMC4671 interface                               |
 
-|Command name|CMD ID                       | Description                                             |
-|------|-----------------------------|---------------------------------------------------------|
-|id    |0x80000001                   |ID of class                                              |
-|name  |0x80000002                   |name of class                                            |
-|help  |0x80000003                   |Prints help for commands                                 |
-|cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
-|cpr   |0x0                          |CPR in TMC                                               |
-|mtype |0x1                          |Motor type                                               |
-|encsrc|0x2                          |Encoder source                                           |
-|tmcHwType|0x3                          |Version of TMC board                                     |
-|encalign|0x4                          |Align encoder                                            |
-|poles |0x5                          |Motor pole pairs                                         |
-|acttrq|0x6                          |Read torque                                              |
-|pwmlim|0x7                          |PWM limit                                                |
-|torqueP|0x8                          |Torque P                                                 |
-|torqueI|0x9                          |Torque I                                                 |
-|fluxP |0xA                          |Flux P                                                   |
-|fluxI |0xB                          |Flux I                                                   |
-|velocityP|0xC                          |Velocity P                                               |
-|velocityI|0xD                          |Velocity I                                               |
-|posP  |0xE                          |Pos P                                                    |
-|posI  |0xF                          |Pos I                                                    |
-|tmctype|0x10                         |Version of TMC chip                                      |
-|pidPrec|0x11                         |PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12             |
-|phiesrc|0x12                         |PhiE source                                              |
-|fluxoffset|0x13                         |Offset flux scale for field weakening                    |
-|seqpi |0x14                         |Sequential PI                                            |
-|iScale|0x15                         |Counts per A                                             |
-|encdir|0x16                         |Encoder dir                                              |
-|temp  |0x17                         |Temperature in C * 100                                   |
-|reg   |0x18                         |Read or write a TMC register at adr                      |
+|Command name|CMD ID|Description                                          |
+|------------|------|-----------------------------------------------------|
+|id          |0x80000001|ID of class                                          |
+|name        |0x80000002|name of class                                        |
+|help        |0x80000003|Prints help for commands                             |
+|cmduid      |0x80000005|Command handler index                                |
+|instance    |0x80000004|Command handler instance number                      |
+|selId       |0x80000006|Selection id used to create this class               |
+|cpr         |0x0   |CPR in TMC                                           |
+|mtype       |0x1   |Motor type                                           |
+|encsrc      |0x2   |Encoder source                                       |
+|tmcHwType   |0x3   |Version of TMC board                                 |
+|encalign    |0x4   |Align encoder                                        |
+|poles       |0x5   |Motor pole pairs                                     |
+|acttrq      |0x6   |Read torque                                          |
+|pwmlim      |0x7   |PWM limit (DEBUG ONLY)                               |
+|torqueP     |0x8   |Torque P                                             |
+|torqueI     |0x9   |Torque I                                             |
+|fluxP       |0xA   |Flux P                                               |
+|fluxI       |0xB   |Flux I                                               |
+|velocityP   |0xC   |Velocity P                                           |
+|velocityI   |0xD   |Velocity I                                           |
+|posP        |0xE   |Pos P                                                |
+|posI        |0xF   |Pos I                                                |
+|tmctype     |0x10  |Version of TMC chip                                  |
+|pidPrec     |0x11  |PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12         |
+|phiesrc     |0x12  |PhiE source (DEBUG ONLY)                             |
+|fluxoffset  |0x13  |Offset flux scale for field weakening                |
+|seqpi       |0x14  |Sequential PI                                        |
+|iScale      |0x15  |Counts per A                                         |
+|encdir      |0x16  |Encoder dir (DEBUG ONLY)                             |
+|temp        |0x17  |Temperature in C * 100                               |
+|reg         |0x18  |Read or write a TMC register at adr (DEBUG ONLY)     |
 
 ---
 
