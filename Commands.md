@@ -122,6 +122,9 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |format      |0x9   |set format=1 to erase all stored values              |
 |debug       |0x13  |Enable or disable debug commands                     |
 
+Note for HID:
+The lsactive command will report the class id in the value field and the instance number in the address field. 
+That way it is possible to check which modules are available.
 
 ---
 
