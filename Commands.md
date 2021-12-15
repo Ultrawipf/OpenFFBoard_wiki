@@ -98,25 +98,26 @@ This is by default the case for the FFB class but not in the failsafe fallback a
 |------|-----------------------------|---------------------------------------------------------|
 |sys.0 |0x0                          |System Commands                                          |
 
-|Command name|CMD ID                       | Description                                             |
+|Command name|CMD ID  | Description                           |
 |------|-----------------------------|---------------------------------------------------------|
-|help  |0x0                          |Print system help                                        |
-|save  |0x1                          |Write all settings to flash                              |
-|reboot|0x2                          |Reset chip                                               |
-|dfu   |0x3                          |reboot into DFU bootloader                               |
-|lsmain|0x6                          |List available mainclasses                               |
-|lsactive|0x8                          |List active classes                                      |
-|vint  |0xE                          |Internal voltage                                         |
-|vext  |0xF                          |External voltage                                         |
-|main  |0x7                          |Query or change mainclass                                |
-|swver |0x4                          |Firmware version                                         |
-|hwtype|0x5                          |Hardware type                                            |
-|flashraw|0xD                          |Write value to flash address                             |
-|flashdump|0xC                          |Read all flash variables                                 |
-|errors|0xA                          |Read error states                                        |
-|errorsclr|0xB                          |Reset errors                                             |
-|heapfree|0x11                         |Memory info                                              |
-|format|0x9                          |set format=1 to erase all stored values                  |
+|help        |0x0     |Print system help                      |
+|save        |0x1     |Write all settings to flash            |
+|reboot      |0x2     |Reset chip                             |
+|dfu         |0x3     |reboot into DFU bootloader             |
+|lsmain      |0x6     |List available mainclasses             |
+|lsactive    |0x8     |List active classes (Fullname:clsname:inst:clsid:idx)|
+|vint        |0xE     |Internal voltage(mV)                   |
+|vext        |0xF     |External voltage(mV)                   |
+|main        |0x7     |Query or change mainclass              |
+|swver       |0x4     |Firmware version                       |
+|hwtype      |0x5     |Hardware type                          |
+|flashraw    |0xD     |Write value to flash address           |
+|flashdump   |0xC     |Read all flash variables               |
+|errors      |0xA     |Read error states                      |
+|errorsclr   |0xB     |Reset errors                           |
+|heapfree    |0x11    |Memory info                            |
+|format      |0x9     |set format=1 to erase all stored values|
+
 
 ---
 
