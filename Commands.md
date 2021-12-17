@@ -346,7 +346,7 @@ Example here is only M0. M1 is available too.
 |canspd|0x1                          |CAN baudrate                                             |
 |errors|0x2                          |ODrive error flags                                       |
 |state |0x3                          |ODrive state                                             |
-|maxtorqe|0x4                          |Max torque to send for scaling                           |
+|maxtorque|0x4                          |Max torque to send for scaling                           |
 |vbus  |0x5                          |ODrive Vbus                                              |
 |anticogging|0x6                          |Set 1 to start anticogging calibration                   |
 
