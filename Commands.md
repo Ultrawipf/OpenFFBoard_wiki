@@ -334,21 +334,23 @@ Example here is only M0. M1 is available too.
 |------|-----------------------------|---------------------------------------------------------|
 |odrv.0|0x85                         |ODrive (M0): ODrive motor driver with CAN                |
 
-|Command name|CMD ID                       | Description                                             |
+|Command name|CMD ID    | Description                             |
 |------|-----------------------------|---------------------------------------------------------|
-|id    |0x80000001                   |ID of class                                              |
-|name  |0x80000002                   |name of class                                            |
-|help  |0x80000003                   |Prints help for commands                                 |
-|cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
-|canid |0x0                          |CAN id of ODrive                                         |
-|canspd|0x1                          |CAN baudrate                                             |
-|errors|0x2                          |ODrive error flags                                       |
-|state |0x3                          |ODrive state                                             |
-|maxtorque|0x4                          |Max torque to send for scaling                           |
-|vbus  |0x5                          |ODrive Vbus                                              |
-|anticogging|0x6                          |Set 1 to start anticogging calibration                   |
+|id          |0x80000001|ID of class                              |
+|name        |0x80000002|name of class                            |
+|help        |0x80000003|Prints help for commands                 |
+|cmduid      |0x80000005|Command handler index                    |
+|instance    |0x80000004|Command handler instance number          |
+|selId       |0x80000006|Selection id used to create this class   |
+|canid       |0x0       |CAN id of ODrive                         |
+|canspd      |0x1       |CAN baudrate                             |
+|errors      |0x2       |ODrive error flags                       |
+|state       |0x3       |ODrive state                             |
+|maxtorque   |0x4       |Max torque to send for scaling           |
+|vbus        |0x5       |ODrive Vbus                              |
+|anticogging |0x6       |Set 1 to start anticogging calibration   |
+|connected   |0x7       |ODrive connection state                  |
+
 
 ---
 
