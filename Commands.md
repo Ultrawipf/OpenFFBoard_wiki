@@ -115,7 +115,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |swver       |0x4   |Firmware version                                     |
 |hwtype      |0x5   |Hardware type                                        |
 |flashraw    |0xD   |Write value to flash address                         |
-|flashdump   |0xC   |Read all flash variables                             |
+|flashdump   |0xC   |Read all flash variables (val:adr)                   |
 |errors      |0xA   |Read error states                                    |
 |errorsclr   |0xB   |Reset errors                                         |
 |heapfree    |0x11  |Memory info                                          |
