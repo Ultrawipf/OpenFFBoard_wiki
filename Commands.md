@@ -38,6 +38,8 @@ The lsactive command will report a list of active classes.
 HID commands only work when the HID command interface is active and the according fields present in the HID report.
 This is by default the case for the FFB class but not in the failsafe fallback and other non HID classes.
 
+Replies to request commands will reply as a request as well as any other broadcast of changed values.
+
 <details>
     <summary>Python example</summary>
     <code class="language-python">
