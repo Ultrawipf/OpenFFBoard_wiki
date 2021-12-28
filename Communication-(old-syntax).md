@@ -1,4 +1,4 @@
-Note: This is currently not correct for the master branch. We will merge soon. In the master there is no echo of the sent command.
+**Note: This is deprecated and not valid anymore since V1.5.**
 
 ## Virtual serial port
 Most of the configuration is done via a simple string based protocol.
