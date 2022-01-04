@@ -364,23 +364,24 @@ Example here is only M0. M1 is available too.
 
 |Command name|CMD ID                       | Description                                             |
 |------|-----------------------------|---------------------------------------------------------|
-|id    |0x80000001                   |ID of class                                              |
-|name  |0x80000002                   |name of class                                            |
-|help  |0x80000003                   |Prints help for commands                                 |
-|cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
-|canid |0x0                          |CAN id of VESC                                           |
-|canspd|0x1                          |CAN baud (3=250k 4=500k 5=1M)                            |
-|errorflags|0x2                          |VESC error state                                         |
-|vescstate|0x3                          |VESC state                                               |
-|voltage|0x4                          |VESC supply voltage                                      |
-|encrate|0x5                          |Encoder update rate                                      |
-|pos   |0x6                          |VESC position                                            |
-|torque|0x7                          |Current VESC torque                                      |
-|forceposread|0x8                          |Force a position update                                  |
-|useencoder|0x9                          |Enable VESC encoder                                      |
-|offset|0xA                          |Get or set encoder offset                                |
+|id          |0x80000001|ID of class                           |
+|name        |0x80000002|name of class                         |
+|help        |0x80000003|Prints help for commands              |
+|cmduid      |0x80000005|Command handler index                 |
+|instance    |0x80000004|Command handler instance number       |
+|selId       |0x80000006|Selection id used to create this class|
+|offbcanid   |0x0       |CAN id of OpenFFBoard Axis            |
+|vesccanid   |0x1       |CAN id of VESC                        |
+|canspd      |0x2       |CAN baud (3=250k 4=500k 5=1M)         |
+|errorflags  |0x3       |VESC error state                      |
+|vescstate   |0x4       |VESC state                            |
+|voltage     |0x5       |VESC supply voltage (mV)              |
+|encrate     |0x6       |Encoder update rate                   |
+|pos         |0x7       |VESC position                         |
+|torque      |0x8       |Current VESC torque                   |
+|forceposread|0x9       |Force a position update               |
+|useencoder  |0xA       |Enable VESC encoder                   |
+|offset      |0xB       |Get or set encoder offset             |
 
 
 ## Other mainclasses:
