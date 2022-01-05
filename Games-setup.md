@@ -10,7 +10,7 @@ Add this line to `device_defines.xml`:
 `<device id="{FFB01209-0000-0000-0000-504944564944}" name="openffboard" priority="100" type="wheel" official="false" />`
 
 
-And you can also add a `openffboard.xml` to the actionmaps folder:
+You can also add a `openffboard.xml` to the actionmaps folder:
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <action_map name="openffboard" device_name="openffboard" library="lib_direct_input">
@@ -31,4 +31,14 @@ And you can also add a `openffboard.xml` to the actionmaps folder:
   </group>
  </group>
 </action_map>
+```
+
+
+## Richard Burns Rally:
+Richard Burns Rally requires a key to be added to Windows registry. This can be done by creating a `RBR_openffboard.reg` file with this content:
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1209&PID_FFB0]
+"OEMData"=hex:43,00,88,01,fe,00,00,00
 ```
