@@ -90,3 +90,5 @@ PWM pins are on TIM1
 * PWM4: Direction (right)
 
 
+### MT6825 encoder
+Use SPI3 on EXT header
