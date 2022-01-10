@@ -93,4 +93,5 @@ PWM pins are on TIM1
 ### MT6825 encoder
 Use SPI3 on EXT header
 
+### F407 official CubeMX pinout
 ![Pinout](img/f407pinout1.png)
