@@ -1,5 +1,5 @@
 ## What is working well:
-FFBWheel mode:
+### FFBWheel mode
 
 #### Force feedback wheels with the TMC4671:
 The setup procedure is not optimal but a FFB wheel with servos or steppers with ABN and SinCos encoders run great in most games.
@@ -25,30 +25,35 @@ For added security, the enable pin on the TMC can also be pulled down externally
 An ODrive can receive torque commands and report the encoder position via a CAN bus for FFB.
 Manual configuration of the ODrive required!
 
+#### VESC support:
+A VESC can receive torque commands and report the encoder position via a CAN bus for FFB.
+Manual configuration of the VESC required!
 
-## Planned features:
 
-#### HID control of certain parameters:
+
+#### Multi axis FFB for joysticks and flight sims:
+Complex. mostly working but rarely tested.
+
+## General
+
+#### Writing and dumping setups into and from flash
+Back up of settings or quick start presets
+
+#### HID control of certain parameters
 Setting steering angles or strength from external programs without the serial port.
-Currently in development.
+Great for third party applications and automations
+
+#### MT8625 Encoder
+Encoder supported via SPI
+
+## Planned features
 
 #### Better TMC initialization routines for encoder alignment:
 Important for safe and stable startup
 
-#### Multi axis FFB for joysticks and flight sims:
-Complex. Will take time but planned in the future
-
-#### Odrive support:
-Interesting for multi axis ffb.
-
-#### CAN bus:
-Using the FFBoard as a CAN bus interface or adding analog/digital inputs via CAN.
-
 #### External encoder support for TMC:
 Tunneling BISS-C or EnDat through the STM to the TMC as a position source. Would be very flexible but adds communication overhead
 
-#### Writing and dumping setups into and from flash:
-Back up of settings or quick start presets
 
 #### SimHub integration via HID:
 Auto change steering degrees and intensity depending on game. Motor stats as overlay etc.
@@ -56,11 +61,6 @@ Auto change steering degrees and intensity depending on game. Motor stats as ove
 #### Predefined settings and limiting options for specialized setups:
 The FFBoard firmware is flexible so for different hardware, features have to be disabled or predefined
 
-#### Improving GUI stability and setup procedures:
-The setup is still a bit unstable depending on how its done. Maybe a wizard could help.
-
-#### Improving TMC Debug bridge mainclass:
-The TMC debug mainclass is very helpful for testing the driver with the Trinamic IDE (TMCL-IDE). The mainclass is hacky and not stable with the newest TMC ide.
 
 #### Autoalignment of steering wheels at startup:
 With absolute encoders or encoders with home pulse, an absolute position can be searched at powerup and automatically set the center offset. Not possible with all encoders and may require slow rotations.
