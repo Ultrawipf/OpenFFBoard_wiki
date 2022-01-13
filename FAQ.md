@@ -1,5 +1,13 @@
 ## FAQ
 
+**Which motor drivers are supported?**
+
+* PWM output with locally connected encoder
+* Custom TMC4671 based driver with ABZ, SinCos and 3 Phase analog encoders
+* ODrive via CAN
+* VESC via CAN
+* more to come...
+
 **When will it be available?**
 
 No idea. Hopefully this year (not in large quantities yet.... So probably mid next year). Prototypes are ordered and have to be tested. First boards go to developers that want to help with the firmware.
