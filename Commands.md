@@ -103,26 +103,29 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |------|-----------------------------|---------------------------------------------------------|
 |sys.0 |0x0                          |System Commands                                          |
 
-|Command name|CMD ID|Description                                          |
-|------------|------|-----------------------------------------------------|
-|help        |0x0   |Print system help                                    |
-|save        |0x1   |Write all settings to flash                          |
-|reboot      |0x2   |Reset chip                                           |
-|dfu         |0x3   |reboot into DFU bootloader                           |
-|lsmain      |0x6   |List available mainclasses                           |
-|lsactive    |0x8   |List active classes (Fullname:clsname:inst:clsid:idx)|
-|vint        |0xE   |Internal voltage(mV)                                 |
-|vext        |0xF   |External voltage(mV)                                 |
-|main        |0x7   |Query or change mainclass                            |
-|swver       |0x4   |Firmware version                                     |
-|hwtype      |0x5   |Hardware type                                        |
-|flashraw    |0xD   |Write value to flash address                         |
-|flashdump   |0xC   |Read all flash variables (val:adr)                   |
-|errors      |0xA   |Read error states                                    |
-|errorsclr   |0xB   |Reset errors                                         |
-|heapfree    |0x11  |Memory info                                          |
-|format      |0x9   |set format=1 to erase all stored values              |
-|debug       |0x13  |Enable or disable debug commands                     |
+
+|Command name|CMD ID  | Description                                         |
+|------------|--------|-----------------------------------------------------|
+|help        |0x0     |Print system help                                    |
+|save        |0x1     |Write all settings to flash                          |
+|reboot      |0x2     |Reset chip                                           |
+|dfu         |0x3     |reboot into DFU bootloader                           |
+|lsmain      |0x6     |List available mainclasses                           |
+|lsactive    |0x8     |List active classes (Fullname:clsname:inst:clsid:idx)|
+|vint        |0xE     |Internal voltage(mV)                                 |
+|vext        |0xF     |External voltage(mV)                                 |
+|main        |0x7     |Query or change mainclass                            |
+|swver       |0x4     |Firmware version                                     |
+|hwtype      |0x5     |Hardware type                                        |
+|flashraw    |0xD     |Write value to flash address                         |
+|flashdump   |0xC     |Read all flash variables (val:adr)                   |
+|errors      |0xA     |Read error states                                    |
+|errorsclr   |0xB     |Reset errors                                         |
+|heapfree    |0x11    |Memory info                                          |
+|format      |0x9     |set format=1 to erase all stored values              |
+|debug       |0x13    |Enable or disable debug commands                     |
+|devid       |0x14    |Get chip dev id and rev id                           |
+
 
 Note for HID:
 The lsactive command will report the class id in the value field and the instance number in the address field. 
