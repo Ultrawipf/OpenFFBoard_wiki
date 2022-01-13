@@ -167,15 +167,15 @@ That way it is possible to check which modules are available.
 |name  |0x80000002                   |name of class                                            |
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
+|instance|0x80000004                   |Command handler instance number                        |
 |selId |0x80000006                   |Selection id used to create this class                   |
-|filterCfFreq|0x0                          |Constant force filter frequency                          |
-|filterCfQ|0x1                          |Constant force filter Q-factor                           |
+|filterCfFreq|0x0                          |Constant force filter frequency                    |
+|filterCfQ|0x1                          |Constant force filter Q-factor                        |
 |spring|0x3                          |Spring gain                                              |
-|friction|0x4                          |Friction gain                                            |
+|friction|0x4                          |Friction gain                                          |
 |damper|0x5                          |Damper gain                                              |
-|inertia|0x6                          |Inertia gain                                             |
-|effects|0x2                          |List effects                                             |
+|inertia|0x6                          |Inertia gain                                            |
+|effects|0x2                          |List effects. set 0 to reset                            |
 
 ---
 
