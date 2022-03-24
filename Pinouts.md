@@ -58,16 +58,18 @@ X and Y channels are the same as in G29 mode but it also has additional SPI butt
 * Clock polarity low
 
 * CS - latch
-* MISO - Data
+* MISO - Data from last shift register in chain
 * CLK - CLK
 * MOSI - unused
 
 
 Unused bits will be cut from the MSB in 74HC165 mode but from the LSB in Thrustmaster mode. (TM uses these for identification)
 
-##### 74HC165 PISO shift register connections:
+##### 74HC165 PISO shift register connections
 
 ![Pinout_74HC165](img/74hc165_connections.png)
+
+If more than one shift register is used connect Qh (serial output) to SER (serial input) of the next one and Qh of the last one to MISO
 
 ### PWM mode
 
