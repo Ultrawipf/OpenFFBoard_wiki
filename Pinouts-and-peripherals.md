@@ -71,6 +71,14 @@ Unused bits will be cut from the MSB in 74HC165 mode but from the LSB in Thrustm
 
 If more than one shift register is used connect Qh (serial output) to SER (serial input) of the next one and Qh of the last one to MISO
 
+#### I2C PCF8574
+* SDA - SDA
+* SCL - SCL
+* VCC - 3.3V
+* GND - GND
+
+Use first address (A0,A1,A2 = LOW) for first PCF in chain, second address for second one (if >8 buttons) and so on.
+
 ### PWM mode
 
 PWM pins are on TIM1
