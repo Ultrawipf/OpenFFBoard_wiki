@@ -106,25 +106,25 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 |Command name|CMD ID  | Description                                         |
 |------------|--------|-----------------------------------------------------|
-|help        |0x0     |Print system help                                    |
-|save        |0x1     |Write all settings to flash                          |
-|reboot      |0x2     |Reset chip                                           |
-|dfu         |0x3     |reboot into DFU bootloader                           |
-|lsmain      |0x6     |List available mainclasses                           |
-|lsactive    |0x8     |List active classes (Fullname:clsname:inst:clsid:idx)|
-|vint        |0xE     |Internal voltage(mV)                                 |
-|vext        |0xF     |External voltage(mV)                                 |
-|main        |0x7     |Query or change mainclass                            |
-|swver       |0x4     |Firmware version                                     |
-|hwtype      |0x5     |Hardware type                                        |
-|flashraw    |0xD     |Write value to flash address                         |
-|flashdump   |0xC     |Read all flash variables (val:adr)                   |
-|errors      |0xA     |Read error states                                    |
-|errorsclr   |0xB     |Reset errors                                         |
-|heapfree    |0x11    |Memory info                                          |
-|format      |0x9     |set format=1 to erase all stored values              |
-|debug       |0x13    |Enable or disable debug commands                     |
-|devid       |0x14    |Get chip dev id and rev id                           |
+|help         |0x0       |Print system help                                        |
+|save         |0x1       |Write all settings to flash                              |
+|reboot       |0x2       |Reset chip                                               |
+|dfu          |0x3       |reboot into DFU bootloader                               |
+|lsmain       |0x6       |List available mainclasses                               |
+|lsactive     |0x8       |List active classes (Fullname:clsname:inst:clsid:idx)    |
+|vint         |0xE       |Internal voltage(mV)                                     |
+|vext         |0xF       |External voltage(mV)                                     |
+|main         |0x7       |Query or change mainclass                                |
+|swver        |0x4       |Firmware version                                         |
+|hwtype       |0x5       |Hardware type                                            |
+|flashraw     |0xD       |Write value to flash address                             |
+|flashdump    |0xC       |Read all flash variables (val:adr)                       |
+|errors       |0xA       |Read error states                                        |
+|errorsclr    |0xB       |Reset errors                                             |
+|heapfree     |0x11      |Memory info                                              |
+|format       |0x9       |set format=1 to erase all stored values                  |
+|debug        |0x13      |Enable or disable debug commands                         |
+|devid        |0x14      |Get chip dev id and rev id                               |
 
 
 Note for HID:
@@ -145,7 +145,7 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |axes  |0x1                          |Number of axes (1-2)                                     |
 |ffbactive|0x0                          |FFB status                                               |
 |btntypes|0x2                          |Enabled button sources                                   |
@@ -171,7 +171,7 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                        |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |filterCfFreq|0x0                          |Constant force filter frequency                    |
 |filterCfQ|0x1                          |Constant force filter Q-factor                        |
 |spring|0x3                          |Spring gain                                              |
@@ -190,25 +190,27 @@ That way it is possible to check which modules are available.
 
 |Command name|CMD ID                       | Description                                             |
 |------|-----------------------------|---------------------------------------------------------|
-|id    |0x80000001                   |ID of class                                              |
-|name  |0x80000002                   |name of class                                            |
-|help  |0x80000003                   |Prints help for commands                                 |
-|cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
-|power |0x0                          |Overall force strength                                   |
-|degrees|0x1                          |Rotation range in deg.                                   |
-|esgain|0x2                          |Endstop stiffness                                        |
-|zeroenc|0x3                          |Zero axis                                                |
-|invert|0x4                          |Invert axis                                              |
-|idlespring|0x5                          |Idle spring strength                                     |
-|axisdamper|0x6                          |Independent damper effect                                |
-|enctype|0x7                          |Encoder type get/set/list                                |
-|drvtype|0x8                          |Motor driver type get/set/list                           |
-|pos   |0x9                          |Axis position                                            |
-|maxspeed|0xA                          |Speed limit in deg/s                                     |
-|maxtorquerate|0xB                          |Torque rate limit in counts/ms                           |
-|fxratio|0xC                          |Effect ratio. Reduces effects excluding endstop. 255=100%|
+|id           |0x80000001|ID of class                                              |
+|name         |0x80000002|name of class                                            |
+|help         |0x80000003|Prints help for commands                                 |
+|cmduid       |0x80000005|Command handler index                                    |
+|instance     |0x80000004|Command handler instance number                          |
+|power        |0x0       |Overall force strength                                   |
+|degrees      |0x1       |Rotation range in deg                                    |
+|esgain       |0x2       |Endstop stiffness                                        |
+|zeroenc      |0x3       |Zero axis                                                |
+|invert       |0x4       |Invert axis                                              |
+|idlespring   |0x5       |Idle spring strength                                     |
+|axisdamper   |0x6       |Independent damper effect                                |
+|enctype      |0x7       |Encoder type get/set/list                                |
+|drvtype      |0x8       |Motor driver type get/set/list                           |
+|pos          |0x9       |Encoder position                                         |
+|maxspeed     |0xA       |Speed limit in deg/s                                     |
+|maxtorquerate|0xB       |Torque rate limit in counts/ms                           |
+|fxratio      |0xC       |Effect ratio. Reduces effects excluding endstop. 255=100%|
+|curtorque    |0xD       |Axis torque                                              |
+|curpos       |0xE       |Axis position                                            |
+
 
 ---
 
@@ -225,7 +227,7 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |cs    |0x0                          |CS pin                                                   |
 
 ---
@@ -243,7 +245,7 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |mask  |0x0                          |Enabled pins                                             |
 |polarity|0x1                          |Pin polarity                                             |
 |pins  |0x2                          |Available pins                                           |
@@ -263,11 +265,29 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |mask  |0x0                          |Enabled pins                                             |
 |autocal|0x1                          |Autoranging                                              |
 |pins  |0x2                          |Available pins                                           |
 
+
+---
+
+### PCF8574 button sourse
+
+|Prefix       |Class ID  |Class description                                        |
+|-------------|----------|---------------------------------------------------------|
+|pcfbtn.0     |0x24      |I2C PCF8574: btnnum/8 devices required. Addresses starting at 0x20.|
+
+|Command name |CMD ID    | Description                                             |
+|-------------|----------|---------------------------------------------------------|
+|id           |0x80000001|ID of class                                              |
+|name         |0x80000002|name of class                                            |
+|help         |0x80000003|Prints help for commands                                 |
+|cmduid       |0x80000005|Command handler index                                    |
+|instance     |0x80000004|Command handler instance number                          |
+|btnnum       |0x0       |Amount of buttons                                        |
+|invert       |0x1       |Invert buttons                                           |
 
 ---
 
@@ -284,7 +304,7 @@ That way it is possible to check which modules are available.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |freq  |0x1                          |PWM period selection                                     |
 |mode  |0x0                          |PWM mode                                                 |
 
@@ -298,37 +318,46 @@ That way it is possible to check which modules are available.
 
 |Command name|CMD ID|Description                                          |
 |------------|------|-----------------------------------------------------|
-|id          |0x80000001|ID of class                                          |
-|name        |0x80000002|name of class                                        |
-|help        |0x80000003|Prints help for commands                             |
-|cmduid      |0x80000005|Command handler index                                |
-|instance    |0x80000004|Command handler instance number                      |
-|selId       |0x80000006|Selection id used to create this class               |
-|cpr         |0x0   |CPR in TMC                                           |
-|mtype       |0x1   |Motor type                                           |
-|encsrc      |0x2   |Encoder source                                       |
-|tmcHwType   |0x3   |Version of TMC board                                 |
-|encalign    |0x4   |Align encoder                                        |
-|poles       |0x5   |Motor pole pairs                                     |
-|acttrq      |0x6   |Read torque                                          |
-|pwmlim      |0x7   |PWM limit (DEBUG ONLY)                               |
-|torqueP     |0x8   |Torque P                                             |
-|torqueI     |0x9   |Torque I                                             |
-|fluxP       |0xA   |Flux P                                               |
-|fluxI       |0xB   |Flux I                                               |
-|velocityP   |0xC   |Velocity P                                           |
-|velocityI   |0xD   |Velocity I                                           |
-|posP        |0xE   |Pos P                                                |
-|posI        |0xF   |Pos I                                                |
-|tmctype     |0x10  |Version of TMC chip                                  |
-|pidPrec     |0x11  |PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12         |
-|phiesrc     |0x12  |PhiE source (DEBUG ONLY)                             |
-|fluxoffset  |0x13  |Offset flux scale for field weakening                |
-|seqpi       |0x14  |Sequential PI                                        |
-|iScale      |0x15  |Counts per A                                         |
-|encdir      |0x16  |Encoder dir (DEBUG ONLY)                             |
-|temp        |0x17  |Temperature in C * 100                               |
-|reg         |0x18  |Read or write a TMC register at adr (DEBUG ONLY)     |
+|id           |0x80000001|ID of class                                              |
+|name         |0x80000002|name of class                                            |
+|help         |0x80000003|Prints help for commands                                 |
+|cmduid       |0x80000005|Command handler index                                    |
+|instance     |0x80000004|Command handler instance number                          |
+|cpr          |0x0       |CPR in TMC                                               |
+|mtype        |0x1       |Motor type                                               |
+|encsrc       |0x2       |Encoder source                                           |
+|tmcHwType    |0x3       |Version of TMC board                                     |
+|encalign     |0x4       |Align encoder                                            |
+|poles        |0x5       |Motor pole pairs                                         |
+|acttrq       |0x6       |Measure torque and flux                                  |
+|pwmlim       |0x7       |PWM limit (DEBUG MODE ONLY)                              |
+|torqueP      |0x8       |Torque P                                                 |
+|torqueI      |0x9       |Torque I                                                 |
+|fluxP        |0xA       |Flux P                                                   |
+|fluxI        |0xB       |Flux I                                                   |
+|velocityP    |0xC       |Velocity P                                               |
+|velocityI    |0xD       |Velocity I                                               |
+|posP         |0xE       |Pos P                                                    |
+|posI         |0xF       |Pos I                                                    |
+|tmctype      |0x10      |Version of TMC chip                                      |
+|pidPrec      |0x11      |PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12             |
+|phiesrc      |0x12      |PhiE source (DEBUG MODE ONLY)                            |
+|fluxoffset   |0x13      |Offset flux scale for field weakening                    |
+|seqpi        |0x14      |Sequential PI                                            |
+|iScale       |0x15      |Counts per A                                             |
+|encdir       |0x16      |Encoder dir (DEBUG MODE ONLY)                            |
+|abnpol       |0x1F      |Encoder polarity                                         |
+|temp         |0x17      |Temperature in C * 100                                   |
+|reg          |0x18      |Read or write a TMC register at adr (DEBUG MODE ONLY)    |
+|svpwm        |0x19      |Space-vector PWM                                         |
+|autohome     |0x1D      |Find abn index                                           |
+|abnindex     |0x1C      |Enable ABN index                                         |
+|calibrate    |0x1A      |Full calibration                                         |
+|calibrated   |0x1B      |Calibration valid                                        |
+|state        |0x1E      |Get state                                                |
+|combineEncoder|0x20      |Use TMC for movement; external encoder for position      |
+|invertForce  |0x21      |Invert incoming forces                                   |
+|vm           |0x22      |VM in mV                                                 |
 
 ---
 
@@ -346,7 +375,7 @@ Example here is only M0. M1 is available too.
 |help        |0x80000003|Prints help for commands                 |
 |cmduid      |0x80000005|Command handler index                    |
 |instance    |0x80000004|Command handler instance number          |
-|selId       |0x80000006|Selection id used to create this class   |
+|~~selId~~       |~~0x80000006~~|~~Selection id used to create this class~~   |
 |canid       |0x0       |CAN id of ODrive                         |
 |canspd      |0x1       |CAN baudrate                             |
 |errors      |0x2       |ODrive error flags                       |
@@ -372,7 +401,7 @@ Example here is only M0. M1 is available too.
 |help        |0x80000003|Prints help for commands              |
 |cmduid      |0x80000005|Command handler index                 |
 |instance    |0x80000004|Command handler instance number       |
-|selId       |0x80000006|Selection id used to create this class|
+|~~selId~~       |~~0x80000006~~|~~Selection id used to create this class~~|
 |offbcanid   |0x0       |CAN id of OpenFFBoard Axis            |
 |vesccanid   |0x1       |CAN id of VESC                        |
 |canspd      |0x2       |CAN baud (3=250k 4=500k 5=1M)         |
@@ -403,7 +432,7 @@ Example here is only M0. M1 is available too.
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |can   |0x0                          |Send a frame or get last received frame                  |
 |rtr   |0x1                          |Send a RTR frame                                         |
 |spd   |0x2                          |Change or get CAN baud                                   |
@@ -426,7 +455,7 @@ To use the FOC modes position; velocity and torque you first must manually selec
 |help  |0x80000003                   |Prints help for commands                                 |
 |cmduid|0x80000005                   |Command handler index                                    |
 |instance|0x80000004                   |Command handler instance number                          |
-|selId |0x80000006                   |Selection id used to create this class                   |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
 |torque|0x0                          |Change torque and enter torque mode                      |
 |pos   |0x1                          |Change pos and enter pos mode                            |
 |openloopspeed|0x2                          |Move openloop. adr=strength;val=speed                    |
