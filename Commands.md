@@ -252,6 +252,24 @@ That way it is possible to check which modules are available.
 
 ---
 
+### PCF8574 buttons
+
+|Prefix       |Class ID  |Class description                                        |
+|-------------|----------|---------------------------------------------------------|
+|pcfbtn.0     |0x24      |I2C PCF8574: btnnum/8 devices required. Addresses starting at 0x20.|
+
+|Command name |CMD ID    | Description                                             |
+|-------------|----------|---------------------------------------------------------|
+|id           |0x80000001|ID of class                                              |
+|name         |0x80000002|name of class                                            |
+|help         |0x80000003|Prints help for commands                                 |
+|cmduid       |0x80000005|Command handler index                                    |
+|instance     |0x80000004|Command handler instance number                          |
+|btnnum       |0x0       |Amount of buttons                                        |
+|invert       |0x1       |Invert buttons                                           |
+
+---
+
 ### Analog pin axes
 
 |Prefix|Class ID                     |Class description                                        |
@@ -273,23 +291,6 @@ That way it is possible to check which modules are available.
 
 ---
 
-### PCF8574 button sourse
-
-|Prefix       |Class ID  |Class description                                        |
-|-------------|----------|---------------------------------------------------------|
-|pcfbtn.0     |0x24      |I2C PCF8574: btnnum/8 devices required. Addresses starting at 0x20.|
-
-|Command name |CMD ID    | Description                                             |
-|-------------|----------|---------------------------------------------------------|
-|id           |0x80000001|ID of class                                              |
-|name         |0x80000002|name of class                                            |
-|help         |0x80000003|Prints help for commands                                 |
-|cmduid       |0x80000005|Command handler index                                    |
-|instance     |0x80000004|Command handler instance number                          |
-|btnnum       |0x0       |Amount of buttons                                        |
-|invert       |0x1       |Invert buttons                                           |
-
----
 
 ### PWM motor driver
 
