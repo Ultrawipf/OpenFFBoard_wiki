@@ -31,6 +31,8 @@ Up to 6 analog pins are mapped to gamepad axes with 12 bit ADC resolution.
 
 An analog shifter is a 2 axis joystick with positions mapped to gamepad buttons.
 
+Use 3.3V for the shifter supply! NOT 5V! 5V can damage the chip and will result in incorrect values.
+
 **G29 mode:**
 
 X and Y channels can be mapped to analog inputs. Default is input 5 and 6 (A4 & A5).
