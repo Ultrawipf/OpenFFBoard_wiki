@@ -250,6 +250,35 @@ That way it is possible to check which modules are available.
 |polarity|0x1                          |Pin polarity                                             |
 |pins  |0x2                          |Available pins                                           |
 
+
+---
+### Analog shifter buttons
+
+Supports G25,G27 (w. all SPI buttons),G29 and similar type shifters w. 2 axis analog stick and reverse button
+
+|Prefix|Class ID                     |Class description                                        |
+|------|-----------------------------|---------------------------------------------------------|
+|shifter.0   |0x23      |Shifter Analog: Analog 6+1 gear shifter button source|
+
+|Command name|CMD ID    | Description                                         |
+|------|-----------------------------|---------------------------------------------------------|
+|id          |0x80000001|ID of class                                          |
+|name        |0x80000002|name of class                                        |
+|help        |0x80000003|Prints help for commands                             |
+|cmduid      |0x80000005|Command handler index                                |
+|instance    |0x80000004|Command handler instance number                      |
+|mode        |0x0       |Shifter mode                                         |
+|x12         |0x1       |X-threshold for 1;2 gears                            |
+|x56         |0x2       |X-threshold for 5;6 gears                            |
+|y135        |0x3       |Y-threshold for 1;3;5 gears                          |
+|y246        |0x4       |Y-threshold for 2;4;6 gears                          |
+|revbtn      |0x5       |Pin for R signal                                     |
+|cspin       |0x6       |CS pin for SPI modes                                 |
+|xchan       |0x7       |X signal analog pin                                  |
+|ychan       |0x8       |Y signal analog pin                                  |
+|vals        |0x9       |Analog values                                        |
+|gear        |0xA       |Decoded gear                                         |
+
 ---
 
 ### PCF8574 buttons
