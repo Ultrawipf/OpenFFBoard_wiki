@@ -133,7 +133,31 @@ That way it is possible to check which modules are available.
 
 ---
 
-### FFB Wheel&Joystick
+### FFB Wheel (until v1.7.x)
+|Prefix|Class ID                     |Class description                                        |
+|------|-----------------------------|---------------------------------------------------------|
+|main.0|0x1                          |FFB Wheel: Force feedback HID game controller            |
+
+|Command name|CMD ID                       | Description                                             |
+|------|-----------------------------|---------------------------------------------------------|
+|id    |0x80000001                   |ID of class                                              |
+|name  |0x80000002                   |name of class                                            |
+|help  |0x80000003                   |Prints help for commands                                 |
+|cmduid|0x80000005                   |Command handler index                                    |
+|instance|0x80000004                   |Command handler instance number                          |
+|~~selId~~ |~~0x80000006~~                   |~~Selection id used to create this class~~                   |
+|axes  |0x1                          |Number of axes (1-2)                                     |
+|ffbactive|0x0                          |FFB status                                               |
+|btntypes|0x2                          |Enabled button sources                                   |
+|addbtn|0x4                          |Enable button source                                     |
+|lsbtn |0x3                          |Get available button sources                             |
+|aintypes|0x5                          |Enabled analog sources                                   |
+|lsain |0x6                          |Get available analog sources                             |
+|addain|0x7                          |Enable analog source                                     |
+|hidrate|0x8                          |Get estimated effect update speed                        |
+|hidsendspd|0x9                          |Change HID gamepad update rate                           |
+
+### FFB Wheel&Joystick (from v1.8 on)
 
 Commands apply to both 1 axis and 2 axis FFB HID mainclasses
 
@@ -158,6 +182,7 @@ Commands apply to both 1 axis and 2 axis FFB HID mainclasses
 |addain      |0x7       |Enable analog source                                 |
 |hidrate     |0x8       |Get estimated effect update speed                    |
 |hidsendspd  |0x9       |Change HID gamepad update rate                       |
+
 
 ---
 
