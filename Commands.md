@@ -55,8 +55,8 @@ Replies to request commands will reply as a request as well as any other broadca
             cls = struct.unpack('<H', bytes(data[2:4]))
             instance = data[4]
             cmd = struct.unpack('<L', bytes(data[5:9]))
-            val = struct.unpack('<Q', bytes(data[9:17]))
-            addr = struct.unpack('<Q', bytes(data[17:25]))
+            val = struct.unpack('<q', bytes(data[9:17]))
+            addr = struct.unpack('<q', bytes(data[17:25]))
             print(f"Type: {t}, Class: {cls}.{instance}: cmd: {cmd}, val: {val}, addr: {addr}")
 
 
