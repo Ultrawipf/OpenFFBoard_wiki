@@ -94,9 +94,18 @@ Replies to request commands will reply as a request as well as any other broadca
 
 ## Command list
 
-Commands marked as "Debug mode only" are treated as invalid if the sys.debug variable is not set to 1 first.
+Commands marked as "Debug" are treated as invalid if the sys.debug variable is not set to 1 first.
 They can be (even more) dangerous and possibly damage hardware if misused. That does not mean all others are safe! 
+Commands marked as "STR" or "I" type requests are not available for HID as they return a string.
 Be careful when changing motor parameters. Incorrect settings can damage the hardware or cause injury.
+
+|Flag     |Description|Example   |
+|---------|-----------|----------|
+|R        |Read or Execute|cls.cmd?  |
+|W        |Write value|cls.cmd=10|
+|RA       |Read with address|cls.cmd?20|
+|WA       |Write with address|cls.cmd=10?20|
+|I        |Get special info string (Not available for HID)|cls.cmd!  |
 
 ### System commands
 |Prefix|Class ID                     |Class description                                        |
@@ -104,27 +113,28 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |sys.0 |0x0                          |System Commands                                          |
 
 
-|Command name|CMD ID  | Description                                         |
-|------------|--------|-----------------------------------------------------|
-|help         |0x0       |Print system help                                        |
-|save         |0x1       |Write all settings to flash                              |
-|reboot       |0x2       |Reset chip                                               |
-|dfu          |0x3       |reboot into DFU bootloader                               |
-|lsmain       |0x6       |List available mainclasses                               |
-|lsactive     |0x8       |List active classes (Fullname:clsname:inst:clsid:idx)    |
-|vint         |0xE       |Internal voltage(mV)                                     |
-|vext         |0xF       |External voltage(mV)                                     |
-|main         |0x7       |Query or change mainclass                                |
-|swver        |0x4       |Firmware version                                         |
-|hwtype       |0x5       |Hardware type                                            |
-|flashraw     |0xD       |Write value to flash address                             |
-|flashdump    |0xC       |Read all flash variables (val:adr)                       |
-|errors       |0xA       |Read error states                                        |
-|errorsclr    |0xB       |Reset errors                                             |
-|heapfree     |0x11      |Memory info                                              |
-|format       |0x9       |set format=1 to erase all stored values                  |
-|debug        |0x13      |Enable or disable debug commands                         |
-|devid        |0x14      |Get chip dev id and rev id                               |
+|Command name|CMD ID|Description                                          |Flags |
+|------------|------|-----------------------------------------------------|------|
+|help        |0x0   |Print system help                                    | (STR)|
+|save        |0x1   |Write all settings to flash                          | R    |
+|reboot      |0x2   |Reset chip                                           | R    |
+|dfu         |0x3   |reboot into DFU bootloader                           | R    |
+|lsmain      |0x6   |List available mainclasses                           | R    |
+|lsactive    |0x8   |List active classes (Fullname:clsname:inst:clsid:idx)| R    |
+|vint        |0xE   |Internal voltage(mV)                                 | R    |
+|vext        |0xF   |External voltage(mV)                                 | R    |
+|main        |0x7   |Query or change mainclass                            | R W  |
+|swver       |0x4   |Firmware version                                     | R    |
+|hwtype      |0x5   |Hardware type                                        | R    |
+|flashraw    |0xD   |Write value to flash address                         | WA   |
+|flashdump   |0xC   |Read all flash variables (val:adr)                   | R    |
+|errors      |0xA   |Read error states                                    | R    |
+|errorsclr   |0xB   |Reset errors                                         | R    |
+|heapfree    |0x11  |Memory info                                          | R    |
+|format      |0x9   |set format=1 to erase all stored values              | W    |
+|debug       |0x13  |Enable or disable debug commands                     | R W  |
+|devid       |0x14  |Get chip dev id and rev id                           | R    |
+
 
 
 Note for HID:
