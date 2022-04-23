@@ -70,6 +70,7 @@ Unused bits will be cut from the MSB in 74HC165 mode but from the LSB in Thrustm
 ##### 74HC165 PISO shift register connections
 
 ![Pinout_74HC165](img/74hc165_connections.png)
+![Example_74HC165](img/74hc165schematic.png)
 
 If more than one shift register is used connect Qh (serial output) to SER (serial input) of the next one and Qh of the last one to MISO
 
