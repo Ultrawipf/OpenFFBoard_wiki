@@ -113,3 +113,7 @@ Use SPI3 on EXT header
 
 ### F407 official CubeMX pinout
 ![Pinout](img/f407pinout1.png)
+
+### Brake resistor
+The brake resistor and voltage sense circuit is intended for the TMC4671 but is currently always active and will work with other drivers as well.
+You need to connect a 10k/294k voltage divider to the vint (internal motor voltage after diode) and vext (to power supply before diode) pins and it will activate when the internal voltage is 5V above the external voltage.
