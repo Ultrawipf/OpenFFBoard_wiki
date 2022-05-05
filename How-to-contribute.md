@@ -7,6 +7,11 @@ Being an open source project you are allowed and encouraged to submit issues, bu
 4. Wait for approval and append requested changes to your branch
 5. Your code gets squash merged if approved
 
+### Release workflow
+Changes should be added in the CHANGELOG.md file.
+This will be used to generate release notes.
+A tagged commit (v1.x.x) will trigger an automatic release. A tag with a "-" (v1.x.x-beta) generates a prerelease.
+
 ### Branches
 If you directly push a branch to the project as a developer your branch name should contain your username or the type of feature. Like `ultrawipf/warpspeed` or `feature/pwmdriver`.
 Set your git author name correctly before committing.
