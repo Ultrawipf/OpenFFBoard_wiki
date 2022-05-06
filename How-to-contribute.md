@@ -12,6 +12,10 @@ Changes should be added in the CHANGELOG.md file.
 This will be used to generate release notes.
 A tagged commit (v1.x.x) will trigger an automatic release. A tag with a "-" (v1.x.x-beta) generates a prerelease.
 
+### Submodules
+The configurator is an important part of the project and should be kept up to date with any changes required to support a firmware and the submodule should if possible point to a commit that works with the corresponding firmware version.
+Pull the submodules with `git submodule update --init`.
+
 ### Branches
 If you directly push a branch to the project as a developer your branch name should contain your username or the type of feature. Like `ultrawipf/warpspeed` or `feature/pwmdriver`.
 Set your git author name correctly before committing.
