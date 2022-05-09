@@ -1,5 +1,5 @@
 ## Commands:
-Valid from version 1.5 on.
+
 ### Syntax for string based Interfaces. (CDC and UART):
 #### Request format:
 Get: `cls.(instance.)cmd?` or `cls.(instance.)cmd?adr`
