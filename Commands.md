@@ -568,7 +568,7 @@ Example here is only M0. M1 is available too.
 
 ## Other mainclasses:
 
-### CAN debug bridge
+### CAN bridge
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -589,6 +589,8 @@ Example here is only M0. M1 is available too.
 ---
 
 ### TMC debug bridge
+
+Debug mode must be active for this to show up
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -613,6 +615,8 @@ To use the FOC modes position; velocity and torque you first must manually selec
 --- 
 
 ### MIDI
+
+Debug mode must be active for this to show up
 
 |Prefix      |Class ID  |Class description                                     |
 |------------|----------|------------------------------------------------------|
