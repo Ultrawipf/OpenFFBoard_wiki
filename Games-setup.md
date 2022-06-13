@@ -45,6 +45,9 @@ Windows Registry Editor Version 5.00
 
 
 ## Forza Horizon 5 (or others)
-Confirmed working: [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html).
 
-When only one FFBoard is connected it will also detect that and allocate effects but it may play a constant vibration effect (maybe fixable) and ffb must be inverted ingame.
+When only one FFBoard is connected it will also detect that but FFB forces may need to be inverted ingame. 
+It will only work when the FFBoard is the first detected HID so you may need to temporarily disconnect other gamepads, pedals and other devices.
+
+Also confirmed working: [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html). 
+Emuwheel will merge multiple devices into one virtual one getting around some of the issues forza has with multiple devices
