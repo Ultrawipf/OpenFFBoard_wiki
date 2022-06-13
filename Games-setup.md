@@ -42,3 +42,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1209&PID_FFB0]
 "OEMData"=hex:43,00,88,01,fe,00,00,00
 ```
+
+
+## Forza Horizon 5 (or others)
+Confirmed working: [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html).
+
+When only one FFBoard is connected it will also detect that and allocate effects but it may play a constant vibration effect (maybe fixable) and ffb must be inverted ingame.
