@@ -48,3 +48,27 @@ Compiling changelogs from previous releases
 - VESC CAN id selection added
 
 
+## Configurator
+
+#### v1.8.7
+- Fixed crash when applying vesc settings
+
+#### v1.8.6
+- Split 1 and 2 axis mainclasses
+- Added CAN button source
+- Added analog CAN source
+- fast mode for PCF buttons
+- Moved CAN settings to common dialog
+- BISS-C encoder support
+- TMC graph follows system style
+- Windows darkmode support
+- Digital and analog readout
+
+#### v1.7.2
+
+* Support for TMC autohoming
+* Support for I2C PCF8574 button source
+* TMC full calibration button added
+* Added TMC encoder notices
+* Shows flux in TMC graph and total current
+* Changed icon
