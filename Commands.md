@@ -168,6 +168,8 @@ Commands apply to both 1 axis and 2 axis FFB HID mainclasses
 |addain      |0x7       |Enable analog source                                  | W        |
 |hidrate     |0x8       |Get estimated effect update speed                     | R        |
 |hidsendspd  |0x9       |Change HID gamepad update rate                        | R W I    |
+|estop       |0xA       |Emergency stop                                        | R W      |
+
 
 
 
