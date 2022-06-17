@@ -12,7 +12,7 @@ Increasing the groundplane distance reduces noise coupled in from the power stag
 
 ### V1.2.2
 
-Using LEM GO 10 SME hall sensors
+Using LEM GO 10 SME hall sensors<br>
 Added opamp buffers for temperature sensor, 2.5V reference and TMC voltage sensing
 
 ### V1.2 Major Update
