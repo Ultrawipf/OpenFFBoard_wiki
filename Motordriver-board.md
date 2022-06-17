@@ -2,7 +2,6 @@
 
 Status: *IN DEVELOPMENT! Not a final design*
 
-## TMC4671 motor driver:
 
 Info:
 If you experience issues with the stability/usb connection/noise with the TMC driver and the FFBoard in versions until including 1.2.2 try to isolate the middle 2 standoffs between the stm and tmc board or replace them with nylon standoffs. 
@@ -10,44 +9,73 @@ It seems like they are a bit too closely coupled to the power part of the driver
 In the next version i will try to increase the impedance and path length a bit between the power and the digital sections.
 Increasing the groundplane distance reduces noise coupled in from the power stage.
 
-### V1.2.2
+### TMC Driver:
 
-Using LEM GO 10 SME hall sensors<br>
-Added opamp buffers for temperature sensor, 2.5V reference and TMC voltage sensing
+#### 1.1: (Prerelease prototype)
+- Added filtering for Hall and Encoder inputs.
+- Separated TMC and STM VM sense dividers
 
-### V1.2 Major Update
+#### 1.2: (Major redesign)
+- Using TMC4671-LA production version
+- Added 5V buck converter
+- Added emergency shutdown method by pulling enable low
+- Rotated power stage. Moved all motor connectors to one side
+- Moved analog encoder pins and routed differential inputs out
+- Improved vcore impedance
+- Increased encoder filter frequencies
+- Reduced resistance of sense dividers
+- Switched LM5050 to LM74700
+- Space for 2 VM capacitors
+- Improved mosfet protection
+- Added temperature sensor pads on AGPI-B
+- 50x50+100mm screw holes
 
-Using TMC4671-LA production version.<br>
-Added 5V buck converter <br>
-Added emergency shutdown method by pulling enable low<br>
-Rotated power stage.<br>
-Moved all motor connectors to one side.<br>
-Moved analog encoder pins and routed differential inputs out.<br>
-Improved Vcore impedance.<br>
-Increased encoder filter frequencies.<br>
-Reduced resistance of sense dividers.<br>
-Switched LM5050 to LM74700.<br>
-Space for 2 VM capacitors.<br>
-Improved MOSFET protection.<br>
-Added temperature sensor pads on AGPI-B<br>
-Added 50x50+100mm screw holes<br>
+#### 1.2 fix:
+- Fixed silkscreen (R18 and R19 swapped)
+- Modified some labels
+- Added 33k gate pulldown for brake resistor
+- Moved and resized vias in motor driver part (Manufacturing reliability)
+- Tented vias
 
-### V1.1 Prerelease prototype
+#### 1.2.2 (HALL):
+- Redesigned power stage to use hall sensors (LEM GO SME and TMCS1100)
+- Changed buffers to 74LV17APWJ
+- Added opamp for TMC inputs (temperature and voltage sensing)
+- Used opamp as comparator for hardware brake resistor activation point (~65V)
 
-Added filtering for Hall and Encoder inputs.<br>
-Separated TMC and STM VM sense dividers.
+### STM USB Interface:
+#### 1.1:
+- Initial prototype
+- STM32F411RE based
+- Only supports TMC4671 driver
+- Only one SPI2 CS
 
-## Board informations
+#### 1.2:
+- STM32F407VG
+- Reserved PWM pins
+- 3 CS pins per SPI
+- CAN bus
+- Reserved E-Stop
+- USB Vbus sense
+- separated ADCs for vsense and analog in
+- LEDs moved
+- Added FFBoard logo
+- Changed USB diode to SMC
+- Added zener pad on 5V
+- Removed encoder buffer
+- Higher value pwr led resistor
 
-Hardware design of the TMC-driverboard can be found here: [Motordriver-Board](https://github.com/Ultrawipf/OpenFFBoard-hardware).<br>
-The git includes the pcb design and the bill of materials to manufacture one for yourself.
+#### 1.2.1:
+- Fixed some labels
+- Moved USB socket and terminals slightly to the corners (Big usb plugs might interfere with the pins)
+- Changed crystal load capacitors to lower values. (F407 DFU is very sensitive and does not work reliably with too high value caps)
+- Added E-Stop capacitor against noise triggering it
+- Tented vias
 
-## STM USB Interface:
-### 1.2:
-Switched from F411RE to F407VE for now (More pins and better availability)<br>
-Added FFBoard logo<br>
-Changed USB diode to SMC<br>
-Added CAN transceiver<br>
-SPI3 on ext header<br>
-Added 3 CS pins for each of the SPI ports<br>
-Added reserved emergency stop pin<br>
+#### 1.2.2
+- Swapped (Previously unused) Encoder Z pin from pin 65 to pin 62 because of interrupt conflicts with the DRV flag pin
+
+#### 1.2.3
+- USB-C instead of micro USB
+- SPI1 uses a 2 row header
+- Additional USB protections
