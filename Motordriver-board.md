@@ -4,6 +4,17 @@ Status: *IN DEVELOPMENT! Not a final design*
 
 ## TMC4671 motor driver:
 
+Info:
+If you experience issues with the stability/usb connection/noise with the TMC driver and the FFBoard in versions until including 1.2.2 try to isolate the middle 2 standoffs between the stm and tmc board or replace them with nylon standoffs. 
+It seems like they are a bit too closely coupled to the power part of the driver and cause a ground loop depending on your setup.
+In the next version i will try to increase the impedance and path length a bit between the power and the digital sections.
+Increasing the groundplane distance reduces noise coupled in from the power stage.
+
+### V1.2.2
+
+Using LEM GO 10 SME hall sensors
+Added opamp buffers for temperature sensor, 2.5V reference and TMC voltage sensing
+
 ### V1.2 Major Update
 
 Using TMC4671-LA production version.<br>
