@@ -33,3 +33,10 @@ For the headers use a relative path with `../../../` prefix.
 Some constants and defines to be set in the target headers.
 
 Also take good care of the flash/ram linker settings for the eeprom emulation. Look at the official targets for examples.
+
+
+
+Important settings:
+
+FreeRTOS tick function: enable "USE_TICK_HOOK" for freertos and delete the function `vApplicationTickHook` inside freertos.c that gets generated.
+The default task creates the mainclass. So it needs to have enough memory for that.
