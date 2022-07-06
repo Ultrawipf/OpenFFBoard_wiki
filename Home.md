@@ -9,3 +9,8 @@ The firmware is designed to be easily extendable and to be reconfigured at runti
 This means the firmware can control different kinds of motors and motor drivers (Stepper, 3 Phase BLDC, DC) motors, read encoder positions and present itself as a force feedback gamepad to the computer via HID.
 
 Having the HID PID implemented in a modular way allows it to be used in different ways without the need to write complex custom USB descriptors.
+
+
+The following image shows a simplified block diagram of how the OpenFFBoard firmware components would operate in a steering wheel setup and how its software components can be used to interface different peripherals.
+
+![firmware_overview](img/ffboard_firmware_overview.png)
