@@ -42,3 +42,27 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1209&PID_FFB0]
 "OEMData"=hex:43,00,88,01,fe,00,00,00
 ```
+
+
+## Forza Horizon 5 (or others)
+The OpenFFBoard works with Forza, but only when the FFBoard is the first detected HID during the initial loading screen so you may need to temporarily disconnect other gamepads, pedals and other devices and reconnect them when the menu has loaded.
+
+Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the media/inputmappingprofiles.zip might force it to be the primary steering device.
+```
+<Profiles>
+<RawGameControllerInputMappingProfile Version="1" Id="a5dcbf10-6530-11d2-901f-00c04fb951ed" UserFacingName="IDS_DefaultWheelProfile_OpenFFBoard_Name" IsDefaultProfile="1" PrimaryDeviceVidPid="0x1209FFB0" FFBDeviceVidPid="0x1209FFB0" FFBMotorIndex="0">
+
+  <!-- Race -->
+  <Context Version="1" Context="INPUTCONTEXT_RACING">
+    <Value Version="1" Key="INPUTCMD_GAS" VidPid="0x044fb67f" InputType="Axis" Index="1" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
+    <Value Version="1" Key="INPUTCMD_BRAKE" VidPid="0x044fb67f" InputType="Axis" Index="2" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
+    <Value Version="1" Key="INPUTCMD_CLUTCH" VidPid="0x044fb67f" InputType="Axis" Index="3" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
+    <Value Version="1" Key="INPUTCMD_STEERING" VidPid="0x044fb67f" InputType="Axis" Index="0" InvertAxis="false" DeadzonesAroundCenter="false" InnerDeadzone="0.00" OuterDeadzone="1.00" />  
+  </Context> 
+  <Context Version="1" Context="INPUTCONTEXT_RACING_UI">
+  </Context>
+```
+
+Also confirmed working if you still have other issues is [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html). 
+Emuwheel will merge and hide multiple devices into one virtual one getting around some of the issues forza has with incompatible devices.
+It will also forward FFB effects to the steering wheel device.

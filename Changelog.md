@@ -1,7 +1,16 @@
 Compiling changelogs from previous releases
 
 ## Firmware
-#### v1.8.x
+#### v1.8.8
+- Rescaled endstop to encoder angle (makes strength feel the same at every range)
+- Changed SPI button saved count from 0-63 to 1-64 (will invalidate your setting)
+- Added CAN next frame length command to send frames with different headers
+- Emergency stop can be reset and only disables torque
+- Added estop command
+- Optimized string based command interfaces
+- Effects honor the gain setting (Makes Forza Horizon work)
+
+#### v1.8.7
 - FFBWheel and FFBJoystick classes split for 1 and 2 axis FFB (Allows to use different HID descriptors)
 - Added a single axis HID descriptor (currently not used for compatibility reasons. enable by defining FFBWHEEL_USE_1AXIS_DESC)
 - Default SPI button speed increased to 1.3MHz
@@ -39,3 +48,27 @@ Compiling changelogs from previous releases
 - VESC CAN id selection added
 
 
+## Configurator
+
+#### v1.8.7
+- Fixed crash when applying vesc settings
+
+#### v1.8.6
+- Split 1 and 2 axis mainclasses
+- Added CAN button source
+- Added analog CAN source
+- fast mode for PCF buttons
+- Moved CAN settings to common dialog
+- BISS-C encoder support
+- TMC graph follows system style
+- Windows darkmode support
+- Digital and analog readout
+
+#### v1.7.2
+
+* Support for TMC autohoming
+* Support for I2C PCF8574 button source
+* TMC full calibration button added
+* Added TMC encoder notices
+* Shows flux in TMC graph and total current
+* Changed icon

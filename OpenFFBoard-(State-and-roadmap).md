@@ -31,6 +31,7 @@ Manual configuration of the VESC required!
 
 
 
+
 #### Multi axis FFB for joysticks and flight sims:
 Complex. mostly working but rarely tested.
 
@@ -39,20 +40,26 @@ Complex. mostly working but rarely tested.
 #### Writing and dumping setups into and from flash
 Back up of settings or quick start presets
 
-#### HID control of certain parameters
+#### HID control
 Setting steering angles or strength from external programs without the serial port.
-Great for third party applications and automations
+Great for third party applications and automations.
+Works with almost all integrated commands.
 
-#### MT8625 Encoder
-Encoder supported via SPI
+#### MT6825 Encoder
+Can be used with SPI3 with PWM and TMC motor drivers
+
+#### BiSS-C Encoder
+Can be used with SPI3 with PWM and TMC motor drivers
+
+#### Autoalignment of steering wheels at startup:
+With absolute encoders or encoders with home pulse, an absolute position can be searched at powerup and automatically set the center offset. Not possible with all encoders and motor drivers. Works with absolut encoders and ABN with index with TMC
 
 ## Planned features
 
 #### Better TMC initialization routines for encoder alignment:
 Important for safe and stable startup
 
-#### External encoder support for TMC:
-Tunneling BISS-C or EnDat through the STM to the TMC as a position source. Would be very flexible but adds communication overhead
+***
 
 
 #### SimHub integration via HID:
@@ -62,5 +69,3 @@ Auto change steering degrees and intensity depending on game. Motor stats as ove
 The FFBoard firmware is flexible so for different hardware, features have to be disabled or predefined
 
 
-#### Autoalignment of steering wheels at startup:
-With absolute encoders or encoders with home pulse, an absolute position can be searched at powerup and automatically set the center offset. Not possible with all encoders and may require slow rotations.

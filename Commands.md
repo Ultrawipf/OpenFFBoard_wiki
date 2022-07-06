@@ -1,5 +1,5 @@
 ## Commands:
-Valid from version 1.5 on.
+
 ### Syntax for string based Interfaces. (CDC and UART):
 #### Request format:
 Get: `cls.(instance.)cmd?` or `cls.(instance.)cmd?adr`
@@ -168,6 +168,8 @@ Commands apply to both 1 axis and 2 axis FFB HID mainclasses
 |addain      |0x7       |Enable analog source                                  | W        |
 |hidrate     |0x8       |Get estimated effect update speed                     | R        |
 |hidsendspd  |0x9       |Change HID gamepad update rate                        | R W I    |
+|estop       |0xA       |Emergency stop                                        | R W      |
+
 
 
 
@@ -568,7 +570,7 @@ Example here is only M0. M1 is available too.
 
 ## Other mainclasses:
 
-### CAN debug bridge
+### CAN bridge
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -589,6 +591,8 @@ Example here is only M0. M1 is available too.
 ---
 
 ### TMC debug bridge
+
+Debug mode must be active for this to show up
 
 |Prefix|Class ID                     |Class description                                        |
 |------|-----------------------------|---------------------------------------------------------|
@@ -613,6 +617,8 @@ To use the FOC modes position; velocity and torque you first must manually selec
 --- 
 
 ### MIDI
+
+Debug mode must be active for this to show up
 
 |Prefix      |Class ID  |Class description                                     |
 |------------|----------|------------------------------------------------------|
