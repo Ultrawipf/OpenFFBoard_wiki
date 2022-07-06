@@ -117,3 +117,14 @@ Use SPI3 on EXT header
 ### Brake resistor
 The brake resistor and voltage sense circuit is intended for the TMC4671 but is currently always active and will work with other drivers as well.
 You need to connect a 10k/294k voltage divider to the vint (internal motor voltage after diode) and vext (to power supply before diode) pins and it will activate when the internal voltage is 5V above the external voltage.
+
+
+### CAN bus
+The CAN bus is designed to use a TJA1501/3 transceiver with the silent pin connected to PD4.
+
+On the official board this is included as well as a 120 ohm termination which can be disconnected or connected using a solder jumper. By default it is connected on most boards with a cuttable trace that can be reconnected if required.
+Most CAN devices require this resistor to stay connected but certain devices like a BMW E90 instrument cluster i tested will only work reliably with it disconnected.
+
+The following image shows how to disconnect the termination on the V1.2.3 board:
+
+![CAN jumper](img/solderjumper_cut_CAN.jpg)
