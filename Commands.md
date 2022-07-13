@@ -1,6 +1,11 @@
 ## Commands:
 
 ### Syntax for string based Interfaces. (CDC and UART):
+
+#### Baudrate
+* Default baudrate for UART: 500000
+* For CDC (USB) baudrate setting has no effect. It will send as fast as possible.
+
 #### Request format:
 Get: `cls.(instance.)cmd?` or `cls.(instance.)cmd?adr`
 
