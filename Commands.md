@@ -3,7 +3,7 @@
 ### Syntax for string based Interfaces. (CDC and UART):
 
 #### Baudrate
-* Default baudrate for UART: 500000
+* Default baudrate for UART: 115200 or 500000 (previous to 1.9)
 * For CDC (USB) baudrate setting has no effect. It will send as fast as possible.
 
 #### Request format:
