@@ -8,6 +8,11 @@
 * VESC via CAN
 * more to come...
 
+**I can not connect in DFU mode**
+
+* You need a winusb DFU driver. Use [Zadig](http://zadig.akeo.ie/) to install it.
+* If you already have a driver loaded with the name "Guillemot STM DFU Device" unfortunately thats Thrustmaster overwriting your driver. This driver is not compatible with any normal DFU tool and must be uninstalled first.
+
 **When will it be available?**
 
 Prototypes are made and have to be tested. The parts availability unfortunately prevents making any large batch at the moment.
