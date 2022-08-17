@@ -11,6 +11,8 @@ Use [Zadig](http://zadig.akeo.ie/) to manually install a winusb driver for the D
 ![Zadig1](img/zadig_listall.png)
 ![Zadig2](img/zadig_install.png)
 
+Warning: Do **NOT** accidentially overwrite the driver for any other device. It will stop working until you manually uninstall the driver again with the device manager!
+
 #### DFU with Configurator
 
 If a firmware is already present connect as usual with the serial port and then open the DFU menu (DFU button or Hardware->Firmware Update).
@@ -18,12 +20,15 @@ Enter the DFU mode and it should be detected.
 
 Select the .hex file for your chip (F407 for official OpenFFBoard) and upload it. Wait until it is completed (takes 30s-1m) and then reset the device if it does not automatically restart.
 
+
 #### DFU or STLink with STM32CubeProgrammer
 
 [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) can be used to flash .hex files either via DFU (short boot0 jumper/connect boot0 to 3.3v) or with the STLink programmer (SWD debug header).
 
 If the device is detected load the .hex file and upload it.
 
+#### Boot0 jumper and debug header position
+![Boot0](img/b0_debug.jpg)
 
 ### Wheel setup with TMC4671
 
