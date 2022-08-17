@@ -8,17 +8,28 @@
 * VESC via CAN
 * more to come...
 
+**I can not connect in DFU mode**
+
+* You need a winusb DFU driver. Use [Zadig](http://zadig.akeo.ie/) to install it.
+* If you already have a driver loaded with the name "Guillemot STM DFU Device" unfortunately thats Thrustmaster overwriting your driver. This driver is not compatible with any normal DFU tool and must be uninstalled first.
+
 **When will it be available?**
 
-No idea. Hopefully this year (not in large quantities yet.... So probably mid next year). Prototypes are ordered and have to be tested. First boards go to developers that want to help with the firmware.
+Prototypes are made and have to be tested. The parts availability unfortunately prevents making any large batch at the moment.
 
 **How much will it cost?**
 
-From my estimates of parts and manufacturing a full kit should be available under 150€ if no unforeseen costs come up. No promises on that though. Might be less or slightly more to cover the costs.
+Considering the rapidly changing prices of components its hard to say. 
+Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/) for updated prices.
 
 **How much current does the TMC driver provide?**
 
-Its designed for 20A (Most motors are fine with under 10A and plenty strong). With a 1mOhm shunt you can get it up to 30A+
+Its designed for around 20-25A (Most motors are fine with under 10A and plenty strong). A different current sensor can allow for a larger or smaller range.
+
+** Can i use a stepper driver (TS6600, HB860, or similar...) **
+
+No. These drivers are not actual FOC drivers even if they use an encoder to correct missed steps.
+They are not capable of driving the motor with a constant force. You will need the TMC4671 driver for steppers or a different supported driver.
 
 **I want it super cheap and don't need servos. Is that possible without the TMC?**
 
