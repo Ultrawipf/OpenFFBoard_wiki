@@ -104,15 +104,33 @@ PWM pins are on TIM1
 
 **PWM/DIR:**
 * PWM1: PWM output
-* PWM3: Direction (left, inverted to PWM4)
+* PWM3 (PWM2 for disco): Direction (left, inverted to PWM4)
 * PWM4: Direction (right)
 
 
 ### MT6825 encoder
 Use SPI3 on EXT header
 
+### BISS-C on SPI3
+2 MAX485 transceiver modules are required. One for modulating the clock signal and one for receiving the encoder data.
+Connect this to SPI3 on the EXT header according to the following picture.
+
+![Pinout](img/TMC_Biss-c.png)
+
+A step by step guide is available in this [video](https://youtu.be/GBKCCanImxA?t=1095).
+Note: in the graphics used in the video the A connection goes to the negative rs485 lines. It should go to the positive instead.
+
+The encoder data can be forwarded to the TMC. Select the external encoder in the TMC encoder selection for that and select the corresponding BISS-C encoder in the axis encoder selection then.
+
 ### F407 official CubeMX pinout
 ![Pinout](img/f407pinout1.png)
+
+
+### F407 DISCO pinout
+![Pinout](img/f407discopinout1.png)
+Discovery board connections are based on mmos/osw pinouts but not completely identical.
+The PWM DIR pin is changed to PWM 2 (PE11) for mmos compatibility.
+A CAN transceiver (TJA1051/3) could be connected for vesc and odrive support.
 
 ### Brake resistor
 The brake resistor and voltage sense circuit is intended for the TMC4671 but is currently always active and will work with other drivers as well.
@@ -128,3 +146,5 @@ Most CAN devices require this resistor to stay connected but certain devices lik
 The following image shows how to disconnect the termination on the V1.2.3 board:
 
 ![CAN jumper](img/solderjumper_cut_CAN.jpg)
+
+On the V1.2.4 the solderjumper was replaced with a normal pinheader jumper.
