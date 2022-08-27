@@ -1,6 +1,24 @@
 Compiling changelogs from previous releases
 
 ## Firmware
+
+#### v1.9.6
+- Added analog filter option
+- Main effect loop runs in higher priority thread than idle
+- Added ADS111X analog source
+- Added user configurable axis encoder ratios for setups with reductions
+- Added effect filter option (Speed/accel filter presets for different encoders)
+- Added effects monitoring
+- Added some analog autorange margin
+- Added min/max commands to analog processing for manual ranges
+- Added analog processing functions to ADS111X
+- Selecting a "none" encoder will remove the axis value. Allows analog inputs to be used as the primary axis.
+- Added constant force rate command
+- Highly improved uart command stability (default baud rate 115200)
+- Added command to check command flags (cls.cmdinfo?cmdid)
+- Added advanced filter mode to switch between custom and default conditional effect output filters ("fx.filterProfile_id")
+- Automatic flash erase condition changed from major version change to separate flash version counter
+
 #### v1.8.8
 - Rescaled endstop to encoder angle (makes strength feel the same at every range)
 - Changed SPI button saved count from 0-63 to 1-64 (will invalidate your setting)
@@ -49,6 +67,22 @@ Compiling changelogs from previous releases
 
 
 ## Configurator
+#### v1.9.6
+- Added analog filter option
+- Added ADS111X source dialog
+- Added manual range tuning option for local analog and ADS111X
+- Automatically connects at startup if one supported FFBoard device is found
+- Many small fixes for stability
+- Added update browser (Help->updates)
+- Added automatic update notifications for firmware and GUI if detected
+- Redesigned UI layout
+- Added effect monitoring windows
+- Added advanced effect tuning window
+- Added encoder filter tuning window
+- Added basic profile management system
+- Added encoder gear reduction option (For belt/gear driven wheels if there is a reduction between the wheel and encoder. Prescales all internal positions)
+- Added constant force rate readout
+
 
 #### v1.8.7
 - Fixed crash when applying vesc settings
