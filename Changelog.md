@@ -67,7 +67,7 @@ Compiling changelogs from previous releases
 
 
 ## Configurator
-### v1.9.6
+#### v1.9.6
 - Added analog filter option
 - Added ADS111X source dialog
 - Added manual range tuning option for local analog and ADS111X
