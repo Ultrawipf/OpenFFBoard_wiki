@@ -274,6 +274,29 @@ Commands apply to both 1 axis and 2 axis FFB HID mainclasses
 |pos         |0x1       |Position                                              | R W      |
 |errors      |0x2       |Parity error count                                    | R        |
 
+
+---
+
+
+### BISS-C Encoder
+
+|Prefix      |Class ID  |Class description                                |
+|------------|----------|-------------------------------------------------|
+|bissenc.0   |0x63      |BISS-C                                           |
+
+|Command name|CMD ID    | Description                                     | Flags    |
+|------------|----------|-------------------------------------------------|----------|
+|id          |0x80000001|ID of class                                      | R        |
+|name        |0x80000002|name of class                                    | R (STR)  |
+|help        |0x80000003|Prints help for commands                         | R I (STR)|
+|cmduid      |0x80000005|Command handler index                            | R        |
+|instance    |0x80000004|Command handler instance number                  | R        |
+|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
+|bits        |0x0       |Bits of resolution                               | R W      |
+|speed       |0x2       |SPI speed preset 1-3                             | R W      |
+|errors      |0x3       |CRC error count                                  | R        |
+
+
 ---
 
 ### SPI buttons
