@@ -1,4 +1,4 @@
-## Setup procedures for specific games
+## Setup procedures for specific games and recommended settings
 
 
 ## All Dirt games:
@@ -32,6 +32,14 @@ You can also add a `openffboard.xml` to the actionmaps folder:
  </group>
 </action_map>
 ```
+
+Recommended settings:
+|Setting  |Value|
+|-----------|-------|
+|CF Filter  |50-80hz|
+|CF Filter q|0.3-0.7|
+|Range      |540    |
+
 
 
 ## Richard Burns Rally:
