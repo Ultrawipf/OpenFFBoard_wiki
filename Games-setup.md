@@ -1,4 +1,4 @@
-## Setup procedures for specific games
+## Setup procedures for specific games and recommended settings
 
 
 ## All Dirt games:
@@ -33,6 +33,14 @@ You can also add a `openffboard.xml` to the actionmaps folder:
 </action_map>
 ```
 
+Recommended settings:
+|Setting  |Value|
+|-----------|-------|
+|CF Filter  |50-80hz|
+|CF Filter q|0.3-0.7|
+|Range      |540    |
+
+
 
 ## Richard Burns Rally:
 Richard Burns Rally requires a key to be added to Windows registry. This can be done by creating a `RBR_openffboard.reg` file with this content:
@@ -42,12 +50,26 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\VID_1209&PID_FFB0]
 "OEMData"=hex:43,00,88,01,fe,00,00,00
 ```
+Warning: This may change the behaviour in other games.
 
 
 ## Forza Horizon 5 (or others)
 The OpenFFBoard works with Forza, but only when the FFBoard is the first detected HID during the initial loading screen so you may need to temporarily disconnect other gamepads, pedals and other devices and reconnect them when the menu has loaded.
 
-Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the media/inputmappingprofiles.zip might force it to be the primary steering device.
+Recommended settings:
+|Setting  |Value|
+|-----------|-------|
+|CF Filter  |60-200hz|
+|CF Filter q|0.3-0.7|
+|Range      |540    |
+
+<details>
+<summary>Config file</summary>
+
+Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the media/inputmappingprofiles.zip might force it to be the primary steering device. 
+
+**It is not confirmed if this actually helps at all so you may not need that.**
+
 ```
 <Profiles>
 <RawGameControllerInputMappingProfile Version="1" Id="a5dcbf10-6530-11d2-901f-00c04fb951ed" UserFacingName="IDS_DefaultWheelProfile_OpenFFBoard_Name" IsDefaultProfile="1" PrimaryDeviceVidPid="0x1209FFB0" FFBDeviceVidPid="0x1209FFB0" FFBMotorIndex="0">
@@ -62,7 +84,9 @@ Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the med
   <Context Version="1" Context="INPUTCONTEXT_RACING_UI">
   </Context>
 ```
+</details>
 
 Also confirmed working if you still have other issues is [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html). 
+
 Emuwheel will merge and hide multiple devices into one virtual one getting around some of the issues forza has with incompatible devices.
 It will also forward FFB effects to the steering wheel device.
