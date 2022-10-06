@@ -754,7 +754,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 |Prefix|Class ID| Class description|
 |------|--------|------------------|
-|main.0|0x1|MIDI (TMC): Failsafe mainclass with no features. Choose a different mainclass. sys.lsmain to get a list|
+|main.0|0x1|MIDI (TMC): Plays MIDI via TMC4671|
 
 |Command name|CMD ID| Description| Flags|
 |------------|------|------------|------|
