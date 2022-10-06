@@ -785,9 +785,9 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmduid|0x80000005|Command handler index| R|
 |instance|0x80000004|Command handler instance number| R|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|can|0x0|Send a frame or get last received frame||
-|rtr|0x1|Send a RTR frame||
-|spd|0x2|Change or get CAN baud||
+|can|0x0|Send a frame or get last received frame| R WA|
+|rtr|0x1|Send a RTR frame| R W|
+|spd|0x2|Change or get CAN baud| R W|
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)

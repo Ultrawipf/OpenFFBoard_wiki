@@ -15,7 +15,7 @@ class CommandHelpReader:
     def __init__(self,port):
         self.port = port
         self.open()
-        self.dev.timeout = 1
+        self.dev.timeout = 2
         self.devicename = self.sendCommand("sys.hwtype?")
         self.already_read = set()
 
@@ -28,7 +28,8 @@ class CommandHelpReader:
         self.dev.close()
 
     def open(self):
-        self.dev = serial.Serial(self.port,115200)
+        self.dev = serial.Serial(self.port,500000)
+        self.dev.setDTR(True)
 
     def sendCommand(self,cmd):
         self.dev.write(bytes(cmd+';','utf-8'))
@@ -37,6 +38,7 @@ class CommandHelpReader:
         
         match = REGEX.search(reply)
         if not match:
+            print("Reply:",reply)
             return None
         groups = match.groups()
         cmd = groups[GRP_CMD]
