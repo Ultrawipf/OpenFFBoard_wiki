@@ -1,0 +1,32 @@
+
+Prefix,Class ID, Class description
+axis.0,0xA01,Axis: FFB axis
+Command name,CMD ID, Description, Flags
+id,0x80000001,ID of class, R
+name,0x80000002,name of class, R (STR)
+help,0x80000003,Prints help for commands, R I (STR)
+cmduid,0x80000005,Command handler index, R
+instance,0x80000004,Command handler instance number, R
+cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
+power,0x0,Overall force strength, R W
+degrees,0x1,Rotation range in deg, R W
+esgain,0x2,Endstop stiffness, R W
+zeroenc,0x3,Zero axis, R
+invert,0x4,Invert axis, R W
+idlespring,0x5,Idle spring strength, R W
+axisdamper,0x6,Independent damper effect, R W
+enctype,0x7,Encoder type get/set/list, R W I
+drvtype,0x8,Motor driver type get/set/list, R W I
+pos,0x9,Encoder position, R
+maxspeed,0xA,Speed limit in deg/s, R W
+maxtorquerate,0xB,Torque rate limit in counts/ms, R W
+fxratio,0xC,Effect ratio. Reduces effects excluding endstop. 255=100%, R W
+curtorque,0xD,Axis torque, R
+curpos,0xE,Axis position, R
+curspd,0xF,Axis speed, R
+curaccel,0x10,Axis accel, R
+reduction,0x11,Encoder to axis gear reduction (val / adr) 1-256, R WA
+filterProfile_id,0x14,Biquad filter profile for speed and accel, R W
+filterSpeed,0x12,Biquad filter freq and q*100 for speed, R
+filterAccel,0x13,Biquad filter freq and q*100 for accel, R
+cpr,0x15,Reported encoder CPR, R

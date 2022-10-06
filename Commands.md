@@ -112,621 +112,681 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |WA       |Write with address|cls.cmd=10?20|
 |I        |Get special info string (Not available for HID)|cls.cmd!  |
 
-### System commands
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|sys.0 |0x0                          |System Commands                                          |
 
+### System Commands
 
-|Command name    |CMD ID    |Description                                                     |Flags     |
-|----------------|----------|----------------------------------------------------------------|----------|
-|help            |0x0       |Print system help                                               | (STR)    |
-|save            |0x1       |Write all settings to flash                                     | R        |
-|reboot          |0x2       |Reset chip                                                      | R        |
-|dfu             |0x3       |reboot into DFU bootloader                                      | R        |
-|lsmain          |0x6       |List available mainclasses                                      | R        |
-|lsactive        |0x8       |List active classes (Fullname:clsname:inst:clsid:idx)           | R        |
-|vint            |0xE       |Internal voltage(mV)                                            | R        |
-|vext            |0xF       |External voltage(mV)                                            | R        |
-|main            |0x7       |Query or change mainclass                                       | R W      |
-|swver           |0x4       |Firmware version                                                | R        |
-|hwtype          |0x5       |Hardware type                                                   | R        |
-|flashraw        |0xD       |Write value to flash address                                    | WA       |
-|flashdump       |0xC       |Read all flash variables (val:adr)                              | R        |
-|errors          |0xA       |Read error states                                               | R        |
-|errorsclr       |0xB       |Reset errors                                                    | R        |
-|heapfree        |0x11      |Memory info                                                     | R        |
-|format          |0x9       |set format=1 to erase all stored values                         | W        |
-|debug           |0x13      |Enable or disable debug commands                                | R W      |
-|devid           |0x14      |Get chip dev id and rev id                                      | R        |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|sys.0|0x0|System Commands|
 
-
-
-Note for HID:
-The lsactive command will report the class id in the value field and the instance number in the address field. 
-That way it is possible to check which modules are available.
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|help|0x0|Print system help| (STR)|
+|save|0x1|Write all settings to flash| R|
+|reboot|0x2|Reset chip| R|
+|dfu|0x3|reboot into DFU bootloader| R|
+|lsmain|0x6|List available mainclasses| R|
+|lsactive|0x8|List active classes (Fullname:clsname:inst:clsid:idx)| R|
+|vint|0xE|Internal voltage(mV)| R|
+|vext|0xF|External voltage(mV)| R|
+|main|0x7|Query or change mainclass| R W|
+|swver|0x4|Firmware version| R|
+|hwtype|0x5|Hardware type| R|
+|flashraw|0xD|Write value to flash address| WA|
+|flashdump|0xC|Read all flash variables (val:adr)| R|
+|errors|0xA|Read error states| R|
+|errorsclr|0xB|Reset errors| R|
+|heapfree|0x11|Memory info| R|
+|format|0x9|set format=1 to erase all stored values| W|
+|debug|0x13|Enable or disable debug commands| R W|
+|devid|0x14|Get chip dev id and rev id| R|
 
 ---
 
-### FFB Wheel&Joystick
+### FFB Wheel (1 Axis)
 
-Commands apply to both 1 axis and 2 axis FFB HID mainclasses
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|FFB Wheel (1 Axis): Force feedback HID game controller|
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|main.0      |0x1       |FFB Wheel (1 Axis): Force feedback HID game controller|
-|main.0      |0x2       |FFB Joystick (2 Axis): Force feedback HID game controller|
-
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|ffbactive   |0x0       |FFB status                                       | R        |
-|btntypes    |0x2       |Enabled button sources                           | R W      |
-|addbtn      |0x4       |Enable button source                             | W        |
-|lsbtn       |0x3       |Get available button sources                     | R (STR)  |
-|aintypes    |0x5       |Enabled analog sources                           | R W      |
-|lsain       |0x6       |Get available analog sources                     | R (STR)  |
-|addain      |0x7       |Enable analog source                             | W        |
-|hidrate     |0x8       |Get estimated effect update speed                | R        |
-|hidsendspd  |0x9       |Change HID gamepad update rate                   | R W I    |
-|estop       |0xA       |Emergency stop                                   | R W      |
-
-
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|ffbactive|0x0|FFB status| R|
+|btntypes|0x2|Enabled button sources| R W|
+|addbtn|0x4|Enable button source| W|
+|lsbtn|0x3|Get available button sources| R (STR)|
+|aintypes|0x5|Enabled analog sources| R W|
+|lsain|0x6|Get available analog sources| R (STR)|
+|addain|0x7|Enable analog source| W|
+|hidrate|0x8|Get estimated effect update speed| R|
+|cfrate|0xB|Get estimated const force rate| R|
+|hidsendspd|0x9|Change HID gamepad update rate| R W I|
+|estop|0xA|Emergency stop| R W|
 
 ---
 
-### FFB effects
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|fx.0  |0xA02                        |Effects: Controls internal FFB effects                   |
+### Effects
 
-|Command name            |CMD ID    |Description                                                 |Flags     |
-|------------------------|----------|------------------------------------------------------------|----------|
-|id                      |0x80000001|ID of class                                                 | R        |
-|name                    |0x80000002|name of class                                               | R (STR)  |
-|help                    |0x80000003|Prints help for commands                                    | R I (STR)|
-|cmduid                  |0x80000005|Command handler index                                       | R        |
-|instance                |0x80000004|Command handler instance number                             | R        |
-|cmdinfo                 |0x80000007|Flags of a command id (adr). -1 if cmd id invalid           | RA       |
-|filterCfFreq            |0x0       |Constant force filter frequency                             | R W      |
-|filterCfQ               |0x1       |Constant force filter Q-factor                              | R W      |
-|spring                  |0x3       |Spring gain                                                 | R W I    |
-|friction                |0x4       |Friction gain                                               | R W I    |
-|damper                  |0x5       |Damper gain                                                 | R W I    |
-|inertia                 |0x6       |Inertia gain                                                | R W I    |
-|effects                 |0x2       |USed effects since reset (Info print as str). set 0 to reset| R W I    |
-|effectsDetails          |0x10      |List effects details. set 0 to reset                        | R W (STR)|
-|effectsForces           |0x11      |List actual effects forces.                                 | R        |
-|damper_f                |0x7       |Damper biquad freq                                          | R W      |
-|damper_q                |0x8       |Damper biquad q                                             | R W      |
-|friction_f              |0x9       |Friction biquad freq                                        | R W      |
-|friction_q              |0xA       |Friction biquad q                                           | R W      |
-|inertia_f               |0xB       |Inertia biquad freq                                         | R W      |
-|inertia_q               |0xC       |Inertia biquad q                                            | R W      |
-|filterProfile_id        |0xD       |Conditional effects filter profile: 0 default; 1 custom     | R W      |
-|frictionPctSpeedToRampup|0xE       |% of max speed for gradual increase                         | R W      |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|fx.0|0xA02|Effects: Controls internal FFB effects|
 
-
----
-
-### FFB axis
-
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|axis.0|0xA01                        |Axis: FFB axis                                           |
-
-|Command name    |CMD ID    |Description                                                     |Flags     |
-|----------------|----------|----------------------------------------------------------------|----------|
-|id              |0x80000001|ID of class                                                     | R        |
-|name            |0x80000002|name of class                                                   | R (STR)  |
-|help            |0x80000003|Prints help for commands                                        | R I (STR)|
-|cmduid          |0x80000005|Command handler index                                           | R        |
-|instance        |0x80000004|Command handler instance number                                 | R        |
-|cmdinfo         |0x80000007|Flags of a command id (adr). -1 if cmd id invalid               | RA       |
-|power           |0x0       |Overall force strength                                          | R W      |
-|degrees         |0x1       |Rotation range in deg                                           | R W      |
-|esgain          |0x2       |Endstop stiffness                                               | R W      |
-|zeroenc         |0x3       |Zero axis                                                       | R        |
-|invert          |0x4       |Invert axis                                                     | R W      |
-|idlespring      |0x5       |Idle spring strength                                            | R W      |
-|axisdamper      |0x6       |Independent damper effect                                       | R W      |
-|enctype         |0x7       |Encoder type get/set/list                                       | R W I    |
-|drvtype         |0x8       |Motor driver type get/set/list                                  | R W I    |
-|pos             |0x9       |Encoder position                                                | R        |
-|maxspeed        |0xA       |Speed limit in deg/s                                            | R W      |
-|maxtorquerate   |0xB       |Torque rate limit in counts/ms                                  | R W      |
-|fxratio         |0xC       |Effect ratio. Reduces effects excluding endstop. 255=100%       | R W      |
-|curtorque       |0xD       |Axis torque                                                     | R        |
-|curpos          |0xE       |Axis position                                                   | R        |
-|curspd          |0xF       |Axis speed                                                      | R        |
-|curaccel        |0x10      |Axis accel                                                      | R        |
-|reduction       |0x11      |Encoder to axis gear reduction (val / adr) 1-256                | R WA     |
-|filterProfile_id|0x14      |Biquad filter profile for speed and accel                       | R W      |
-|filterSpeed     |0x12      |Biquad filter freq and q*100 for speed                          | R        |
-|filterAccel     |0x13      |Biquad filter freq and q*100 for accel                          | R        |
-|cpr             |0x15      |Reported encoder CPR                                            | R        |
-
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|filterCfFreq|0x0|Constant force filter frequency| R W|
+|filterCfQ|0x1|Constant force filter Q-factor| R W|
+|spring|0x3|Spring gain| R W I|
+|friction|0x4|Friction gain| R W I|
+|damper|0x5|Damper gain| R W I|
+|inertia|0x6|Inertia gain| R W I|
+|effects|0x2|USed effects since reset (Info print as str). set 0 to reset| R W I|
+|effectsDetails|0x10|List effects details. set 0 to reset| R W (STR)|
+|effectsForces|0x11|List actual effects forces.| R|
+|damper_f|0x7|Damper biquad freq| R W|
+|damper_q|0x8|Damper biquad q| R W|
+|friction_f|0x9|Friction biquad freq| R W|
+|friction_q|0xA|Friction biquad q| R W|
+|inertia_f|0xB|Inertia biquad freq| R W|
+|inertia_q|0xC|Inertia biquad q| R W|
+|filterProfile_id|0xD|Conditional effects filter profile: 0 default; 1 custom| R W|
+|frictionPctSpeedToRampup|0xE|% of max speed for gradual increase| R W|
 
 ---
 
-### MT SPI encoder
+### Axis
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|mtenc.0|0x62                         |MT6825 SPI3                                              |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|axis.0|0xA01|Axis: FFB axis|
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|cs          |0x0       |CS pin                                                | R W      |
-|pos         |0x1       |Position                                              | R W      |
-|errors      |0x2       |Parity error count                                    | R        |
-
-
----
-
-
-### BISS-C Encoder
-
-|Prefix      |Class ID  |Class description                                |
-|------------|----------|-------------------------------------------------|
-|bissenc.0   |0x63      |BISS-C                                           |
-
-|Command name|CMD ID    | Description                                     | Flags    |
-|------------|----------|-------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|bits        |0x0       |Bits of resolution                               | R W      |
-|speed       |0x2       |SPI speed preset 1-3                             | R W      |
-|errors      |0x3       |CRC error count                                  | R        |
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|power|0x0|Overall force strength| R W|
+|degrees|0x1|Rotation range in deg| R W|
+|esgain|0x2|Endstop stiffness| R W|
+|zeroenc|0x3|Zero axis| R|
+|invert|0x4|Invert axis| R W|
+|idlespring|0x5|Idle spring strength| R W|
+|axisdamper|0x6|Independent damper effect| R W|
+|enctype|0x7|Encoder type get/set/list| R W I|
+|drvtype|0x8|Motor driver type get/set/list| R W I|
+|pos|0x9|Encoder position| R|
+|maxspeed|0xA|Speed limit in deg/s| R W|
+|maxtorquerate|0xB|Torque rate limit in counts/ms| R W|
+|fxratio|0xC|Effect ratio. Reduces effects excluding endstop. 255=100%| R W|
+|curtorque|0xD|Axis torque| R|
+|curpos|0xE|Axis position| R|
+|curspd|0xF|Axis speed| R|
+|curaccel|0x10|Axis accel| R|
+|reduction|0x11|Encoder to axis gear reduction (val / adr) 1-256| R WA|
+|filterProfile_id|0x14|Biquad filter profile for speed and accel| R W|
+|filterSpeed|0x12|Biquad filter freq and q*100 for speed| R|
+|filterAccel|0x13|Biquad filter freq and q*100 for accel| R|
+|cpr|0x15|Reported encoder CPR| R|
 
 ---
 
-### SPI buttons
+### Can port
 
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|spibtn.0    |0x22      |SPI Buttons 1: SPI 2 Button                           |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|can.0|0xC01|Can port|
 
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|mode        |0x0       |SPI mode                                         | R W I    |
-|btncut      |0x1       |Cut buttons right                                | R W      |
-|btnpol      |0x2       |Invert                                           | R W      |
-|btnnum      |0x3       |Number of buttons                                | R W      |
-|cs          |0x4       |SPI CS pin                                       | R W      |
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|speed|0x0|CAN speed preset (0:50k;1:100k;2:125k;3:250k;4:500k;5:1M)| R W I|
+|send|0x1|Send CAN frame. Adr&Value required| WA|
+|len|0x2|Set length of next frames| R W|
 
+---
+### Button sources
+- D-Pins
+- SPI Buttons 1
+- Shifter Analog
+- I2C PCF8574
+- CAN Buttons
+
+### I2C port
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|i2c.0|0xC02|I2C port|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|speed|0x0|I2C speed preset (0:100k;1:400k)| R W I|
 
 ---
 
-### Digital pin buttons
+### D-Pins
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|dpin.0|0x21                         |D-Pins: Digital pin button source                        |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|dpin.0|0x21|D-Pins: Digital pin button source|
 
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|mask        |0x0       |Enabled pins                                     | R W      |
-|polarity    |0x1       |Pin polarity                                     | R W      |
-|pins        |0x2       |Available pins                                   | R W      |
-|values      |0x3       |pin values                                       | R        |
-
-
----
-
-### Analog shifter buttons
-
-Supports G25,G27 (w. all SPI buttons),G29 and similar type shifters w. 2 axis analog stick and reverse button
-
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|shifter.0   |0x23      |Shifter Analog: Analog 6+1 gear shifter button source|
-
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|mode        |0x0       |Shifter mode                                          | R W I    |
-|x12         |0x1       |X-threshold for 1 2 gears                             | R W      |
-|x56         |0x2       |X-threshold for 5 6 gears                             | R W      |
-|y135        |0x3       |Y-threshold for 1 3 5 gears                           | R W      |
-|y246        |0x4       |Y-threshold for 2 4 6 gears                           | R W      |
-|revbtn      |0x5       |Pin for R signal                                      | R W      |
-|cspin       |0x6       |CS pin for SPI modes                                  | R W      |
-|xchan       |0x7       |X signal analog pin                                   | R W      |
-|ychan       |0x8       |Y signal analog pin                                   | R W      |
-|vals        |0x9       |Analog values                                         | R        |
-|gear        |0xA       |Decoded gear                                          | R        |
-
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mask|0x0|Enabled pins| R W|
+|polarity|0x1|Pin polarity| R W|
+|pins|0x2|Available pins| R W|
+|values|0x3|pin values| R|
 
 ---
 
-### PCF8574 buttons
+### SPI Buttons 1
 
-|Prefix       |Class ID  |Class description                                        |
-|-------------|----------|---------------------------------------------------------|
-|pcfbtn.0     |0x24      |I2C PCF8574: btnnum/8 devices required. Addresses starting at 0x20.|
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|spibtn.0|0x22|SPI Buttons 1: SPI 2 Button|
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|btnnum      |0x0       |Amount of buttons                                     | R W      |
-|invert      |0x1       |Invert buttons                                        | R W      |
-|speed       |0x2       |400kb/s mode                                          | R W      |
-
----
-
-### CAN buttons
-
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|canbtn.0    |0x25      |CAN Buttons                                           |
-
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|btnnum      |0x0       |Amount of buttons                                     | R W      |
-|invert      |0x1       |Invert buttons                                        | R W      |
-|canid       |0x2       |CAN frame ID                                          | R W      |
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mode|0x0|SPI mode| R W I|
+|btncut|0x1|Cut buttons right| R W|
+|btnpol|0x2|Invert| R W|
+|btnnum|0x3|Number of buttons| R W|
+|cs|0x4|SPI CS pin| R W|
 
 ---
 
-### Analog pin axes
+### Shifter Analog
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|apin.0|0x41                         |AIN-Pins: Analog pins source                             |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|shifter.0|0x23|Shifter Analog: Analog 6+1 gear shifter button source|
 
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|filter      |0xAA2     |Enable lowpass filters                           | R W      |
-|autocal     |0xAA3     |Autoranging                                      | R W      |
-|values      |0xAA0     |Analog output values                             | R        |
-|rawval      |0xAA1     |All raw values                                   | R        |
-|min         |0xAA4     |Min value limit (adr=chan)                       | WA RA    |
-|max         |0xAA5     |Max value limit (adr=chan)                       | WA RA    |
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|mask        |0x0       |Enabled pins                                     | R W      |
-|pins        |0x2       |Available pins                                   | R W      |
-
-
---- 
-
-### CAN analog axes
-
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|cananalog.0 |0x42      |CAN Analog: 4 16b axes per 64b packet                 |
-
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|canid       |0x0       |CAN frame ID of first packet. Next packet ID+1   | R W      |
-|amount      |0x1       |Amount of analog axes                            | R W      |
-|maxamount   |0x2       |Maxmimum amount of analog axes                   | R        |
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mode|0x0|Shifter mode| R W I|
+|x12|0x1|X-threshold for 1|2 gears| R W|
+|x56|0x2|X-threshold for 5|6 gears| R W|
+|y135|0x3|Y-threshold for 1|3|5 gears| R W|
+|y246|0x4|Y-threshold for 2|4|6 gears| R W|
+|revbtn|0x5|Pin for R signal| R W|
+|cspin|0x6|CS pin for SPI modes| R W|
+|xchan|0x7|X signal analog pin| R W|
+|ychan|0x8|Y signal analog pin| R W|
+|vals|0x9|Analog values| R|
+|gear|0xA|Decoded gear| R|
 
 ---
 
-### ADS111x analog
+### I2C PCF8574
 
-|Prefix   |Class ID  |Class description                                |
-|---------|----------|-------------------------------------------------|
-|adsAnalog.0|0x43      |ADS111X ADC: ADS1113/4/5 analog source           |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|pcfbtn.0|0x24|I2C PCF8574: btnnum/8 devices required. Addresses starting at 0x20.|
 
-|Command name|CMD ID    |Description                                      |Flags     |
-|------------|----------|-------------------------------------------------|----------|
-|filter      |0xAA2     |Enable lowpass filters                           | R W      |
-|autocal     |0xAA3     |Autoranging                                      | R W      |
-|values      |0xAA0     |Analog output values                             | R        |
-|rawval      |0xAA1     |All raw values                                   | R        |
-|min         |0xAA4     |Min value limit (adr=chan)                       | WA RA    |
-|max         |0xAA5     |Max value limit (adr=chan)                       | WA RA    |
-|id          |0x80000001|ID of class                                      | R        |
-|name        |0x80000002|name of class                                    | R (STR)  |
-|help        |0x80000003|Prints help for commands                         | R I (STR)|
-|cmduid      |0x80000005|Command handler index                            | R        |
-|instance    |0x80000004|Command handler instance number                  | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|inputs      |0x0       |Amount of inputs (1-4 or 1-2 if differential)    | R W      |
-|diff        |0x1       |Differential mode (Ch0= 0p 1n Ch1= 2p 3n)        | R W      |
-|gain        |0x2       |PGA scale (0-5)                                  | R W I    |
-|rate        |0x3       |Data rate (0-7)                                  | R W I    |
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|btnnum|0x0|Amount of buttons| R W|
+|invert|0x1|Invert buttons| R W|
+|speed|0x2|400kb/s mode| R W|
 
 ---
 
+### CAN Buttons
 
-### PWM motor driver
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|canbtn.0|0x25|CAN Buttons|
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|pwmdrv.0|0x84                         |PWM: PWM output motor driver                             |
-
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|freq        |0x1       |PWM period selection                                  | R W I    |
-|mode        |0x0       |PWM mode                                              | R W I    |
-
-
----
-
-### TMC4671 motor driver
-
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|tmc.0 |0x81                         |TMC4671: TMC4671 interface                               |
-
-|Command name  |CMD ID    |Description                                        |Flags         |
-|--------------|----------|---------------------------------------------------|--------------|
-|id            |0x80000001|ID of class                                        | R            |
-|name          |0x80000002|name of class                                      | R (STR)      |
-|help          |0x80000003|Prints help for commands                           | R I (STR)    |
-|cmduid        |0x80000005|Command handler index                              | R            |
-|instance      |0x80000004|Command handler instance number                    | R            |
-|cmdinfo       |0x80000007|Flags of a command id (adr). -1 if cmd id invalid  | RA           |
-|cpr           |0x0       |CPR in TMC                                         | R W          |
-|mtype         |0x1       |Motor type                                         | R W I        |
-|encsrc        |0x2       |Encoder source                                     | R W I        |
-|tmcHwType     |0x3       |Version of TMC board                               | R W I        |
-|encalign      |0x4       |Align encoder                                      | R            |
-|poles         |0x5       |Motor pole pairs                                   | R W          |
-|acttrq        |0x6       |Measure torque and flux                            | R            |
-|pwmlim        |0x7       |PWM limit                                          | R W (DEBUG)  |
-|torqueP       |0x8       |Torque P                                           | R W          |
-|torqueI       |0x9       |Torque I                                           | R W          |
-|fluxP         |0xA       |Flux P                                             | R W          |
-|fluxI         |0xB       |Flux I                                             | R W          |
-|velocityP     |0xC       |Velocity P                                         | R W          |
-|velocityI     |0xD       |Velocity I                                         | R W          |
-|posP          |0xE       |Pos P                                              | R W          |
-|posI          |0xF       |Pos I                                              | R W          |
-|tmctype       |0x10      |Version of TMC chip                                | R            |
-|pidPrec       |0x11      |PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12       | R W          |
-|phiesrc       |0x12      |PhiE source                                        | R W (DEBUG)  |
-|fluxoffset    |0x13      |Offset flux scale for field weakening              | R W          |
-|seqpi         |0x14      |Sequential PI                                      | R W          |
-|iScale        |0x15      |Counts per A                                       | (STR)        |
-|encdir        |0x16      |Encoder dir                                        | R W (DEBUG)  |
-|abnpol        |0x1F      |Encoder polarity                                   | R W          |
-|temp          |0x17      |Temperature in C * 100                             | R            |
-|reg           |0x18      |Read or write a TMC register at adr                | WA RA (DEBUG)|
-|svpwm         |0x19      |Space-vector PWM                                   | R W          |
-|autohome      |0x1D      |Find abn index                                     | R            |
-|abnindex      |0x1C      |Enable ABN index                                   | R W          |
-|calibrate     |0x1A      |Full calibration                                   | R            |
-|calibrated    |0x1B      |Calibration valid                                  | R            |
-|state         |0x1E      |Get state                                          | R            |
-|combineEncoder|0x20      |Use TMC for movement. External encoder for position| R W          |
-|invertForce   |0x21      |Invert incoming forces                             | R W          |
-|vm            |0x22      |VM in mV                                           | R            |
-|extphie       |0x23      |external phie                                      | R            |
-
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|btnnum|0x0|Amount of buttons| R W|
+|invert|0x1|Invert buttons| R W|
+|canid|0x2|CAN frame ID| R W|
 
 ---
 
-### ODrive motor driver (CAN)
-Example here is only M0. M1 is available too.
+### AIN-Pins
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|odrv.0|0x85                         |ODrive (M0): ODrive motor driver with CAN                |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|apin.0|0x41|AIN-Pins: Analog pins source|
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|canid       |0x0       |CAN id of ODrive                                      | R W      |
-|canspd      |0x1       |CAN baudrate                                          | R W      |
-|errors      |0x2       |ODrive error flags                                    | R        |
-|state       |0x3       |ODrive state                                          | R        |
-|maxtorque   |0x4       |Max torque to send for scaling                        | R W      |
-|vbus        |0x5       |ODrive Vbus                                           | R        |
-|anticogging |0x6       |Set 1 to start anticogging calibration                | W        |
-|connected   |0x7       |ODrive connection state                               | R        |
-
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|filter|0xAA2|Enable lowpass filters| R W|
+|autocal|0xAA3|Autoranging| R W|
+|values|0xAA0|Analog output values| R|
+|rawval|0xAA1|All raw values| R|
+|min|0xAA4|Min value limit (adr=chan)| WA RA|
+|max|0xAA5|Max value limit (adr=chan)| WA RA|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mask|0x0|Enabled pins| R W|
+|pins|0x2|Available pins| R W|
 
 ---
 
-### VESC motor driver
+### CAN Analog
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|vesc.0|0x87                         |VESC: VESC CAN interface                                 |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|cananalog.0|0x42|CAN Analog: 4 16b axes per 64b packet|
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|offbcanid   |0x0       |CAN id of OpenFFBoard Axis                            | R W      |
-|vesccanid   |0x1       |CAN id of VESC                                        | R W      |
-|canspd      |0x2       |CAN baud (3=250k 4=500k 5=1M)                         | R W      |
-|errorflags  |0x3       |VESC error state                                      | R        |
-|vescstate   |0x4       |VESC state                                            | R        |
-|voltage     |0x5       |VESC supply voltage (mV)                              | R        |
-|encrate     |0x6       |Encoder update rate                                   | R        |
-|pos         |0x7       |VESC position                                         | R        |
-|torque      |0x8       |Current VESC torque                                   | R        |
-|forceposread|0x9       |Force a position update                               | R        |
-|useencoder  |0xA       |Enable VESC encoder                                   | R W      |
-|offset      |0xB       |Get or set encoder offset                             | R W      |
-
---- 
-
-## Ports
-### CAN port
-
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|can.0       |0xC01     |Can port                                              |
-
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|speed       |0x0       |CAN speed preset (0:50k;1:100k;2:125k;3:250k;4:500k;5:1M)| R W I    |
-|send        |0x1       |Send CAN frame. Adr&Value required                    | WA       |
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|canid|0x0|CAN frame ID of first packet. Next packet ID+1| R W|
+|amount|0x1|Amount of analog axes| R W|
+|maxamount|0x2|Maxmimum amount of analog axes| R|
 
 ---
 
-### I²C port
+### ADS111X ADC
 
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|i2c.0       |0xC02     |I2C port                                              |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|adsAnalog.0|0x43|ADS111X ADC: ADS1113/4/5 analog source|
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|speed       |0x0       |I2C speed preset (0:100k;1:400k)                      | R W I    |
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|filter|0xAA2|Enable lowpass filters| R W|
+|autocal|0xAA3|Autoranging| R W|
+|values|0xAA0|Analog output values| R|
+|rawval|0xAA1|All raw values| R|
+|min|0xAA4|Min value limit (adr=chan)| WA RA|
+|max|0xAA5|Max value limit (adr=chan)| WA RA|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|inputs|0x0|Amount of inputs (1-4 or 1-2 if differential)| R W|
+|diff|0x1|Differential mode (Ch0= 0p 1n Ch1= 2p 3n)| R W|
+|gain|0x2|PGA scale (0-5)| R W I|
+|rate|0x3|Data rate (0-7)| R W I|
+
+---
+### Encoders
+- None
+- Local ABN
+- MT6825 SPI3
+- BISS-C
+---
+
+### Local ABN
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|localenc.0|0x61|Local ABN: Local ABN encoder|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|cpr|0x0|CPR of encoder| R W|
+|index|0x1|Enable index pin| R W|
 
 ---
 
-## Other mainclasses:
+### MT6825 SPI3
 
-### CAN bridge
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|mtenc.0|0x62|MT6825 SPI3|
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|main.0|0x1                          |CAN Bridge (This class is GVRET/SavvyCAN compatible!)    |
-
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|can         |0x0       |Send a frame or get last received frame               | R WA     |
-|rtr         |0x1       |Send a RTR frame                                      | WA R     |
-|spd         |0x2       |Change or get CAN baud                                |R W       |
-
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|cs|0x0|CS pin| R W|
+|pos|0x1|Position| R W|
+|errors|0x2|Parity error count| R|
 
 ---
 
-### TMC debug bridge
+### BISS-C
 
-Debug mode must be active for this to show up
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|bissenc.0|0x63|BISS-C|
 
-|Prefix|Class ID                     |Class description                                        |
-|------|-----------------------------|---------------------------------------------------------|
-|main.0|0x1                          |TMC Debug Bridge: Compatible with TMCL-IDE. |
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|bits|0x0|Bits of resolution| R W|
+|speed|0x2|SPI speed preset 1-3| R W|
+|errors|0x3|CRC error count| R|
 
-To use the FOC modes position; velocity and torque you first must manually select the encoder and wait for alignment.
+---
+### Drivers
+- None
+- TMC4671 (CS 1)
+- TMC4671 (CS 2)
+- PWM
+- ODrive (M0)
+- ODrive (M1)
+- VESC 1
+---
 
-|Command name|CMD ID                       | Description                                             |
-|------|-----------------------------|---------------------------------------------------------|
-|id    |0x80000001                   |ID of class                                              |
-|name  |0x80000002                   |name of class                                            |
-|help  |0x80000003                   |Prints help for commands                                 |
-|cmduid|0x80000005                   |Command handler index                                    |
-|instance|0x80000004                   |Command handler instance number                          |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|torque|0x0                          |Change torque and enter torque mode                      |
-|pos   |0x1                          |Change pos and enter pos mode                            |
-|openloopspeed|0x2                          |Move openloop. adr=strength;val=speed                    |
-|velocity|0x3                          |Change velocity and enter velocity mode                  |
-|mode  |0x4                          |Change motion mode                                       |
+### TMC4671
 
---- 
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|tmc.0|0x81|TMC4671: TMC4671 interface|
 
-### MIDI
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|cpr|0x0|CPR in TMC| R W|
+|mtype|0x1|Motor type| R W I|
+|encsrc|0x2|Encoder source| R W I|
+|tmcHwType|0x3|Version of TMC board| R W I|
+|encalign|0x4|Align encoder| R|
+|poles|0x5|Motor pole pairs| R W|
+|acttrq|0x6|Measure torque and flux| R|
+|pwmlim|0x7|PWM limit| R W (DEBUG)|
+|torqueP|0x8|Torque P| R W|
+|torqueI|0x9|Torque I| R W|
+|fluxP|0xA|Flux P| R W|
+|fluxI|0xB|Flux I| R W|
+|velocityP|0xC|Velocity P| R W|
+|velocityI|0xD|Velocity I| R W|
+|posP|0xE|Pos P| R W|
+|posI|0xF|Pos I| R W|
+|tmctype|0x10|Version of TMC chip| R|
+|pidPrec|0x11|PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12| R W|
+|phiesrc|0x12|PhiE source| R W (DEBUG)|
+|fluxoffset|0x13|Offset flux scale for field weakening| R W|
+|seqpi|0x14|Sequential PI| R W|
+|iScale|0x15|Counts per A| (STR)|
+|encdir|0x16|Encoder dir| R W (DEBUG)|
+|abnpol|0x1F|Encoder polarity| R W|
+|temp|0x17|Temperature in C * 100| R|
+|reg|0x18|Read or write a TMC register at adr| WA RA (DEBUG)|
+|svpwm|0x19|Space-vector PWM| R W|
+|autohome|0x1D|Find abn index| R|
+|abnindex|0x1C|Enable ABN index| R W|
+|calibrate|0x1A|Full calibration| R|
+|calibrated|0x1B|Calibration valid| R|
+|state|0x1E|Get state| R|
+|combineEncoder|0x20|Use TMC for movement. External encoder for position| R W|
+|invertForce|0x21|Invert incoming forces| R W|
+|vm|0x22|VM in mV| R|
+|extphie|0x23|external phie| R|
+|trqbq_mode|0x24|Torque filter mode: none;lowpass;notch;peak| R W I|
+|trqbq_f|0x25|Torque filter freq 1000 max. 0 to disable. (Stored f/2)| R W|
+|trqbq_q|0x26|Torque filter q*100| R W|
 
-Debug mode must be active for this to show up
+---
 
-|Prefix      |Class ID  |Class description                                     |
-|------------|----------|------------------------------------------------------|
-|main.0      |0x1       |MIDI (TMC): Easteregg mainclass to play midi songs on the tmc|
+### PWM
 
-|Command name|CMD ID    |Description                                           |Flags     |
-|------------|----------|------------------------------------------------------|----------|
-|id          |0x80000001|ID of class                                           | R        |
-|name        |0x80000002|name of class                                         | R (STR)  |
-|help        |0x80000003|Prints help for commands                              | R I (STR)|
-|cmduid      |0x80000005|Command handler index                                 | R        |
-|instance    |0x80000004|Command handler instance number                       | R        |
-|cmdinfo     |0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA       |
-|power       |0x0       |Intensity                                             | R W      |
-|range       |0x1       |Range of phase change                                 | R W      |
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|pwmdrv.0|0x84|PWM: PWM output motor driver|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|freq|0x1|PWM period selection| R W I|
+|mode|0x0|PWM mode| R W I|
+
+---
+
+### ODrive (M0)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|odrv.0|0x85|ODrive (M0): ODrive motor driver with CAN|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|canid|0x0|CAN id of ODrive| R W|
+|canspd|0x1|CAN baudrate| R W|
+|errors|0x2|ODrive error flags| R|
+|state|0x3|ODrive state| R|
+|maxtorque|0x4|Max torque to send for scaling| R W|
+|vbus|0x5|ODrive Vbus| R|
+|anticogging|0x6|Set 1 to start anticogging calibration| W|
+|connected|0x7|ODrive connection state| R|
+
+---
+
+### VESC 1
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|vesc.0|0x87|VESC 1: VESC CAN interface|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|offbcanid|0x0|CAN id of OpenFFBoard Axis| R W|
+|vesccanid|0x1|CAN id of VESC| R W|
+|canspd|0x2|CAN baud (3=250k 4=500k 5=1M)| R W|
+|errorflags|0x3|VESC error state| R|
+|vescstate|0x4|VESC state| R|
+|voltage|0x5|VESC supply voltage (mV)| R|
+|encrate|0x6|Encoder update rate| R|
+|pos|0x7|VESC position| R|
+|torque|0x8|Current VESC torque| R|
+|forceposread|0x9|Force a position update| R|
+|useencoder|0xA|Enable VESC encoder| R W|
+|offset|0xB|Get or set encoder offset| R W|
+
+---
+### Other mainclasses
+- Basic (Failsafe)
+- FFB Wheel (1 Axis)
+- FFB Joystick (2 Axis)
+- TMC Debug Bridge
+- MIDI (TMC)
+- CAN Bridge (GVRET)
+---
+
+### Basic (Failsafe)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|Basic (Failsafe): Failsafe mainclass with no features. Choose a different mainclass. sys.lsmain to get a list|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+
+---
+
+### FFB Joystick (2 Axis)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|FFB Joystick (2 Axis): Force feedback HID game controller|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|ffbactive|0x0|FFB status| R|
+|btntypes|0x2|Enabled button sources| R W|
+|addbtn|0x4|Enable button source| W|
+|lsbtn|0x3|Get available button sources| R (STR)|
+|aintypes|0x5|Enabled analog sources| R W|
+|lsain|0x6|Get available analog sources| R (STR)|
+|addain|0x7|Enable analog source| W|
+|hidrate|0x8|Get estimated effect update speed| R|
+|cfrate|0xB|Get estimated const force rate| R|
+|hidsendspd|0x9|Change HID gamepad update rate| R W I|
+|estop|0xA|Emergency stop| R W|
+
+---
+
+### TMC Debug Bridge
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|TMC Debug Bridge: Compatible with TMCL-IDE. To use the FOC modes position| velocity and torque you first must manually select the encoder and wait for alignment.|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|reg|0x5|Read or write a TMC register at adr||
+|torque|0x0|Change torque and enter torque mode||
+|pos|0x1|Change pos and enter pos mode||
+|openloopspeed|0x2|Move openloop. adr=strength|val=speed||
+|velocity|0x3|Change velocity and enter velocity mode||
+|mode|0x4|Change motion mode||
+
+---
+
+### MIDI (TMC)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|MIDI (TMC): Failsafe mainclass with no features. Choose a different mainclass. sys.lsmain to get a list|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|power|0x0|Intensity| R W|
+|range|0x1|Range of phase change| R W|
+
+---
+
+### CAN Bridge (GVRET)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|CAN Bridge (GVRET): CAN bus debug bridge. This class is GVRET/SavvyCAN compatible!|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|can|0x0|Send a frame or get last received frame||
+|rtr|0x1|Send a RTR frame||
+|spd|0x2|Change or get CAN baud||
+
+---
+State: v1.9.9
+Automatically generated list by [makecommands.py](commands/makecommands.py)
