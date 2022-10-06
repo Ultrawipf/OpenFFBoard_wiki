@@ -348,10 +348,10 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |instance|0x80000004|Command handler instance number| R|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
 |mode|0x0|Shifter mode| R W I|
-|x12|0x1|X-threshold for 1|2 gears| R W|
-|x56|0x2|X-threshold for 5|6 gears| R W|
-|y135|0x3|Y-threshold for 1|3|5 gears| R W|
-|y246|0x4|Y-threshold for 2|4|6 gears| R W|
+|x12|0x1|X-threshold for 1&2 gears| R W|
+|x56|0x2|X-threshold for 5&6 gears| R W|
+|y135|0x3|Y-threshold for 1&3&5 gears| R W|
+|y246|0x4|Y-threshold for 2&4&6 gears| R W|
 |revbtn|0x5|Pin for R signal| R W|
 |cspin|0x6|CS pin for SPI modes| R W|
 |xchan|0x7|X signal analog pin| R W|
@@ -515,6 +515,26 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cs|0x0|CS pin| R W|
 |pos|0x1|Position| R W|
 |errors|0x2|Parity error count| R|
+
+---
+
+### BISS-C
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|bissenc.0|0x63|BISS-C|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|bits|0x0|Bits of resolution| R W|
+|speed|0x2|SPI speed preset 1-3| R W|
+|errors|0x3|CRC error count| R|
 
 ---
 ### Drivers
@@ -723,12 +743,12 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmduid|0x80000005|Command handler index| R|
 |instance|0x80000004|Command handler instance number| R|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|reg|0x5|Read or write a TMC register at adr||
-|torque|0x0|Change torque and enter torque mode||
-|pos|0x1|Change pos and enter pos mode||
-|openloopspeed|0x2|Move openloop. adr=strength|val=speed||
-|velocity|0x3|Change velocity and enter velocity mode||
-|mode|0x4|Change motion mode||
+|reg|0x5|Read or write a TMC register at adr| WA RA|
+|torque|0x0|Change torque and enter torque mode| R W|
+|pos|0x1|Change pos and enter pos mode| R W|
+|openloopspeed|0x2|Move openloop. adr=strength;val=speed| W WA|
+|velocity|0x3|Change velocity and enter velocity mode| R W|
+|mode|0x4|Change motion mode| R W|
 
 ---
 

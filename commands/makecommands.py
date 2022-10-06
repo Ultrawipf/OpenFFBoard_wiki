@@ -106,6 +106,7 @@ class CommandHelpReader:
     def getAllActiveHelp(self):
         """"Gets help of all not already read active classes"""
         helpentry = ""
+        time.sleep(0.1) # Wait a bit if class was just started
         active = self.sendCommand("sys.lsactive?")
         for line in active.split("\n"):
             linelist = line.split(":")
