@@ -69,12 +69,15 @@ class CommandHelpReader:
 
     def getHelp(self,cls,instance=0,writefile=True,noduplicates = True):
         cmd = f"{cls}.{instance}.help!"
+        if (cls in self.already_read and noduplicates):
+            return ""
+        time.sleep(0.2) # Wait a bit if class was just started
         reply = self.sendCommand(cmd)
         
-        if not reply or (cls in self.already_read and noduplicates):
-            #print("Skipping",cls)
+        if not reply:
+            print("No reply for",cls)
             return ""
-
+        
         lines = [line.split(',') for line in reply.splitlines() if line]
 
         classname = self.sendCommand(f"{cls}.name")
@@ -234,11 +237,11 @@ def makeCommands(reader : CommandHelpReader):
     commands_markdown += readMainclasses(reader)
 
     ver = reader.sendCommand("sys.swver")
-    commands_markdown += f"State: v{ver}\n"
 
     with open("footer.txt","r") as f:
         commands_markdown += f.read()
 
+    commands_markdown += f"\nState: v{ver}"
 
     with open(os.path.join("..","Commands.md"),"w") as f:
         f.write(commands_markdown)

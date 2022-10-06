@@ -140,6 +140,8 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |format|0x9|set format=1 to erase all stored values| W|
 |debug|0x13|Enable or disable debug commands| R W|
 |devid|0x14|Get chip dev id and rev id| R|
+|name|0x80000002|name of class| R (STR)|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
 
 ---
 
@@ -244,6 +246,24 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 ---
 
+### I2C port
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|i2c.0|0xC02|I2C port|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|speed|0x0|I2C speed preset (0:100k;1:400k)| R W I|
+
+---
+
 ### Can port
 
 |Prefix|Class ID| Class description|
@@ -269,24 +289,6 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 - Shifter Analog
 - I2C PCF8574
 - CAN Buttons
-
-### I2C port
-
-|Prefix|Class ID| Class description|
-|------|--------|------------------|
-|i2c.0|0xC02|I2C port|
-
-|Command name|CMD ID| Description| Flags|
-|------------|------|------------|------|
-|id|0x80000001|ID of class| R|
-|name|0x80000002|name of class| R (STR)|
-|help|0x80000003|Prints help for commands| R I (STR)|
-|cmduid|0x80000005|Command handler index| R|
-|instance|0x80000004|Command handler instance number| R|
-|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|speed|0x0|I2C speed preset (0:100k;1:400k)| R W I|
-
----
 
 ### D-Pins
 
@@ -513,26 +515,6 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cs|0x0|CS pin| R W|
 |pos|0x1|Position| R W|
 |errors|0x2|Parity error count| R|
-
----
-
-### BISS-C
-
-|Prefix|Class ID| Class description|
-|------|--------|------------------|
-|bissenc.0|0x63|BISS-C|
-
-|Command name|CMD ID| Description| Flags|
-|------------|------|------------|------|
-|id|0x80000001|ID of class| R|
-|name|0x80000002|name of class| R (STR)|
-|help|0x80000003|Prints help for commands| R I (STR)|
-|cmduid|0x80000005|Command handler index| R|
-|instance|0x80000004|Command handler instance number| R|
-|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|bits|0x0|Bits of resolution| R W|
-|speed|0x2|SPI speed preset 1-3| R W|
-|errors|0x3|CRC error count| R|
 
 ---
 ### Drivers
@@ -788,5 +770,5 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |spd|0x2|Change or get CAN baud||
 
 ---
-State: v1.9.9
 Automatically generated list by [makecommands.py](commands/makecommands.py)
+State: v1.9.9
