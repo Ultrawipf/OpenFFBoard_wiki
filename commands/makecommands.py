@@ -1,4 +1,3 @@
-from tarfile import DIRTYPE
 import serial,json,time,os
 import argparse,re
 
