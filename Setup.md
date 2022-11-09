@@ -63,3 +63,30 @@ This is rarely occuring on fresh F407 chips and seems to be a flash issue. Do a 
 #### Can't find the serial port
 You may need to manually load a usbserial driver for the device. Check the device manager if it shows up and use the driver inf file to install the driver (or manually select usbser).
 On windows 10 and above, linux and mac the driver should be loaded automatically.
+
+
+### ODrive setup
+Read ODrive [getting started page](https://docs.odriverobotics.com/v/latest/getting-started.html)
+
+Connect CANH and CANL between ODrive and FFBoard
+
+* CAN speed: `odrv0.can.config.baud_rate=500000` (or 1000000)
+* Current limit: `odrv0.config.dc_max_positive_current=10` and `odrv0.axis0.config.motor.current_soft_max=8` and `odrv0.axis0.config.motor.current_hard_max=10`
+* Calibration current: `odrv0.axis0.config.calibration_lockin.current=3` and `ODrive.Axis.Config.Motor.calibration_current = 4` (Lower than current limit)
+* Resistor: `odrv0.config.brake_resistor0.resistance=2` (2 ohm default) and `odrv0.config.brake_resistor0.enable=True`
+
+Example for ABN encoder:
+* Encoder mode (ABN): `odrv0.axis0.config.load_encoder=EncoderId.INC_ENCODER0` and `odrv0.axis0.config.commutation_encoder=EncoderId.INC_ENCODER0` ([Encoder definition](https://docs.odriverobotics.com/v/latest/fibre_types/com_odriverobotics_ODrive.html#ODrive.EncoderId))
+* Encoder CPR: `odrv0.inc_encoder0.config.cpr = 8192`
++ `odrv0.inc_encoder0.config.enabled = True`
+
+Motor:
+* Motor type: `odrv0.axis0.config.motor.motor_type=0`
+* Pole pairs: `odrv0.axis0.config.motor.pole_pairs=xxx` (Often 4 or 5)
+* Torque constant: `odrv0.axis0.config.motor.torque_constant=1` (Adjust for your motor)
+* Resistance calibration: `odrv0.axis0.config.motor.resistance_calib_max_voltage=20` (Set high because our motors have high resistance)
+* Optional startup calibration: `odrv0.axis0.config.startup_motor_calibration=True`
+* Optional encoder calibration: `odrv0.axis0.config.startup_encoder_offset_calibration=True`
+* Save: `odrv0.save_configuration()`
+
+* Disable velocity limit and error: `odrv0.axis0.controller.config.enable_vel_limit=False` `odrv0.axis0.controller.config.enable_overspeed_error=False`
