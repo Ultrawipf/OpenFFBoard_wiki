@@ -72,7 +72,7 @@ Connect CANH and CANL between ODrive and FFBoard
 
 * CAN speed: `odrv0.can.config.baud_rate=500000` (or 1000000)
 * Current limit: `odrv0.config.dc_max_positive_current=10` and `odrv0.axis0.config.motor.current_soft_max=8` and `odrv0.axis0.config.motor.current_hard_max=10`
-* Calibration current: `odrv0.axis0.config.calibration_lockin.current=3` and `ODrive.Axis.Config.Motor.calibration_current = 4` (Lower than current limit)
+* Calibration current: `odrv0.axis0.config.calibration_lockin.current=3` and `odrv0.axis0.config.motor.calibration_current = 4` (Lower than current limit)
 * Resistor: `odrv0.config.brake_resistor0.resistance=2` (2 ohm default) and `odrv0.config.brake_resistor0.enable=True`
 
 Example for ABN encoder:
