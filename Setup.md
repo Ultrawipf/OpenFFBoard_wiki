@@ -74,7 +74,6 @@ Connect CANH and CANL between ODrive and FFBoard
 * Current limit: `odrv0.config.dc_max_positive_current=10` and `odrv0.axis0.config.motor.current_soft_max=8` and `odrv0.axis0.config.motor.current_hard_max=10`
 * Calibration current: `odrv0.axis0.config.calibration_lockin.current=3` and `ODrive.Axis.Config.Motor.calibration_current = 4` (Lower than current limit)
 * Resistor: `odrv0.config.brake_resistor0.resistance=2` (2 ohm default) and `odrv0.config.brake_resistor0.enable=True`
-* Calibration voltage: `odrv0.axis0.config.motor.resistance_calib_max_voltage=15` (Less than half PSU voltage)
 
 Example for ABN encoder:
 * Encoder mode (ABN): `odrv0.axis0.config.load_encoder=EncoderId.INC_ENCODER0` and `odrv0.axis0.config.commutation_encoder=EncoderId.INC_ENCODER0` ([Encoder definition](https://docs.odriverobotics.com/v/latest/fibre_types/com_odriverobotics_ODrive.html#ODrive.EncoderId))
@@ -85,7 +84,7 @@ Motor:
 * Motor type: `odrv0.axis0.config.motor.motor_type=0`
 * Pole pairs: `odrv0.axis0.config.motor.pole_pairs=xxx` (Often 4 or 5)
 * Torque constant: `odrv0.axis0.config.motor.torque_constant=1` (Adjust for your motor)
-* Resistance calibration: `odrv0.axis0.config.motor.resistance_calib_max_voltage=20` (Set high because our motors have high resistance)
+* Calibration voltage: `odrv0.axis0.config.motor.resistance_calib_max_voltage=15` (Less than half PSU voltage)
 * Optional startup calibration: `odrv0.axis0.config.startup_motor_calibration=True`
 * Optional encoder calibration: `odrv0.axis0.config.startup_encoder_offset_calibration=True`
 * Save: `odrv0.save_configuration()`
