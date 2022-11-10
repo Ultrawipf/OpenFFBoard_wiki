@@ -88,7 +88,7 @@ Motor:
 * Motor type: `odrv0.axis0.config.motor.motor_type=0` ()
 * Pole pairs: `odrv0.axis0.config.motor.pole_pairs=xxx` (Often 4 or 5)
 * Torque constant: `odrv0.axis0.config.motor.torque_constant=1` (Adjust for your motor)
-* Calibration voltage: `odrv0.axis0.config.motor.resistance_calib_max_voltage=15` (Less than half PSU voltage)
+* Calibration voltage: `odrv0.axis0.config.motor.resistance_calib_max_voltage=15` (Less than half PSU voltage. Increase if you get PHASE_RESISTANCE_OUT_OF_RANGE error)
 * Optional startup calibration: `odrv0.axis0.config.startup_motor_calibration=True`
 * Optional encoder calibration: `odrv0.axis0.config.startup_encoder_offset_calibration=True`
 * Save: `odrv0.save_configuration()`
