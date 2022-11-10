@@ -68,6 +68,8 @@ On windows 10 and above, linux and mac the driver should be loaded automatically
 ### ODrive setup
 Read ODrive [getting started page](https://docs.odriverobotics.com/v/latest/getting-started.html)
 
+Warning: ODrive will refuse to run motors with over 4µH inductance!
+
 Connect CANH and CANL between ODrive and FFBoard
 
 * CAN speed: `odrv0.can.config.baud_rate=500000` (or 1000000)
