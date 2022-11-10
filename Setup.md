@@ -80,9 +80,13 @@ Example commands for S1 (ODrive 3.6 may differ. Change axis.config.motor to axis
 * Resistor: `odrv0.config.brake_resistor0.resistance=2` (2 ohm default) and `odrv0.config.brake_resistor0.enable=True`
 
 Example for ABN encoder:
+For S1:
 * Encoder mode (ABN): `odrv0.axis0.config.load_encoder=EncoderId.INC_ENCODER0` and `odrv0.axis0.config.commutation_encoder=EncoderId.INC_ENCODER0` ([Encoder definition](https://docs.odriverobotics.com/v/latest/fibre_types/com_odriverobotics_ODrive.html#ODrive.EncoderId))
 * Encoder CPR: `odrv0.inc_encoder0.config.cpr = 8192`
 + `odrv0.inc_encoder0.config.enabled = True`
+
+For 3.6:
+* CPR `axis0.encoder.config.cpr`
 
 Motor:
 * Motor type: `odrv0.axis0.config.motor.motor_type=0` ()
