@@ -72,7 +72,7 @@ Warning: ODrive will refuse to run motors with over 4µH inductance!
 
 Connect CANH and CANL between ODrive and FFBoard
 
-Example commands for S1 (ODrive 3.6 may differ)
+Example commands for S1 (ODrive 3.6 may differ. Change axis.config.motor to axis.motor.config)
 
 * CAN speed: `odrv0.can.config.baud_rate=500000` (or 1000000)
 * Current limit: `odrv0.config.dc_max_positive_current=10` and `odrv0.axis0.config.motor.current_soft_max=8` and `odrv0.axis0.config.motor.current_hard_max=10`
@@ -85,7 +85,7 @@ Example for ABN encoder:
 + `odrv0.inc_encoder0.config.enabled = True`
 
 Motor:
-* Motor type: `odrv0.axis0.config.motor.motor_type=0`
+* Motor type: `odrv0.axis0.config.motor.motor_type=0` ()
 * Pole pairs: `odrv0.axis0.config.motor.pole_pairs=xxx` (Often 4 or 5)
 * Torque constant: `odrv0.axis0.config.motor.torque_constant=1` (Adjust for your motor)
 * Calibration voltage: `odrv0.axis0.config.motor.resistance_calib_max_voltage=15` (Less than half PSU voltage)
