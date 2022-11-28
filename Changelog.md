@@ -12,6 +12,7 @@ Compiling changelogs from previous releases
 - Added missing command flags and help messages
 - Changed default power from 2000 to 5000 as 2000 is not enough to calibrate many motors
 - Internal change moving effects into effectscalculator to simplify managing effects from different sources
+- Effect intensity tuning value now only affects game effects. Fixes the effect intensity incorrectly affecting the endstop.
 
 #### v1.9.6
 - Added analog filter option

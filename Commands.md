@@ -233,7 +233,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |pos|0x9|Encoder position| R|
 |maxspeed|0xA|Speed limit in deg/s| R W|
 |maxtorquerate|0xB|Torque rate limit in counts/ms| R W|
-|fxratio|0xC|Effect ratio. Reduces effects excluding endstop. 255=100%| R W|
+|fxratio|0xC|Effect ratio. Reduces game effects excluding endstop. 255=100%| R W|
 |curtorque|0xD|Axis torque| R|
 |curpos|0xE|Axis position| R|
 |curspd|0xF|Axis speed| R|
