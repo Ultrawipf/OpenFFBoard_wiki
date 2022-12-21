@@ -1,7 +1,6 @@
 ## External FFB mode
 
-The external FFB mainclass (id 3, `sys.main=3` to enable) is a normal HID gamepad without PID effects. Instead the effects can be managed using serial or HID commands with the usual command system. Check out [Ext FFB commands](Commands.md#hid-gamepad-ext-ffb) for a list of commands.
-
+The external FFB mainclass (id 3, `sys.main=3` to enable) is a normal HID gamepad without PID effects. Instead the effects can be managed using serial or HID commands with the usual command system. Check out [Ext FFB commands](https://github.com/Ultrawipf/OpenFFBoard/wiki/Commands#hid-gamepad-ext-ffb) for a list of commands.
 
 Effects can be conditional or non conditional or periodic and have a type id.
 
