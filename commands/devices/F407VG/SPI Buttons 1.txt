@@ -13,3 +13,4 @@ btncut,0x1,Cut buttons right, R W
 btnpol,0x2,Invert, R W
 btnnum,0x3,Number of buttons, R W
 cs,0x4,SPI CS pin, R W
+spispeed,0x5,SPI speed preset, R W I

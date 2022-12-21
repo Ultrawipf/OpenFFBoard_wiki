@@ -38,7 +38,7 @@ class CommandHelpReader:
         
         match = REGEX.search(reply)
         if not match:
-            print("Reply:",reply)
+            print("Reply,cmd:",reply,cmd)
             return None
         groups = match.groups()
         cmd = groups[GRP_CMD]

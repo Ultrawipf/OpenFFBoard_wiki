@@ -330,6 +330,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |btnpol|0x2|Invert| R W|
 |btnnum|0x3|Number of buttons| R W|
 |cs|0x4|SPI CS pin| R W|
+|spispeed|0x5|SPI speed preset| R W I|
 
 ---
 
@@ -540,10 +541,8 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 ### Drivers
 - None
 - TMC4671 (CS 1)
-- TMC4671 (CS 2)
 - PWM
 - ODrive (M0)
-- ODrive (M1)
 - VESC 1
 ---
 
@@ -679,6 +678,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 - Basic (Failsafe)
 - FFB Wheel (1 Axis)
 - FFB Joystick (2 Axis)
+- HID Gamepad (Ext FFB)
 - TMC Debug Bridge
 - MIDI (TMC)
 - CAN Bridge (GVRET)
@@ -726,6 +726,64 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cfrate|0xB|Get estimated const force rate| R|
 |hidsendspd|0x9|Change HID gamepad update rate| R W I|
 |estop|0xA|Emergency stop| R W|
+
+---
+
+### HID Gamepad (Ext FFB)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|HID Gamepad (Ext FFB): Force feedback HID game controller|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|ffbactive|0x0|FFB status| R|
+|btntypes|0x2|Enabled button sources| R W|
+|addbtn|0x4|Enable button source| W|
+|lsbtn|0x3|Get available button sources| R (STR)|
+|aintypes|0x5|Enabled analog sources| R W|
+|lsain|0x6|Get available analog sources| R (STR)|
+|addain|0x7|Enable analog source| W|
+|hidrate|0x8|Get estimated effect update speed| R|
+|cfrate|0xB|Get estimated const force rate| R|
+|hidsendspd|0x9|Change HID gamepad update rate| R W I|
+|estop|0xA|Emergency stop| R W|
+
+---
+
+### Effects manager
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|fxm.0|0xA03|Effects manager|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|ffbstate|0x0|FFB active| R W|
+|type|0x3|Effect type| RA|
+|reset|0x1|Reset all effects or effect adr| R RA|
+|new|0x2|Create new effect of type val. Returns index or -1 on err| W I|
+|mag|0x4|16b magnitude of non cond. effect adr| WA RA|
+|state|0x5|Enable/Disable effect adr| WA RA|
+|period|0x6|Period of effect adr| WA RA|
+|duration|0x7|Duration of effect adr| WA RA|
+|offset|0x8|Offset of cond. effect adr| WA RA|
+|deadzone|0x9|Deadzone of cond. effect adr| WA RA|
+|sat|0xA|Saturation of cond. effect adr| WA RA|
+|coeff|0xB|Coefficient of cond. effect adr| WA RA|
+|axisgain|0xC|Gain for this axis (instance) 16b| WA RA|
 
 ---
 
@@ -791,4 +849,4 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.9.9
+State: v1.11.1
