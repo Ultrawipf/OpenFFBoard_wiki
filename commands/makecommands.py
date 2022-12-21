@@ -185,10 +185,10 @@ def readDrivers(reader : CommandHelpReader):
 
 def readMainclasses(reader : CommandHelpReader):
     types = [b.split(":") for b in reader.sendCommand("sys.lsmain?").split("\n")]
-    commands_markdown = "### Other mainclasses\n"
+    commands_markdown = "### Other mainclasses.\nUse `sys.main=<id>` to change mainclass\n"
     for t in types:
         name = t[2]
-        commands_markdown += f"- {name}\n"
+        commands_markdown += f"- {name} = id {t[0]}\n"
     commands_markdown += "---\n"
     for t in types:
         if t[0] == "1": # ffbwheel already read 

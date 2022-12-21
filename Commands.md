@@ -674,14 +674,15 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |offset|0xB|Get or set encoder offset| R W|
 
 ---
-### Other mainclasses
-- Basic (Failsafe)
-- FFB Wheel (1 Axis)
-- FFB Joystick (2 Axis)
-- HID Gamepad (Ext FFB)
-- TMC Debug Bridge
-- MIDI (TMC)
-- CAN Bridge (GVRET)
+### Other mainclasses.
+Use `sys.main=<id>` to change mainclass
+- Basic (Failsafe) = id 0
+- FFB Wheel (1 Axis) = id 1
+- FFB Joystick (2 Axis) = id 2
+- HID Gamepad (Ext FFB) = id 3
+- TMC Debug Bridge = id 11
+- MIDI (TMC) = id 13
+- CAN Bridge (GVRET) = id 12
 ---
 
 ### Basic (Failsafe)
