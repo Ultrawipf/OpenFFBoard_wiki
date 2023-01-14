@@ -13,4 +13,4 @@ Connect the following pins of the official OpenFFBoard to a RS485 transceiver (M
 * GND to GND
 * 3.3V (or 5V if signal level is too low) to VCC of transceiver
 
-Picture following soon....
+![Pinout](img/Connections_simplemotion.png)
