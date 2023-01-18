@@ -127,10 +127,12 @@ The encoder data can be forwarded to the TMC. Select the external encoder in the
 
 
 ### F407 DISCO pinout
-![Pinout](img/f407discopinout1.png)
+
 Discovery board connections are based on mmos/osw pinouts but not completely identical.
 The PWM DIR pin is changed to PWM 2 (PE11) for mmos compatibility.
 A CAN transceiver (TJA1051/3) could be connected for vesc and odrive support.
+
+![Pinout](img/f407discopinout1.png)
 
 ### Brake resistor
 The brake resistor and voltage sense circuit is intended for the TMC4671 but is currently always active and will work with other drivers as well.
@@ -148,3 +150,20 @@ The following image shows how to disconnect the termination on the V1.2.3 board:
 ![CAN jumper](img/solderjumper_cut_CAN.jpg)
 
 On the V1.2.4 the solderjumper was replaced with a normal pinheader jumper.
+
+
+### Granite simplemotion
+Connect the following pins of the official OpenFFBoard to a RS485 transceiver (MAX585 breakout board for example)
+|FFBoard pin|MAX485 pin|
+|--|--|
+|GP7 (TX)| DI|
+|GP8 (RX)| RO|
+|DRV_GP| RE & DE|
+|5V| VCC|
+|GND| GND|
+
+Also connect GND to the RJ45 cable to the driver.
+
+![Pinout](img/Connections_simplemotion.png)
+
+For more info about the setup check out the [Simplemotion page](Granite-Simplemotion.md)
