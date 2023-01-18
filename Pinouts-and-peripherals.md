@@ -165,5 +165,3 @@ Connect the following pins of the official OpenFFBoard to a RS485 transceiver (M
 Also connect GND to the RJ45 cable to the driver.
 
 ![Pinout](img/Connections_simplemotion.png)
-
-For more info about the setup check out the [Simplemotion page](Granite-Simplemotion.md)
