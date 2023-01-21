@@ -6,6 +6,7 @@
 * Custom TMC4671 based driver with ABZ, SinCos and 3 Phase analog encoders
 * ODrive via CAN
 * VESC via CAN
+* Simplemotion v2
 * more to come...
 
 **I can not connect in DFU mode**
@@ -15,12 +16,12 @@
 
 **When will it be available?**
 
-Prototypes are made and have to be tested. The parts availability unfortunately prevents making any large batch at the moment.
+Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/).  The parts availability unfortunately prevents making any large batch at the moment so keep an eye on the discord and store.
 
-**How much will it cost?**
+**My chip stays in basic/failsafe mode and does not save settings**
 
-Considering the rapidly changing prices of components its hard to say. 
-Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/) for updated prices.
+This is a rare issue with the F407VG flash and it is unknown what causes it due to it being improssible to reproduce on demand.
+The known fix is to do a full chip erase (using GUI  or STM32CubeProgrammer) and reflash the firmware. That usually fixes it for the rest of the lifetime of the chip. If it happens again it may need another erase cycle.
 
 **How much current does the TMC driver provide?**
 
@@ -44,7 +45,7 @@ Three phases with a permanent magnet is all the same no matter if you call it BL
 
 **How can I donate?**
 
-[Patreon](https://www.patreon.com/gigawipf) or [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B23BD5FGD5CH8&source=url)
+[Patreon](https://www.patreon.com/gigawipf) or [PayPal](http://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B23BD5FGD5CH8)
 
 **How can I help?**
 
