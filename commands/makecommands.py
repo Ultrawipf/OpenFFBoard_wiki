@@ -33,7 +33,8 @@ class CommandHelpReader:
 
     def sendCommand(self,cmd):
         self.dev.write(bytes(cmd+';','utf-8'))
-        #time.sleep(1)
+        # time.sleep(0.1)
+        print(">",cmd)
         reply = (self.dev.read_until(b']')).decode('utf-8')
         
         match = REGEX.search(reply)
@@ -177,7 +178,9 @@ def readDrivers(reader : CommandHelpReader):
         if t[0] == "0": 
             continue
         reader.sendCommand("axis.drvtype=0") # Reset
+        time.sleep(0.1)
         reader.sendCommand(f"axis.drvtype={t[0]}")
+        time.sleep(0.5)
         commands_markdown += reader.getAllActiveHelp()
     reader.sendCommand("axis.drvtype=0") # Reset
 
