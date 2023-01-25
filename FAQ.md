@@ -37,11 +37,14 @@ They are not capable of driving the motor with a constant force. You will need t
 Yes. For really simple setups a halfbridge DC motor driver and encoder can be connected directly to the FFBoard (STM Interface) instead of using the TMC driver.
 This way you can also use some third party motor drivers with PWM inputs.
 
-**What's Difference between BLDC and PMSM servo?**
+**Does the TMC support induction motors?**
 
-It's (basically) the same motor type.
-PMSM (permanent magnet stator motor) = BLDC (Brushless Direct Current Motor) = ac synchronous (three phase synchronous motors).
-Three phases with a permanent magnet is all the same no matter if you call it BLDC, Servo, AC-Motor. As long as its got a magnet (as rotor) and has three phases its the same motor type.
+No. It supports PMSM/BLDC, DC and 2 phase stepper motors.
+
+**How to use the brake resistor output with other motor drivers than the TMC**
+
+Check the [pinouts](https://github.com/Ultrawipf/OpenFFBoard/wiki/Pinouts-and-peripherals#brake-resistor).
+You can use a 297k/10k resistor divider on the Vint (after a diode at the driver) and Vext (before the diode at the power supply) to let the STM activate the brake resistor on the brake pin.
 
 **How can I donate?**
 
