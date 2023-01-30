@@ -19,3 +19,4 @@
     * [VESC & ODrive (CAN)](Pinouts-and-peripherals#can-bus)
 * [FAQ](FAQ)
 * [Changelog](Changelog)
+* [TMC debug mode](TMCL-IDE-debugging)
