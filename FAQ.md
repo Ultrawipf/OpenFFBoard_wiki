@@ -6,6 +6,7 @@
 * Custom TMC4671 based driver with ABZ, SinCos and 3 Phase analog encoders
 * ODrive via CAN
 * VESC via CAN
+* Simplemotion v2
 * more to come...
 
 **I can not connect in DFU mode**
@@ -15,12 +16,12 @@
 
 **When will it be available?**
 
-Prototypes are made and have to be tested. The parts availability unfortunately prevents making any large batch at the moment.
+Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/).  The parts availability unfortunately prevents making any large batch at the moment so keep an eye on the discord and store.
 
-**How much will it cost?**
+**My chip stays in basic/failsafe mode and does not save settings**
 
-Considering the rapidly changing prices of components its hard to say. 
-Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/) for updated prices.
+This is a rare issue with the F407VG flash and it is unknown what causes it due to it being improssible to reproduce on demand.
+The known fix is to do a full chip erase (using GUI  or STM32CubeProgrammer) and reflash the firmware. That usually fixes it for the rest of the lifetime of the chip. If it happens again it may need another erase cycle.
 
 **How much current does the TMC driver provide?**
 
@@ -36,15 +37,18 @@ They are not capable of driving the motor with a constant force. You will need t
 Yes. For really simple setups a halfbridge DC motor driver and encoder can be connected directly to the FFBoard (STM Interface) instead of using the TMC driver.
 This way you can also use some third party motor drivers with PWM inputs.
 
-**What's Difference between BLDC and PMSM servo?**
+**Does the TMC support induction motors?**
 
-It's (basically) the same motor type.
-PMSM (permanent magnet stator motor) = BLDC (Brushless Direct Current Motor) = ac synchronous (three phase synchronous motors).
-Three phases with a permanent magnet is all the same no matter if you call it BLDC, Servo, AC-Motor. As long as its got a magnet (as rotor) and has three phases its the same motor type.
+No. It supports PMSM/BLDC, DC and 2 phase stepper motors.
+
+**How to use the brake resistor output with other motor drivers than the TMC**
+
+Check the [pinouts](https://github.com/Ultrawipf/OpenFFBoard/wiki/Pinouts-and-peripherals#brake-resistor).
+You can use a 297k/10k resistor divider on the Vint (after a diode at the driver) and Vext (before the diode at the power supply) to let the STM activate the brake resistor on the brake pin.
 
 **How can I donate?**
 
-[Patreon](https://www.patreon.com/gigawipf) or [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B23BD5FGD5CH8&source=url)
+[Patreon](https://www.patreon.com/gigawipf) or [PayPal](http://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B23BD5FGD5CH8)
 
 **How can I help?**
 
