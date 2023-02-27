@@ -161,6 +161,7 @@ def readEnctypes(reader : CommandHelpReader):
         if t[0] == "0": 
             continue
         reader.sendCommand("axis.enctype=0") # Reset
+        time.sleep(0.5)
         reader.sendCommand(f"axis.enctype={t[0]}")
         commands_markdown += reader.getAllActiveHelp()
     
@@ -178,7 +179,7 @@ def readDrivers(reader : CommandHelpReader):
         if t[0] == "0": 
             continue
         reader.sendCommand("axis.drvtype=0") # Reset
-        time.sleep(0.1)
+        time.sleep(0.5)
         reader.sendCommand(f"axis.drvtype={t[0]}")
         time.sleep(0.5)
         commands_markdown += reader.getAllActiveHelp()

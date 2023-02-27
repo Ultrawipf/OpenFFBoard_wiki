@@ -47,3 +47,4 @@ extphie,0x23,external phie, R
 trqbq_mode,0x24,Torque filter mode: none;lowpass;notch;peak, R W I
 trqbq_f,0x25,Torque filter freq 1000 max. 0 to disable. (Stored f/2), R W
 trqbq_q,0x26,Torque filter q*100, R W
+pidautotune,0x27,Start PID autoruning, R

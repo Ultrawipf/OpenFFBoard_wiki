@@ -478,6 +478,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 - Local ABN
 - MT6825 SPI3
 - BISS-C
+- SSI
 ---
 
 ### Local ABN
@@ -536,6 +537,27 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |bits|0x0|Bits of resolution| R W|
 |speed|0x2|SPI speed preset 1-3| R W|
 |errors|0x3|CRC error count| R|
+
+---
+
+### SSI
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|ssienc.0|0x64|SSI: SPI SSI Encoder|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|bits|0x0|Bits of resolution| R W|
+|speed|0x2|SPI speed preset 0-2| R W I|
+|errors|0x3|Error count| R|
+|mode|0x4|SPI mode| R W I|
 
 ---
 ### Drivers
@@ -600,6 +622,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |trqbq_mode|0x24|Torque filter mode: none;lowpass;notch;peak| R W I|
 |trqbq_f|0x25|Torque filter freq 1000 max. 0 to disable. (Stored f/2)| R W|
 |trqbq_q|0x26|Torque filter q*100| R W|
+|pidautotune|0x27|Start PID autoruning| R|
 
 ---
 
@@ -876,4 +899,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.12.0
+State: v1.13.0
