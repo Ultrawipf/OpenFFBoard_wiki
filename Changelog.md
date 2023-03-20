@@ -2,6 +2,13 @@ Compiling changelogs from previous releases
 
 ## Firmware
 
+#### v1.13.x
+- Added basic iterative TMC PI autotuning
+- Fixed issues with CAN transmission with multiple axes
+- Added SSI encoder support (AMT232B)
+- Fixed SPI buttons not working (SPI2 DMA on F407)
+- Dynamic TMC encoder alignment current based on current limit
+
 #### v1.12.x
 - Added part of unique serial number to usb interface names for easier identification of multiple devices
 - Added support for Simplemotion V2 (Ioni/Argon motor drivers)
@@ -105,6 +112,12 @@ Compiling changelogs from previous releases
 
 
 ## Configurator
+
+#### v1.13.x
+- Fixed issue in encoder tuning UI
+- Added SSI encoder ui
+
+
 #### v1.9.6
 - Added analog filter option
 - Added ADS111X source dialog
