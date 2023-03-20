@@ -37,6 +37,8 @@ All fully directinput compatible games should work but some games may use whitel
 | IRacing |:white_check_mark:|
 | Euro Truck Simulator 2 |:white_check_mark:|
 | Raceroom |:white_check_mark:|
+| Live for Speed |:white_check_mark:|
+| Wreckfest |:white_check_mark:|
 | Mud Runner |:white_check_mark:|
 | Snow Runner |:x: (Whitelisted vendors<br/>Registry hack possible)|
 | Moto GP 22 |:x: (xinput only)|
