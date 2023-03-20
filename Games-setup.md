@@ -41,8 +41,11 @@ All fully directinput compatible games should work but some games may use whitel
 | DCS World |:white_check_mark: (2 axis joystick)|
 | IRacing |:white_check_mark:|
 | Euro Truck Simulator 2 |:white_check_mark:|
+| Raceroom |:white_check_mark:|
 | CarX | :warning: (Bad FFB in general reported)|
 | Garfield Kart | :warning: (No FFB :smirk:)|
+| Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
+
 
 ## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
