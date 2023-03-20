@@ -34,13 +34,15 @@ All fully directinput compatible games should work but some games may use whitel
 | WRC 8 |:white_check_mark: :memo: |
 | WRC Generations |:white_check_mark: :memo: |
 | Mud Runner |:white_check_mark:|
+| Snow Runner |:x: (Whitelisted vendors<br/>Registry hack possible)|
 | Moto GP 22 |:x: (xinput only)|
-| Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
+| Richard Burns Rally |:warning: :memo: (Registry mod)|
 | Trackmania 2020 |:white_check_mark:|
 | DCS World |:white_check_mark: (2 axis joystick)|
 | IRacing |:white_check_mark:|
 | Euro Truck Simulator 2 |:white_check_mark:|
 | CarX | :warning: (Bad FFB in general reported)|
+| Garfield Kart | :warning: (No FFB :smirk:)|
 
 ## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
