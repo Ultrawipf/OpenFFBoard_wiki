@@ -30,6 +30,7 @@ All fully directinput compatible games should work but some games may use whitel
 | KartKraft |:white_check_mark:|
 | Project Cars 1&2 |:white_check_mark:|
 | WRC 8 |:white_check_mark:|
+| WRC Generations |:white_check_mark:|
 | Mud Runner |:white_check_mark:|
 | Moto GP 22 |:x: (xinput only)|
 | Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
@@ -88,6 +89,20 @@ Recommended settings:
 |Setting  |Value|
 |-----------|-------|
 |Range      |360    |
+
+## WRC Games
+
+The games use the spring effect for FFB. Confirmed for WRC 8 and WRC Generations.
+Consider playing around with the spring gain to set how direct and stiff it feels.
+
+More FFB tuning options available in `steamapps\common\WRCxxx\Common\Settings\InputFFBSoftwareConfig.cfg`
+
+
+Recommended settings:
+|Setting  |Value|
+|-----------|-------|
+|Range      |540    |
+|Spring gain |10 - max|
 
 ## Richard Burns Rally
 Richard Burns Rally requires a key to be added to Windows registry. This can be done by creating a `RBR_openffboard.reg` file with this content:
