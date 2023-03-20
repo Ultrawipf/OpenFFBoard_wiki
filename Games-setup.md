@@ -30,7 +30,8 @@ All fully directinput compatible games should work but some games may use whitel
 | rFactor 2 |:white_check_mark:|
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
-| Project Cars 1&2 |:white_check_mark:|
+| Project Cars 1 |:white_check_mark:|
+| Project Cars 2 |:white_check_mark:|
 | WRC 8 |:white_check_mark: :memo: |
 | WRC Generations |:white_check_mark: :memo: |
 | Mud Runner |:white_check_mark:|
@@ -45,7 +46,7 @@ All fully directinput compatible games should work but some games may use whitel
 | CarX | :warning: (Bad FFB in general reported)|
 | Garfield Kart | :warning: (No FFB :smirk:)|
 | Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
-
+| Dakar Desert Rally|:x: :warning: (Whitelist.<br/>May work later or with emuwheel)|
 
 ## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
@@ -158,7 +159,7 @@ Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the med
 </details>
 
 ## Games working with vjoy emuwheel
-### Forza, Dakar desert rally...
+### Forza
 
 Also confirmed working if you still have other issues is [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html). 
 
@@ -166,3 +167,5 @@ Emuwheel will merge and hide multiple devices into one virtual one getting aroun
 It will also forward FFB effects to the steering wheel device.
 
 This tool works for games that have steering wheel whitelists blocking unknown devices but supporting vjoy.
+
+In Dakar Desert Rally only 1 vjoy device can be present or it may use the wrong one. Sometimes it works. Sometimes not. For now unsupported.
