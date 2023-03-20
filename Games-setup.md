@@ -120,6 +120,8 @@ Warning: This may change the behaviour in other games.
 ## Forza Horizon 5 (or others)
 The OpenFFBoard works with Forza, but only when the FFBoard is the first detected HID during the initial loading screen so you may need to temporarily disconnect other gamepads, pedals and other devices and reconnect them when the menu has loaded.
 
+Invert FFB force direction in game or use emu wheel.
+
 Recommended settings:
 |Setting  |Value|
 |-----------|-------|
