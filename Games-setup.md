@@ -1,6 +1,4 @@
-## Setup procedures for specific games and recommended settings
-
-## Compatibility list
+# Compatibility list
 
 Non exhaustive list of tested games.
 All fully directinput compatible games should work but some games may use whitelists for specific devices or require config modifications.
@@ -34,19 +32,21 @@ All fully directinput compatible games should work but some games may use whitel
 | Project Cars 2 |:white_check_mark:|
 | WRC 8 |:white_check_mark: :memo: |
 | WRC Generations |:white_check_mark: :memo: |
-| Mud Runner |:white_check_mark:|
-| Snow Runner |:x: (Whitelisted vendors<br/>Registry hack possible)|
-| Moto GP 22 |:x: (xinput only)|
-| Richard Burns Rally |:warning: :memo: (Registry mod)|
 | Trackmania 2020 |:white_check_mark:|
 | DCS World |:white_check_mark: (2 axis joystick)|
 | IRacing |:white_check_mark:|
 | Euro Truck Simulator 2 |:white_check_mark:|
 | Raceroom |:white_check_mark:|
+| Mud Runner |:white_check_mark:|
+| Snow Runner |:x: (Whitelisted vendors<br/>Registry hack possible)|
+| Moto GP 22 |:x: (xinput only)|
+| Richard Burns Rally |:warning: :memo: (Registry mod)|
 | CarX | :warning: (Bad FFB in general reported)|
 | Garfield Kart | :warning: (No FFB :smirk:)|
 | Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
 | Dakar Desert Rally|:x: :warning: (Whitelist.<br/>May work later or with emuwheel)|
+
+# Setup procedures for specific games and recommended settings
 
 ## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
