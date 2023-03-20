@@ -31,6 +31,7 @@ All fully directinput compatible games should work but some games may use whitel
 | Mud Runner |:white_check_mark:|disc
 | Moto GP 22 |:x: (xinput only)|
 | Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
+| Trackmania 2020 |:white_check_mark:|disc
 
 
 ## All Dirt games:
