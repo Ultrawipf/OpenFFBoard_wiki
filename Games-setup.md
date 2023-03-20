@@ -9,7 +9,7 @@ All fully directinput compatible games should work but some games may use whitel
 |-----------|-------|
 |:white_check_mark:|Fully working|
 |:x:  |Not working|
-|:ballot_box_with_check: | Working with mods, config changes or partially (check notes below) |
+|:ballot_box_with_check: | Fully working with mods, config changes or notes |
 |:exclamation:  | Partially or with issues (check notes) |
 
 
