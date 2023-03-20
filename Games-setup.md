@@ -1,5 +1,34 @@
 ## Setup procedures for specific games and recommended settings
 
+## Compatibility list
+
+Non exhaustive list of tested games.
+All fully directinput compatible games should work but some games may use whitelists for specific devices or require config modifications.
+
+|Symbol  |Status|
+|-----------|-------|
+|:white_check_mark:|Fully working|
+|:x:  |Not working|
+|:ballot_box_with_check: | Working with mods, config changes or partially (check notes below) |
+|:exclamation:  | Partially or with issues (check notes) |
+
+
+|Game  |Status|
+|-----------|-------|
+| Assetto corsa |:white_check_mark:|
+| Assetto corsa competizione|:white_check_mark:|
+| Automobilista 2 |:white_check_mark:|
+| rfactor2 |:white_check_mark:|
+| Forza horizon 5 |:ballot_box_with_check:|
+| Dirt Rally 2.0 |:ballot_box_with_check:|
+| Dirt Rally 4 |:ballot_box_with_check:|
+| F1 2020 |:exclamation:|
+| rfactor2 |:white_check_mark:|
+| BeamNG |:white_check_mark:|
+| KartKraft |:white_check_mark:|
+| Project Cars 2&2 |:white_check_mark:|
+| WRC 8 |:white_check_mark:|
+| Moto GP 22 |:x:|
 
 ## All Dirt games:
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
@@ -86,7 +115,12 @@ Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the med
 ```
 </details>
 
+## Games working with vjoy emuwheel
+### Forza, Dakar desert rally...
+
 Also confirmed working if you still have other issues is [emuwheel](https://forzatools.weebly.com/forza-emuwheel-setup-guide.html). 
 
 Emuwheel will merge and hide multiple devices into one virtual one getting around some of the issues forza has with incompatible devices.
 It will also forward FFB effects to the steering wheel device.
+
+This tool works for games that have steering wheel whitelists blocking unknown devices but supporting vjoy.
