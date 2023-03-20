@@ -8,9 +8,11 @@ All fully directinput compatible games should work but some games may use whitel
 |Symbol  |Status|
 |-----------|-------|
 |:white_check_mark:|Fully working|
-|:ballot_box_with_check: | Fully working with mods, config changes or notes |
-|:exclamation:  | Partially or with issues (check notes) |
+|:ballot_box_with_check: | Fully working with mods, config changes |
+|:warning:  | Partially or with issues (check notes) |
 |:x:  |Not working|
+|:memo:|Notes available below|
+
 
 
 |Game  |Status|
@@ -18,19 +20,19 @@ All fully directinput compatible games should work but some games may use whitel
 | Assetto corsa |:white_check_mark:|
 | Assetto corsa competizione|:white_check_mark:|
 | Automobilista 2 |:white_check_mark:|
-| Forza horizon 4 |:ballot_box_with_check: (See below)|
-| Forza horizon 5 |:ballot_box_with_check: (See below)|
+| Forza horizon 4 |:ballot_box_with_check: :memo:  (See below)|
+| Forza horizon 5 |:ballot_box_with_check: :memo:  (See below)|
 | Dirt Rally 2.0 |:ballot_box_with_check: (config mod)|
 | Dirt Rally |:ballot_box_with_check: (config mod)|
 | Dirt Rally 4 |:ballot_box_with_check: (config mod)|
-| F1 2020 |:white_check_mark: :exclamation: (See note)|
-| F1 2022 |:white_check_mark: :exclamation: (See note)|
+| F1 2020 |:white_check_mark: :memo:  (See note)|
+| F1 2022 |:white_check_mark: :memo:  (See note)|
 | rFactor 2 |:white_check_mark:|
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
 | Project Cars 1&2 |:white_check_mark:|
-| WRC 8 |:ballot_box_with_check:|
-| WRC Generations |:ballot_box_with_check:|
+| WRC 8 |:ballot_box_with_check: :memo: |
+| WRC Generations |:ballot_box_with_check: :memo: |
 | Mud Runner |:white_check_mark:|
 | Moto GP 22 |:x: (xinput only)|
 | Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
@@ -38,7 +40,7 @@ All fully directinput compatible games should work but some games may use whitel
 | DCS World |:white_check_mark: (2 axis joystick)|
 | IRacing |:white_check_mark:|
 | Euro Truck Simulator 2 |:white_check_mark:|
-| CarX | :exclamation: (Bad FFB in general reported)|
+| CarX | :warning: (Bad FFB in general reported)|
 
 ## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
