@@ -8,9 +8,9 @@ All fully directinput compatible games should work but some games may use whitel
 |Symbol  |Status|
 |-----------|-------|
 |:white_check_mark:|Fully working|
-|:x:  |Not working|
 |:ballot_box_with_check: | Fully working with mods, config changes or notes |
 |:exclamation:  | Partially or with issues (check notes) |
+|:x:  |Not working|
 
 
 |Game  |Status|
@@ -26,10 +26,12 @@ All fully directinput compatible games should work but some games may use whitel
 | rfactor2 |:white_check_mark:|
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
-| Project Cars 2&2 |:white_check_mark:|
+| Project Cars 1&2 |:white_check_mark:|
 | WRC 8 |:white_check_mark:|
 | Mud Runner |:white_check_mark:|disc
 | Moto GP 22 |:x: (xinput only)|
+| Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
+
 
 ## All Dirt games:
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
