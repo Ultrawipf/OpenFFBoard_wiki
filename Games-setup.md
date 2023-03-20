@@ -29,8 +29,8 @@ All fully directinput compatible games should work but some games may use whitel
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
 | Project Cars 1&2 |:white_check_mark:|
-| WRC 8 |:white_check_mark:|
-| WRC Generations |:white_check_mark:|
+| WRC 8 |:ballot_box_with_check:|
+| WRC Generations |:ballot_box_with_check:|
 | Mud Runner |:white_check_mark:|
 | Moto GP 22 |:x: (xinput only)|
 | Richard Burns Rally |:ballot_box_with_check: (Registry mod)|
