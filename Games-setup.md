@@ -23,8 +23,8 @@ All fully directinput compatible games should work but some games may use whitel
 | Dirt Rally 2.0 |:ballot_box_with_check: (config mod)|
 | Dirt Rally |:ballot_box_with_check: (config mod)|
 | Dirt Rally 4 |:ballot_box_with_check: (config mod)|
-| F1 2020 |:white_check_mark: :exclamation: (Visual steering assist on)|
-| F1 2022 |:white_check_mark: :exclamation: (Visual steering assist on)|
+| F1 2020 |:white_check_mark: :exclamation: (See note)|
+| F1 2022 |:white_check_mark: :exclamation: (See note)|
 | rFactor 2 |:white_check_mark:|
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
@@ -36,9 +36,10 @@ All fully directinput compatible games should work but some games may use whitel
 | Trackmania 2020 |:white_check_mark:|
 | DCS World |:white_check_mark: (2 axis joystick)|
 | IRacing |:white_check_mark:|
+| Euro Truck Simulator 2 |:white_check_mark:|
+| CarX | :exclamation: (Bad FFB in general reported)|
 
-
-## All Dirt games:
+## All Dirt games
 Dirt requires you to add custom devices to the `device_defines.xml` for example found in the `DiRT Rally 2.0\input\devices` path or similar.
 
 
@@ -77,9 +78,18 @@ Recommended settings:
 |CF Filter q|0.3-0.7|
 |Range      |540    |
 
+## F1 Games
 
+Disable all steering assists.
 
-## Richard Burns Rally:
+There will still be a gamepad style visual steering wheel wobble or assist in the simulated wheel for non whitelisted devices. Not confirmed if it impacts the actual input or is only visual.
+
+Recommended settings:
+|Setting  |Value|
+|-----------|-------|
+|Range      |360    |
+
+## Richard Burns Rally
 Richard Burns Rally requires a key to be added to Windows registry. This can be done by creating a `RBR_openffboard.reg` file with this content:
 ```
 Windows Registry Editor Version 5.00
