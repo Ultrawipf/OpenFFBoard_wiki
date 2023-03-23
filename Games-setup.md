@@ -5,10 +5,10 @@ All fully directinput compatible games should work but some games may use whitel
 
 |Symbol  |Status|
 |-----------|-------|
-|:white_check_mark:|Fully working|
-|:ballot_box_with_check: | Fully working with mods, config changes |
-|:warning:  | Partially or with issues (check notes) |
-|:x:  |Not working|
+|:white_check_mark:|**Fully working**<br>(Only ingame setup required at most)|
+|:ballot_box_with_check: | **Fully working** with non invasive modifications<br>or external config changes for correct operation |
+|:warning:  | **Partially or with issues**<br>(May need third party tools, significant effort or has issues impacting gameplay) |
+|:x:  |**Not working** at all or significant problems<br>(Not officially supported)|
 |:memo:|Notes available below|
 
 
