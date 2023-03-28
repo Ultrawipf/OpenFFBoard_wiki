@@ -145,11 +145,7 @@ The CAN bus is designed to use a TJA1501/3 transceiver with the silent pin conne
 On the official board this is included as well as a 120 ohm termination which can be disconnected or connected using a solder jumper. By default it is connected on most boards with a cuttable trace that can be reconnected if required.
 Most CAN devices require this resistor to stay connected but certain devices like a BMW E90 instrument cluster i tested will only work reliably with it disconnected.
 
-The following image shows how to disconnect the termination on the V1.2.3 board:
-
-![CAN jumper](img/solderjumper_cut_CAN.jpg)
-
-On the V1.2.4 the solderjumper was replaced with a normal pinheader jumper.
+On the V1.2.4 the solderjumper was replaced with a normal pinheader jumper (CAN-R pins). This usually has to be connected.
 
 
 ### Granite simplemotion
