@@ -20,6 +20,7 @@ Analog joystick style shifters like the G29, G27 and G25 for example can connect
 #### Emergency stop:
 An E-Stop pin can be pulled down on the STM board to stop the FFB.
 For added security, the enable pin on the TMC can also be pulled down externally.
+The emergency state can be reset when releasing or toggling the pin again if the STM board was used.
 
 #### ODrive support:
 An ODrive can receive torque commands and report the encoder position via a CAN bus for FFB.
@@ -29,11 +30,12 @@ Manual configuration of the ODrive required!
 A VESC can receive torque commands and report the encoder position via a CAN bus for FFB.
 Manual configuration of the VESC required!
 
-
-
+#### Simplemotion support:
+Experimental but working. May occasionally drop packets in case the IONI does not respond.
+All setup must be done in the Granite tool.
 
 #### Multi axis FFB for joysticks and flight sims:
-Complex. mostly working but rarely tested.
+Working with ODrive (And modified TMC boards). No special features implemented yet. Works mostly like the steering wheel mode but with 2 axes.
 
 ## General
 
@@ -68,4 +70,6 @@ Auto change steering degrees and intensity depending on game. Motor stats as ove
 #### Predefined settings and limiting options for specialized setups:
 The FFBoard firmware is flexible so for different hardware, features have to be disabled or predefined
 
+#### More 2 axis features
+Automatic centering with mechanical endstops
 
