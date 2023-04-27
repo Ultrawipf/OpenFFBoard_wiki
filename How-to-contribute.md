@@ -24,4 +24,6 @@ Set your git author name correctly before committing.
 The code should follow the same style as the other parts of the project and you should use easy to understand comments for complex statements and new functions.
 
 ### Flash storage
-If you require a variable to be stored in flash check the eeprom emulation functions and choose an address according to `eeprom_addresses.h` and add it to the list in `eeprom_addresses.c`. Don't forget to update the `NB_OF_VAR` length. In general you should use a block of addresses per class and use the space efficiently. If you have 5 bools and an 8 bit int to store don't use 6 full addresses but pack them into a single uint16_t.
+If you require a variable to be stored in flash check the eeprom emulation functions and choose an address according to `eeprom_addresses.h` and add it to the list in `scripts/memory_map.csv`. The script `scripts/generate_memory.py` is used to generate `eeprom_addresses.c` and `eeprom_addresses.h` from the csv file to keep track of used addresses and automatically set the right defitions.
+
+In general you should use a block of addresses per class and use the space efficiently. If you have 5 bools and an 8 bit int to store don't use 6 full addresses but pack them into a single uint16_t.
