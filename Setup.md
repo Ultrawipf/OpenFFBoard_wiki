@@ -30,6 +30,20 @@ If the device is detected load the .hex file and upload it.
 #### Boot0 jumper and debug header position
 ![Boot0](img/b0_debug.jpg)
 
+
+#### Settings
+Due to common mistakes about understanding power and effect ratio:
+
+Power is the total maximum force sent to the motor driver (16b). This is important for motor drivers where the output force directly controls the motor current (PWM, TMC...)
+
+Effect scaler prescales the game effects down to leave extra force for the endstop so you can still feel it without already being clipped by the game.
+
+Formula:
+
+`effect_torque = all_effects_added * effect scale (0-100%)`
+
+`total_output  = effect_torque + endstop_torque * (power/0x7fff)`
+
 ### Wheel setup with TMC4671
 
 The OpenFFBoard STM board must be stacked on top of the TMC4671 driver board to ensure short connections and good grounding.
