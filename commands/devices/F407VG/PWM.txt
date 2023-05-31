@@ -10,3 +10,4 @@ instance,0x80000004,Command handler instance number, R
 cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
 freq,0x1,PWM period selection, R W I
 mode,0x0,PWM mode, R W I
+dir,0x2,Invert direction, R W

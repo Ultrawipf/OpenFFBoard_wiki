@@ -142,6 +142,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |devid|0x14|Get chip dev id and rev id| R|
 |name|0x80000002|name of class| R (STR)|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|uid|0x15|Get 94b chip uid. Adr0-2 sel blk| R RA|
 
 ---
 
@@ -194,8 +195,8 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |damper|0x5|Damper gain| R W I|
 |inertia|0x6|Inertia gain| R W I|
 |effects|0x2|USed effects since reset (Info print as str). set 0 to reset| R W I|
-|effectsDetails|0x10|List effects details. set 0 to reset| R W (STR)|
-|effectsForces|0x11|List actual effects forces.| R|
+|effectsDetails|0x10|List effects details. set 0 to reset| R W RA (STR)|
+|effectsForces|0x11|List actual effects forces.| R RA|
 |damper_f|0x7|Damper biquad freq| R W|
 |damper_q|0x8|Damper biquad q| R W|
 |friction_f|0x9|Friction biquad freq| R W|
@@ -642,6 +643,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
 |freq|0x1|PWM period selection| R W I|
 |mode|0x0|PWM mode| R W I|
+|dir|0x2|Invert direction| R W|
 
 ---
 
@@ -899,4 +901,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.13.0
+State: v1.13.2
