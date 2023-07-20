@@ -78,6 +78,14 @@ This is rarely occuring on fresh F407 chips and seems to be a flash issue. Do a 
 You may need to manually load a usbserial driver for the device. Check the device manager if it shows up and use the driver inf file to install the driver (or manually select usbser).
 On windows 10 and above, linux and mac the driver should be loaded automatically.
 
+#### TMC says ADC calibration failed
+This is likely a soldering issue or hardware defect (if using the ADS shunt amps).
+You can check the raw adc data with `tmc.0.reg=0?3;tmc.0.reg?2` in debug mode (`sys.debug=1`).
+It will reply an integer containing 2 16b values.
+u16(15:0) = ADC_I0_RAW, u16(31:16) = ADC_I1_RAW.
+Convert to hex and both should be close to 0x7fff.
+If one value is stuck high there is a broken. I0 is phase A, I1 phase C.
+
 
 ### ODrive setup
 Read ODrive [getting started page](https://docs.odriverobotics.com/v/latest/getting-started.html)
