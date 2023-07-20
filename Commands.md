@@ -142,7 +142,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |devid|0x14|Get chip dev id and rev id| R|
 |name|0x80000002|name of class| R (STR)|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|uid|0x15|Get 94b chip uid. Adr0-2 sel blk| R RA|
+|uid|0x15|Get 96b chip uid. Adr0-2 sel blk| R RA|
 
 ---
 
@@ -624,6 +624,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |trqbq_f|0x25|Torque filter freq 1000 max. 0 to disable. (Stored f/2)| R W|
 |trqbq_q|0x26|Torque filter q*100| R W|
 |pidautotune|0x27|Start PID autoruning| R|
+|fluxbrake|0x28|Prefer energy dissipation in motor| R W|
 
 ---
 
@@ -901,4 +902,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.13.2
+State: v1.14.0

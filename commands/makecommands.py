@@ -241,6 +241,7 @@ def makeCommands(reader : CommandHelpReader):
     commands_markdown += readDrivers(reader)
 
     # Other mainclasses
+    time.sleep(0.2)
     commands_markdown += readMainclasses(reader)
 
     ver = reader.sendCommand("sys.swver")
