@@ -10,7 +10,10 @@ This means the firmware can control different kinds of motors and motor drivers 
 
 Having the HID PID implemented in a modular way allows it to be used in different ways without the need to write complex custom USB descriptors.
 
+### Contributing to the Wiki
+If you want to create a pull request for the wiki you need to do so on the [OpenFFBoard_wiki](https://github.com/Ultrawipf/OpenFFBoard_wiki) repo which mirrors this wiki because Github does not allow public PR access to the wiki repo directly.
 
+### Block diagram
 The following image shows a simplified block diagram of how the OpenFFBoard firmware components would operate in a steering wheel setup and how its software components can be used to interface different peripherals.
 
 ![firmware_overview](img/ffboard_firmware_overview.png)
