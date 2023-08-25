@@ -39,9 +39,20 @@ X and Y channels can be mapped to analog inputs. Default is input 5 and 6 (A4 & 
 
 The reverse button (Reverse gear if position is gear 6 & reverse button pressed) is mapped to a digital input. Default is input 1.
 
+<a href="img/wiring_diagrams/g29.jpg">
+    <img width="500" height="300" src="img/wiring_diagrams/g29.jpg">
+</a>
+
 **G27 mode:**
 
 X and Y channels are the same as in G29 mode but it also has additional SPI buttons with the reverse button being one of them. The CS pin of SPI2 has to be specified. Connections are the same as with the SPI button source.
+
+<a href="img/wiring_diagrams/g27.jpg">
+    <img width="500" height="300" src="img/wiring_diagrams/g27.jpg">
+</a>
+<a href="img/wiring_diagrams/g25.jpg">
+    <img width="500" height="300" src="img/wiring_diagrams/g25.jpg">
+</a>
 
 ### SPI2
 |FFBoard pin|STM pin|
