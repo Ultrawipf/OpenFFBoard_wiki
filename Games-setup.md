@@ -47,7 +47,7 @@ All fully directinput compatible games should work but some games may use whitel
 | CarX | :warning: (Bad FFB in general reported)|
 | Garfield Kart | :warning: (No FFB :smirk:)|
 | Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
-| Dakar Desert Rally|:x: :warning: (Whitelist.<br/>May work later or with emuwheel)|
+| Dakar Desert Rally|:warning: (FFBoard works but other devices may interfere)|
 
 # Setup procedures for specific games and recommended settings
 
@@ -127,7 +127,7 @@ Warning: This may change the behaviour in other games.
 
 
 ## Forza Horizon 5 (or others)
-The OpenFFBoard works with Forza, but only when the FFBoard is the first detected HID during the initial loading screen so you may need to temporarily disconnect other gamepads, pedals and other devices and reconnect them when the menu has loaded.
+The OpenFFBoard works with Forza in theory but might be more stable with emuwheel.
 
 Invert FFB force direction in game or use emu wheel.
 
