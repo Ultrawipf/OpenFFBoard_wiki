@@ -14,9 +14,11 @@
 * You need a winusb DFU driver. Use [Zadig](http://zadig.akeo.ie/) to install it.
 * If you already have a driver loaded with the name "Guillemot STM DFU Device" unfortunately thats Thrustmaster overwriting your driver. This driver is not compatible with any normal DFU tool and must be uninstalled first.
 
-**When will it be available?**
+**When/where will it be available?**
 
-Check out the [tindie store page](https://www.tindie.com/stores/gigawipf/).  The parts availability unfortunately prevents making any large batch at the moment so keep an eye on the discord and store.
+Check out the [Elecrow store page](https://www.elecrow.com/open-ffboard-stm32f407-usb-interface-only.html).
+
+Smaller batches and prototype TMC kits will be announced on the [Discord](https://discord.com/servers/openffboard-704355326291607614)
 
 **My chip stays in basic/failsafe mode and does not save settings**
 
