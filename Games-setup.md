@@ -23,6 +23,7 @@ All fully directinput compatible games should work but some games may use whitel
 | Dirt Rally 2.0 |:ballot_box_with_check: :memo: (config mod)|
 | Dirt Rally |:ballot_box_with_check: :memo: (config mod)|
 | Dirt 4 |:ballot_box_with_check: :memo: (config mod)|
+| EA WRC |:ballot_box_with_check: :memo: (config mod)|
 | F1 2020 |:white_check_mark: :memo: (See note)|
 | F1 2022 |:white_check_mark: :memo: (See note)|
 | rFactor 2 |:white_check_mark:|
@@ -89,6 +90,40 @@ Recommended settings:
 |CF Filter  |50-80hz|
 |CF Filter q|0.3-0.7|
 |Range      |540    |
+
+## EA WRC
+Wheel may not be detected or not have any force feedback.  In the file `steamapps\common\EA SPORTS WRC\WRC\Content\input\Windows\devices\device_defines.xml` add this line : 
+
+```xml
+<device id="{FFB01209-0000-0000-0000-504944564944}" name="openffboard" priority="100" type="wheel" official="false" />
+```
+
+Add a new file `openffboard.xml` in `steamapps\common\EA SPORTS WRC\WRC\Content\input\Windows\actionmaps` with the following content:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<action_map name="openffboard" device_name="openffboard" library="lib_direct_input" version="2">
+  <axis_map>
+    <axis name="di_x_axis" direction_type="left_right" axis_set_name="device"/>
+  </axis_map>
+  <axis_defaults>
+    <axis name="di_x_axis">
+      <action deadzone="0" name="driving.steer.left" />
+      <action deadzone="0" name="driving.steer.right" />
+    </axis>
+  </axis_defaults>
+  <group name="driving">
+    <group name="steer">
+      <action name="left">
+        <axis name="di_x_axis" type="lower" />
+      </action>
+      <action name="right">
+        <axis name="di_x_axis" type="upper" />
+      </action>
+    </group>
+  </group>
+</action_map>
+```
 
 ## F1 Games
 
