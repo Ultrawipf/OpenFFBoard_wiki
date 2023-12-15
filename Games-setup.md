@@ -98,28 +98,30 @@ Wheel may not be detected or not have any force feedback.  In the file `steamapp
 
 Add a new file `openffboard.xml` in `steamapps\common\EA SPORTS WRC\WRC\Content\input\Windows\actionmaps` with the following content:
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <action_map name="openffboard" device_name="openffboard" library="lib_direct_input" version="2">
-      <axis_map>
-        <axis name="di_x_axis" direction_type="left_right" axis_set_name="device"/>
-      </axis_map>
-      <axis_defaults>
-        <axis name="di_x_axis">
-          <action deadzone="0" name="driving.steer.left" />
-          <action deadzone="0" name="driving.steer.right" />
-        </axis>
-      </axis_defaults>
-      <group name="driving">
-        <group name="steer">
-          <action name="left">
-            <axis name="di_x_axis" type="lower" />
-          </action>
-          <action name="right">
-            <axis name="di_x_axis" type="upper" />
-          </action>
-        </group>
-      </group>
-    </action_map>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<action_map name="openffboard" device_name="openffboard" library="lib_direct_input" version="2">
+  <axis_map>
+    <axis name="di_x_axis" direction_type="left_right" axis_set_name="device"/>
+  </axis_map>
+  <axis_defaults>
+    <axis name="di_x_axis">
+      <action deadzone="0" name="driving.steer.left" />
+      <action deadzone="0" name="driving.steer.right" />
+    </axis>
+  </axis_defaults>
+  <group name="driving">
+    <group name="steer">
+      <action name="left">
+        <axis name="di_x_axis" type="lower" />
+      </action>
+      <action name="right">
+        <axis name="di_x_axis" type="upper" />
+      </action>
+    </group>
+  </group>
+</action_map>
+```
 
 ## F1 Games
 
