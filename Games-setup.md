@@ -94,7 +94,9 @@ Recommended settings:
 ## EA WRC
 Wheel may not be detected or not have any force feedback.  In the file `steamapps\common\EA SPORTS WRC\WRC\Content\input\Windows\devices\device_defines.xml` add this line : 
 
-    <device id="{FFB01209-0000-0000-0000-504944564944}" name="openffboard" priority="100" type="wheel" official="false" />
+```xml
+<device id="{FFB01209-0000-0000-0000-504944564944}" name="openffboard" priority="100" type="wheel" official="false" />
+```
 
 Add a new file `openffboard.xml` in `steamapps\common\EA SPORTS WRC\WRC\Content\input\Windows\actionmaps` with the following content:
 
