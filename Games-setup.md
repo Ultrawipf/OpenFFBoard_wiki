@@ -18,12 +18,12 @@ All fully directinput compatible games should work but some games may use whitel
 | Assetto corsa |:white_check_mark:|
 | Assetto corsa competizione|:white_check_mark:|
 | Automobilista 2 |:white_check_mark:|
-| EA WRC |:ballot_box_with_check: :memo: (See below)|
 | Forza horizon 4 |:ballot_box_with_check: :memo:  (See below)|
 | Forza horizon 5 |:ballot_box_with_check: :memo:  (See below)|
 | Dirt Rally 2.0 |:ballot_box_with_check: :memo: (config mod)|
 | Dirt Rally |:ballot_box_with_check: :memo: (config mod)|
 | Dirt 4 |:ballot_box_with_check: :memo: (config mod)|
+| EA WRC |:ballot_box_with_check: :memo: (config mod)|
 | F1 2020 |:white_check_mark: :memo: (See note)|
 | F1 2022 |:white_check_mark: :memo: (See note)|
 | rFactor 2 |:white_check_mark:|
