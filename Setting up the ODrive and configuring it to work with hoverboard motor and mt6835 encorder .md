@@ -61,10 +61,10 @@
 
 
     `odrv0.axis0.motor.config.pole_pairs = 15`
-   + # Common value for hoverboard motors@@
+   <span style="color:green;"># Common value for hoverboard motors</span>
     
     `odrv0.axis0.motor.config.torque_constant = 1`
-   <span style="color:green;"># If you know the KV value of the motor do this and change the value “8.27/(motor KV)” otherwise keep it at 1</span>
+   <span style="color:green;"># If you know the KV value of the motor do this and change the value “8.27/(motor KV)” otherwise keep it at 1 </span>
     
     `odrv0.axis0.motor.config.current_lim = 10`
    <span style="color:green;"># Set this value to bit below the max Amp value of your PSU mine was 12.5A so I used 10</span>
