@@ -117,9 +117,9 @@
 2. Select the FFBoard and connect to it.
 3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> ![Screenshot 2024-02-04 235552](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/9b96fc00-1368-41f7-85ff-534d9bef8636)
 
-4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 100K. Apply it and press Ok.<br> ![Screenshot 2024-02-04 235511 tab ](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4eeecaec-e570-4063-b11c-d51fe794add9)
+4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 100K. Apply it and press Ok.<br> ![Screenshot 2024-02-04 235511 tab ](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4eeecaec-e570-4063-b11c-d51fe794add9)<br>
 
-![Screenshot 2024-02-04 235049](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/ca98a423-bb11-48b0-aeae-e5dba000e589)
+<center> ![Screenshot 2024-02-04 235049](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/ca98a423-bb11-48b0-aeae-e5dba000e589) </center>
 
 5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.
 6. Hit Save to Flash at the bottom right corner.
