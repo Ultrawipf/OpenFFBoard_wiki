@@ -18,7 +18,7 @@
 
 ## ODrive Firmware
 
-**If you have a non-genuine/fake ODrive with an old firmware or shows v0.0.0 please do this part!!**
+###**If you have a non-genuine/fake ODrive with an old firmware or shows v0.0.0 please do this part!!**
 
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
@@ -28,7 +28,7 @@
 5. Follow these steps:
 
 
-**If you have a genuine/original ODrive with an old firmware:**
+###**If you have a genuine/original ODrive with an old firmware:**
 
 
 
