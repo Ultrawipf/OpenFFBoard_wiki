@@ -1,5 +1,6 @@
 # ODrive Configuration to Work with a Hoverboard Motor and MT6835 Encoder
 
+<span style="color:blue">some *blue* text</span>
 ## ODrive Driver Setup
 
 **Before getting started, change the ODrive drivers to libusb-win32:**
