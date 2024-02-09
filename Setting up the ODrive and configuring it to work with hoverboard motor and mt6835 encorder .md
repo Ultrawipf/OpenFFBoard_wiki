@@ -1,5 +1,8 @@
 # ODrive Configuration to Work with a Hoverboard Motor and MT6835 Encoder
-$\textcolor{yellow}{This\ is\ a\ Big\ Title}$
+
+{\\fontspec{Times New Roman} ## $\textcolor{yellow}{This\ is\ a\ Big\ Title}$}
+
+
 
 
 ## ODrive Driver Setup
