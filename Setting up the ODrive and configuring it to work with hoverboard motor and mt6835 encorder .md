@@ -7,7 +7,7 @@
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
 2. Connect ODrive to PC.
 3. Follow this (you might need to do the same in DFU mode too maybe. It will show up as STM Bootloader):
-https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/d25209b6-6c72-43ed-b076-c4417523cd67
+
 
 ## ODrivetool Setup
 
@@ -25,7 +25,7 @@ https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/d25209b6-6c72-
 ![ODrive with DFU jumper removed](https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr)
 
 5. Follow these steps:
-https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/9b2076ed-0f58-45f2-9e69-ab1b09356c09
+
 
 **If you have a genuine/original ODrive with an old firmware:**
 
@@ -59,22 +59,22 @@ https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/9b2076ed-0f58-
 
 
 
-    > odrv0.axis0.motor.config.pole_pairs = 15  <span style="color:green;"># Common value for hoverboard motors</span>
-    > odrv0.axis0.motor.config.torque_constant = 1  <span style="color:green;"># If you know the KV value of the motor do this and change the value “8.27/(motor KV)” otherwise keep it at 1</span>
-    > odrv0.axis0.motor.config.current_lim = 10  <span style="color:green;"># Set this value to bit below the max Amp value of your PSU mine was 12.5A so I used 10</span>
-    > odrv0.config.enable_brake_resistor = True  <span style="color:green;"># Sets use Brake resistor function</span>
-    > odrv0.config.brake_resistance = 2  <span style="color:green;"># Set the value to the Ohm value of your brake resistor. Mine came with a 2Ohm resistor</span>
-    > odrv0.axis0.encoder.config.cpr = 65536  <span style="color:green;"># Default value for the MT6835 encoder. Multiply this value accordingly if you have and gearing other than 1:1</span>
-    > odrv0.axis0.config.startup_motor_calibration = True  <span style="color:green;"># Makes ODrive run motor calibration on each startup</span>
-    > odrv0.axis0.config.startup_encoder_offset_calibration = True  <span style="color:green;"># Make ODrive perform an encoder offset calibration on each startup</span>
-    > odrv0.axis0.config.startup_closed_loop_control = True  <span style="color:green;"># Puts ODrive to the mode that is needed for the FFBoard to be able to control the ODrive automatically on startup</span>
-    > odrv0.axis0.controller.config.enable_vel_limit = False  <span style="color:green;"># Makes ODrive ignore Velocity limits. This command is very important otherwise the motor won’t function properly. Mine didn’t return to the center automatically with the spring force.</span>
-    > odrv0.axis0.controller.config.enable_overspeed_error = False  <span style="color:green;"># Makes it ignore set speed limits</span>
-    > odrv0.can.config.baud_rate = 1000000  <span style="color:green;"># Sets ODrive CAN baudrate</span>
-    > odrv0.axis0.config.can.node_id = 0  <span style="color:green;"># Sets ODrive CAN bus to work on ID 0</span>
-    > odrv0.axis0.controller.config.control_mode = CONTROL_MODE_TORQUE_CONTROL  <span style="color:green;"># Sets control mode to torque control</span>
-    > odrv0.axis0.controller.input_torque = 1
-    > odrv0.save_configuration()  <span style="color:green;"># Save config</span>
+    `odrv0.axis0.motor.config.pole_pairs = 15`  <span style="color:green;"># Common value for hoverboard motors</span>
+    `odrv0.axis0.motor.config.torque_constant = 1`  <span style="color:green;"># If you know the KV value of the motor do this and change the value “8.27/(motor KV)” otherwise keep it at 1</span>
+    `odrv0.axis0.motor.config.current_lim = 10`  <span style="color:green;"># Set this value to bit below the max Amp value of your PSU mine was 12.5A so I used 10</span>
+    `odrv0.config.enable_brake_resistor = True`  <span style="color:green;"># Sets use Brake resistor function</span>
+    `odrv0.config.brake_resistance = 2`  <span style="color:green;"># Set the value to the Ohm value of your brake resistor. Mine came with a 2Ohm resistor</span>
+    `odrv0.axis0.encoder.config.cpr = 65536`  <span style="color:green;"># Default value for the MT6835 encoder. Multiply this value accordingly if you have and gearing other than 1:1</span>
+    `odrv0.axis0.config.startup_motor_calibration = True`  <span style="color:green;"># Makes ODrive run motor calibration on each startup</span>
+    `odrv0.axis0.config.startup_encoder_offset_calibration = True`  <span style="color:green;"># Make ODrive perform an encoder offset calibration on each startup</span>
+    `odrv0.axis0.config.startup_closed_loop_control = True`  <span style="color:green;"># Puts ODrive to the mode that is needed for the FFBoard to be able to control the ODrive automatically on startup</span>
+    `odrv0.axis0.controller.config.enable_vel_limit = False`  <span style="color:green;"># Makes ODrive ignore Velocity limits. This command is very important otherwise the motor won’t function properly. Mine didn’t return to the center automatically with the spring force.</span>
+    `odrv0.axis0.controller.config.enable_overspeed_error = False`  <span style="color:green;"># Makes it ignore set speed limits</span>
+    `odrv0.can.config.baud_rate = 1000000`  <span style="color:green;"># Sets ODrive CAN baudrate</span>
+    `odrv0.axis0.config.can.node_id = 0`  <span style="color:green;"># Sets ODrive CAN bus to work on ID 0</span>
+    `odrv0.axis0.controller.config.control_mode = CONTROL_MODE_TORQUE_CONTROL`  <span style="color:green;"># Sets control mode to torque control</span>
+    `odrv0.axis0.controller.input_torque = 1`
+    `odrv0.save_configuration()`  <span style="color:green;"># Save config</span>
 
  ### <span style="color:green;">It should reboot itself now and go to Closed Loop Control mode.</span>
 
