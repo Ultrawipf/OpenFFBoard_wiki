@@ -121,7 +121,8 @@
 
    ![Screenshot 2024-02-04 235049](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/ca98a423-bb11-48b0-aeae-e5dba000e589)
 
-5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.
+5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.<br>![Screenshot 2024-02-04 235511 can settings ](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/36b8165c-4745-4141-bf6c-c294bccf43ab)
+
 6. Hit Save to Flash at the bottom right corner.
 
    ### You Should be good to go now!
