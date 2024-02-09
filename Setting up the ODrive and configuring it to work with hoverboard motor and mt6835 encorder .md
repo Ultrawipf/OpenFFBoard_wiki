@@ -31,7 +31,7 @@
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
-2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)
+2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br>
    <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4e4db066-fcf3-474d-88f9-a460892d70c0" width="450" />
 
 3. Type `odrivetool dfu <location of the firmware file>` like this.
