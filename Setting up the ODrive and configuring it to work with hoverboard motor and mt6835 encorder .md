@@ -107,8 +107,7 @@
     `odrv0.save_configuration()`<br>
    <span style="color:green;"># Save config</span>
 
- ### <span style="color:green;">It should reboot itself now and go to Closed Loop Control mode.</span>
-
+   ###It should reboot itself now and go to Closed Loop Control mode.
  ## FFBoard Setup
 
 1. Download and Open the Open FFBoard Configurator.exe: [Release OpenFFBoard v1.14.2 · Ultrawipf/OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/releases/tag/v1.14.2) 
@@ -118,7 +117,7 @@
 5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.
 6. Hit Save to Flash at the bottom right corner.
 
-    ### You Should be good to go now!
+   ### You Should be good to go now!
 
 
 
