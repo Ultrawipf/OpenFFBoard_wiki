@@ -24,7 +24,7 @@
 
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
-3. Put the Odrive into DFU mode. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
+3. Put the Odrive into DFU mode and plug it in. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
    <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/74826870-bd3c-48f3-b883-fab94d04a25f"  width="897"/>![odrive-s1-dfu-switch](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/222cc5c2-7837-40f9-82a2-64bb89e41e15)
 
 
@@ -38,7 +38,7 @@
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
-2. Put the Odrive into DFU mode. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
+2. Put the Odrive into DFU mode and plug it in. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
    <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/74826870-bd3c-48f3-b883-fab94d04a25f"  width="897"/>![odrive-s1-dfu-switch](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/222cc5c2-7837-40f9-82a2-64bb89e41e15)
 
 3. Type `odrivetool dfu <location of the firmware file>` like this.
