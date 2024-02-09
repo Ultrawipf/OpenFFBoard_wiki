@@ -7,7 +7,7 @@
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
 2. Connect ODrive to PC.
 3. Follow this (you might need to do the same in DFU mode too maybe. It will show up as STM Bootloader):
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AHDXFNtmBCY?si=A8GcAAAZ5BxdOB-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+![ODrive driver changing video](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/d25209b6-6c72-43ed-b076-c4417523cd67)
 
 ## ODrivetool Setup
 
@@ -23,16 +23,24 @@
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 3. Put the Odrive into DFU mode.
 ![ODrive with DFU jumper removed](https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr)
-4. Follow these steps:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/94vjfaX2yMg?si=5yxDxtAjXpT5kQ6H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+5. Follow these steps:
+![Firmware upgrading vidoe fake ODrive]([my_video.mov](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/9b2076ed-0f58-45f2-9e69-ab1b09356c09))
+
 **If you have a genuine/original ODrive with an old firmware:**
+
+
+
+
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up) 
 ![ODrive with DFU jumper removed](https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr)
-3. Type `odrivetool dfu <location of the firmware file>` like this.
+
+4. Type `odrivetool dfu <location of the firmware file>` like this.
 ![Firmware upgrade command in CMD](https://drive.google.com/uc?export=view&id=1LU9gIeqIuxuMa5HkpPPRF_KPGTUB-RTs)
-4. Press 'Y' when it asks you to, and you should be good to go.
+
+5. Press 'Y' when it asks you to, and you should be good to go.
 
 ## ODrive Configuration to Work with the FFBoard
 
