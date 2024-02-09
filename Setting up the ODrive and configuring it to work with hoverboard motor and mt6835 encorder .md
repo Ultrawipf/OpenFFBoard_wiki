@@ -1,9 +1,5 @@
 # ODrive Configuration to Work with a Hoverboard Motor and MT6835 Encoder
 
-$\textcolor{green}{Thi\ is a Big Title}$
-
-
-
 
 ## ODrive Driver Setup
 
@@ -65,7 +61,7 @@ $\textcolor{green}{Thi\ is a Big Title}$
 
 
     `odrv0.axis0.motor.config.pole_pairs = 15`
-   <span style="color:green;"># Common value for hoverboard motors</span>
+   + <span style="color:green;"># Common value for hoverboard motors</span> @@
     
     `odrv0.axis0.motor.config.torque_constant = 1`
    <span style="color:green;"># If you know the KV value of the motor do this and change the value “8.27/(motor KV)” otherwise keep it at 1</span>
