@@ -115,9 +115,10 @@
 
 1. Download and Open the Open FFBoard Configurator.exe: [Release OpenFFBoard v1.14.2 · Ultrawipf/OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/releases/tag/v1.14.2) 
 2. Select the FFBoard and connect to it.
-3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> ![Screenshot 2024-02-04 235552](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/9b96fc00-1368-41f7-85ff-534d9bef8636)
+3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> ![Screenshot 2024-02-04 235639](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/6c8fde5b-e72d-40e4-92af-552df537c7fc)
 
-4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 100K. Apply it and press Ok.<br> ![Screenshot 2024-02-04 235511 tab ](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4eeecaec-e570-4063-b11c-d51fe794add9)<br>
+4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 100K. Apply it and press Ok.<br> ![Screenshot 2024-02-04 235511](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/e1f41030-4248-4f35-bf00-507395a27dbb)
+<br>
 
    ![Screenshot 2024-02-04 235049](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/ca98a423-bb11-48b0-aeae-e5dba000e589)
 
