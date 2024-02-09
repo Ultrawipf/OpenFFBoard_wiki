@@ -9,6 +9,8 @@
 2. Connect ODrive to PC.
 3. Follow this (you might need to do the same in DFU mode too maybe. It will show up as STM Bootloader):
 
+https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4b28dac9-ac60-4717-bd92-19afeba24d91
+
 
 ## ODrivetool Setup
 
