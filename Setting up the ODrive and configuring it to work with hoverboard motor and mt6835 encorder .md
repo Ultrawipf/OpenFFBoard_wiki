@@ -28,11 +28,7 @@
 5. Follow these steps:
 
 
-### **If you have a genuine/original ODrive with an old firmware:**
-
-
-
-
+### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up) 
