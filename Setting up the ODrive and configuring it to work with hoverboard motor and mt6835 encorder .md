@@ -45,10 +45,10 @@
 
 ## ODrive Configuration to Work with the FFBoard
 
-**All Modifications have been done to the default configuration!**
+### **All Modifications have been done to the default configuration!**
 
 
-## If you can’t save, it’s because the ODrive isn’t in Idle state so run this command if you have an issue:
+### If you can’t save, it’s because the ODrive isn’t in Idle state so run this command if you have an issue:
 
 `odrv0.axis0.requested_state = AXIS_STATE_IDLE`
 
