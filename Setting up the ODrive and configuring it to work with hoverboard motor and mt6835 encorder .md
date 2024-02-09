@@ -60,7 +60,7 @@
 
 
 
-    `odrv0.axis0.motor.config.pole_pairs = 15`
+    `odrv0.axis0.motor.config.pole_pairs = 15`<br>
    <span style="color:green;"># Common value for hoverboard motors</span>
     
     `odrv0.axis0.motor.config.torque_constant = 1`
