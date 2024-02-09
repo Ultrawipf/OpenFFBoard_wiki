@@ -25,7 +25,8 @@
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 3. Put the Odrive into DFU mode.<br><br>
-   <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/09515713-174d-47b5-b1fe-c996577f231e"  width="897"/>![odrive-s1-dfu-switch](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/222cc5c2-7837-40f9-82a2-64bb89e41e15)
+   <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/74826870-bd3c-48f3-b883-fab94d04a25f"  width="897"/>![odrive-s1-dfu-switch](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/222cc5c2-7837-40f9-82a2-64bb89e41e15) ![IMG_6003](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/74826870-bd3c-48f3-b883-fab94d04a25f)
+
 
 
 
