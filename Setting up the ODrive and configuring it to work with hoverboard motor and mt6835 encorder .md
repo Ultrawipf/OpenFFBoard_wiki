@@ -32,13 +32,12 @@
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)
-3. <img src="https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr" width="200" />
-![ODrive with DFU jumper removed](https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr)
+<img src="https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr" width="450" />
 
-4. Type `odrivetool dfu <location of the firmware file>` like this.
+3. Type `odrivetool dfu <location of the firmware file>` like this.
 ![Firmware upgrade command in CMD](https://drive.google.com/uc?export=view&id=1LU9gIeqIuxuMa5HkpPPRF_KPGTUB-RTs)
 
-5. Press 'Y' when it asks you to, and you should be good to go.
+4. Press 'Y' when it asks you to, and you should be good to go.
 
 ## ODrive Configuration to Work with the FFBoard
 
