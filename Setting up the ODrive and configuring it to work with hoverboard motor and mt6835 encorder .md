@@ -107,7 +107,7 @@
     `odrv0.save_configuration()`<br>
    <span style="color:green;"># Save config</span>
 
-   ###It should reboot itself now and go to Closed Loop Control mode.
+   ### It should reboot itself now and go to Closed Loop Control mode.
  ## FFBoard Setup
 
 1. Download and Open the Open FFBoard Configurator.exe: [Release OpenFFBoard v1.14.2 · Ultrawipf/OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/releases/tag/v1.14.2) 
