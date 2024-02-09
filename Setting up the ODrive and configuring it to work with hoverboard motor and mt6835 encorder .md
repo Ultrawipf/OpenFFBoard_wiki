@@ -18,7 +18,7 @@
 
 ## ODrive Firmware
 
-### **If you have a non-genuine/fake ODrive with an old firmware or shows v0.0.0 please do this part!!**
+### <ins>**If you have a non-genuine/fake ODrive with an old firmware or shows v0.0.0 please do this part!!**</ins>
 
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
@@ -31,7 +31,8 @@
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
-2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up) 
+2. Put the Odrive into DFU mode. (remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)
+3. <img src="https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr" width="200" />
 ![ODrive with DFU jumper removed](https://drive.google.com/uc?export=view&id=1msPYKlTC1R43lDNciWIuL_1Wxdf8BIfr)
 
 4. Type `odrivetool dfu <location of the firmware file>` like this.
