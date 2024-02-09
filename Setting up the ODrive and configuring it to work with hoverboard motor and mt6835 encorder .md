@@ -28,6 +28,11 @@
 5. Follow these steps:
 
 
+
+https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/cce995de-afd5-4459-ab32-083cc8ec285e
+
+
+
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
