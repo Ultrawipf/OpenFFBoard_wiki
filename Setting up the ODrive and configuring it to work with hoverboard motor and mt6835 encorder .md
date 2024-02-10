@@ -40,7 +40,8 @@
 
 1. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 2. Put the Odrive into DFU mode and plug it in. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
-   <img src="https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/74826870-bd3c-48f3-b883-fab94d04a25f"  width="897"/>![odrive-s1-dfu-switch](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/222cc5c2-7837-40f9-82a2-64bb89e41e15)
+   <img src="img/ODrive Setup Images/OD_DFU_Jumper.jpg"  width="897"/><br>
+   <img src="img/ODrive Setup Images/OD_DFU_Switch.jpg"  width="897"/>
 
 3. Type `odrivetool dfu <location of the firmware file>` like this.
 ![Firmware upgrade command in CMD](https://drive.google.com/uc?export=view&id=1LU9gIeqIuxuMa5HkpPPRF_KPGTUB-RTs)
