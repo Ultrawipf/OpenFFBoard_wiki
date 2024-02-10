@@ -61,7 +61,7 @@
 2. Paste in the below commands one by one (hit enter after each one).
 
     <span style="color:red;">These commands should start with the name of the ODrive (probably either dev0 or odrv0)</span>
-    ![ODrive name](https://drive.google.com/uc?export=view&id=1HX4Ykw-8kYCfg2bMHWP10pyirMOALUgM)
+    <img src="img/ODrive Setup Images/OD_Name.png"/>
 
 
 
@@ -117,14 +117,14 @@
 
 1. Download and Open the Open FFBoard Configurator.exe: [Release OpenFFBoard v1.14.2 · Ultrawipf/OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/releases/tag/v1.14.2) 
 2. Select the FFBoard and connect to it.
-3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> ![Screenshot 2024-02-04 235639](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/6c8fde5b-e72d-40e4-92af-552df537c7fc)
+3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> <img src="img/ODrive Setup Images/FFB_Motor_Controller.png"/>
 
-4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 1000K. Apply it and press Ok.<br> ![Screenshot 2024-02-04 235511](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/e1f41030-4248-4f35-bf00-507395a27dbb)
-<br> ![Screenshot 2024-02-04 235049](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/ca98a423-bb11-48b0-aeae-e5dba000e589)
+4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 1000K. Apply it and press Ok.<br> <img src="img/ODrive Setup Images/FFB_CAN_Settings.png"/>
+<br> <img src="img/ODrive Setup Images/FFB_CAN_Baudrate.png"/>
 
-5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.<br>![Screenshot 2024-02-04 235511 can settings ](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/36b8165c-4745-4141-bf6c-c294bccf43ab)
+5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.<br><img src="img/ODrive Setup Images/FFB_Motor_Settings.png"/>
 
-6. Hit Save to Flash at the bottom right corner on any tab.<br>![Screenshot 2024-02-04 235552](https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4af12a0d-3f83-40b3-bd74-b531948fc9c0)
+6. Hit Save to Flash at the bottom right corner on any tab.<br><img src="img/ODrive Setup Images/FFB_Save.png"/>
 
    
 
