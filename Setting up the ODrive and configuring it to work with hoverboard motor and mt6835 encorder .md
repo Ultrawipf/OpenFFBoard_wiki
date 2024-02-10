@@ -25,7 +25,8 @@
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
 2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 3. Put the Odrive into DFU mode and plug it in. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
-   <img src="img/ODrive Setup Images/OD_DFU_Jumper.jpg"  width="897"/>![odrive-s1-dfu-switch](img/ODrive Setup Images/OD_DFU_Switch.jpg)
+   <img src="img/ODrive Setup Images/OD_DFU_Jumper.jpg"  width="897"/><br>
+   <img src="img/ODrive Setup Images/OD_DFU_Switch.jpg"  width="897"/>
 
 
 
