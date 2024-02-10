@@ -44,7 +44,7 @@
    <img src="img/ODrive Setup Images/OD_DFU_Switch.jpg"  width="897"/>
 
 3. Type `odrivetool dfu <location of the firmware file>` like this.
-![Firmware upgrade command in CMD](https://drive.google.com/uc?export=view&id=1LU9gIeqIuxuMa5HkpPPRF_KPGTUB-RTs)
+<img src="img/ODrive Setup Images/OD_Firmware_Command.png"/>
 
 4. Press 'Y' when it asks you to, and you should be good to go.
 
