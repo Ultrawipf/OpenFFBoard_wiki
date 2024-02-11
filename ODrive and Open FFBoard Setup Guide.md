@@ -33,7 +33,11 @@
 
 
 5. Follow these steps:
-   https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/6c526378-9a15-4ab4-8887-6e7711997529
+   
+
+
+https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/697b1e07-a518-4032-bc48-b0411dcc1464
+
 
 
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
