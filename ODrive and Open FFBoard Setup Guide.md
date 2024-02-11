@@ -36,7 +36,7 @@
    
 
 
-https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/697b1e07-a518-4032-bc48-b0411dcc1464
+   https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/697b1e07-a518-4032-bc48-b0411dcc1464
 
 
 
