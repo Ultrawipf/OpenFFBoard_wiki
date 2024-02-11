@@ -14,9 +14,7 @@
 
    https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/e8a9591a-c153-422c-8b9d-389c7076eba7
 
-   src="img/ODrive Setup Images/Firmware flash ODrive.mp4"
-   ![driver video](img/ODrive Setup Images/Firmware flash ODrive.mp4)
-   [Zadig - USB driver installation made easy](img/ODrive Setup Images/Firmware flash ODrive.mp4)
+   
 
 ## ODrivetool Setup
 
