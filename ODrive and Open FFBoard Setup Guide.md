@@ -115,7 +115,7 @@
    ### It should reboot itself now and go to Closed Loop Control mode.
  ## FFBoard Setup
 
-1. Download and Open the Open FFBoard Configurator.exe: [Release OpenFFBoard v1.14.2 · Ultrawipf/OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/releases/tag/v1.14.2) 
+1. Download and Open the Open FFBoard Configurator.exe: [OpenFFBoard releases](https://github.com/Ultrawipf/OpenFFBoard/releases)
 2. Select the FFBoard and connect to it.
 3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.<br> <img src="img/ODrive Setup Images/FFB_Motor_Controller.png"/>
 
