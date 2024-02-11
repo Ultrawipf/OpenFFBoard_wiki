@@ -16,7 +16,7 @@
 
    src="img/ODrive Setup Images/Firmware flash ODrive.mp4"
    ![driver video](img/ODrive Setup Images/Firmware flash ODrive.mp4)
-
+   [Zadig - USB driver installation made easy](img/ODrive Setup Images/Firmware flash ODrive.mp4)
 
 ## ODrivetool Setup
 
