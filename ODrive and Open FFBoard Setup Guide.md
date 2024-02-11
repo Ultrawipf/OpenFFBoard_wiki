@@ -32,8 +32,7 @@
 
 
 5. Follow these steps:
-
-   https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/cce995de-afd5-4459-ab32-083cc8ec285e
+   <iframe src="img/ODrive Setup Images/Odrive Driver change.mp4"></iframe>
 
 
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
