@@ -8,8 +8,8 @@
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
 2. Connect ODrive to PC.
 3. Follow this (you might need to do the same in DFU mode too maybe. It will show up as STM Bootloader):
-
-   https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/4b28dac9-ac60-4717-bd92-19afeba24d91
+   <iframe src="img/ODrive Setup Images/Odrive Driver change.mp4"></iframe>
+   
 
 
 ## ODrivetool Setup
@@ -32,7 +32,8 @@
 
 
 5. Follow these steps:
-   <iframe src="img/ODrive Setup Images/Odrive Driver change.mp4"></iframe>
+   
+   <iframe src="img/ODrive Setup Images/Firmware flash ODrive.mp4"></iframe>
 
 
 ### <ins>**If you have a genuine/original ODrive with an old firmware:**</ins>
