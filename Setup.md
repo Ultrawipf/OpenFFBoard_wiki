@@ -89,7 +89,7 @@ If one value is stuck high there is a broken. I0 is phase A, I1 phase C.
 
 ### ODrive setup
 
-[Full setup tutorial](https://github.com/Ultrawipf/OpenFFBoard/wiki/ODrive and Open FFBoard Setup Guide)
+#### [Full setup tutorial](https://github.com/Ultrawipf/OpenFFBoard/wiki/ODrive%20and%20Open%20FFBoard%20Setup%20Guide)
 
 #### Quick overview
 
