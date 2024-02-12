@@ -88,6 +88,11 @@ If one value is stuck high there is a broken. I0 is phase A, I1 phase C.
 
 
 ### ODrive setup
+
+[Full setup tutorial](https://github.com/Ultrawipf/OpenFFBoard/wiki/ODrive and Open FFBoard Setup Guide)
+
+#### Quick overview
+
 Read ODrive [getting started page](https://docs.odriverobotics.com/v/latest/getting-started.html)
 
 Warning: ODrive will refuse to run motors with over 4µH inductance!
