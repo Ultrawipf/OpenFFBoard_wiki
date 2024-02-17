@@ -93,6 +93,8 @@ If more than one shift register is used connect Qh (serial output) to SER (seria
 
 Use first address (A0,A1,A2 = LOW) for first PCF in chain, second address for second one (if >8 buttons) and so on.
 
+This mode can be used as well by other microcontrollers responding with 8 bits of button states for 7b addresses 0x20 to 0x27.
+
 ### PWM mode
 
 PWM pins are on TIM1
