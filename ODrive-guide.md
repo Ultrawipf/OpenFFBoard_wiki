@@ -83,6 +83,7 @@ If you're using a different type of motor, you'll need to enter values from the 
 1. Do not put the ODrive into closed loop mode without a brake resistor installed. If you purchased one without the brake resistor output, you will need to buy or build a circuit to add to control a brake resistor.
 2. Configure and test the motor with nothing attached to the shaft. If something does go wrong, having a steering wheel or adapter mounted to the motor can catch your hands or make it more likely for the motor to move.
 3. Clamp the motor down before attempting to enter closed loop control of the motor so it isn't able to move.
+4. Avoid connecting USB to both the OpenFFBoard and ODrive at the same time. This can possibly create a ground loop and cause damage.
 
 ## Configuration required to connect to OpenFFBoard     
 You'll need to configure CAN on the ODrive to communicate with the OpenFFBoard USB interface. This is handled with the following commands:    
@@ -102,17 +103,21 @@ ODrive is set by default to limit velocity in torque control mode, which will gr
 
  ## FFBoard Setup
 
-1. Download and Open the Open FFBoard Configurator.exe: [OpenFFBoard releases](https://github.com/Ultrawipf/OpenFFBoard/releases)
-2. Select the FFBoard and connect to it.
-3. Go to the Axis:0 tab and change motor driver to Odrive and click change driver.
+1. Download and the Open FFBoard Configurator from [OpenFFBoard releases](https://github.com/Ultrawipf/OpenFFBoard/releases). Unzip the archive and start `OpenFFBoard.exe`.
+2. Select the FFBoard and click `Connect`.
+3. In the `Axis:0` tab, change `Motor driver` to `ODrive` and click `Change driver`.
 ![](img/odrive/FFB_Motor_Controller.png)
 
-4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 500K. Apply it and press Ok.
+4. In the `ODrive` tab that appeared, click on `Change CAN Settings` and set the baud rate to the same as the one you configured on the ODrive. Click Ok.
 ![](img/odrive/FFB_CAN_Settings.png)
 ![](img/odrive/FFB_CAN_Baudrate.png)
 
-5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.
+5. Set `Max torque range` to your motor specs and Axis CAN ID to the node ID you set on the ODrive and click `Submit`. If successfully configured, the `Voltage`, `Axis state`, and `Errors` boxes should populate with information when you connect and power on the ODrive.
 ![](img/odrive/FFB_Motor_Settings.png)
 
-6. Hit Save to Flash at the bottom right corner on any tab.
+6. Click `Save to Flash` at the bottom right corner on any tab.
 ![](img/odrive/FFB_Save.png)
+
+## Wiring CAN
+To properly wire CAN, you will need to connect 3 wires between the two boards. ODrive reccomends having a ground wire connected between the two boards along with the `CAN H` and `CAN L` wires. Both the ODrive and USB interface should have CAN termination resistors on them, but you will need to refer to the documentation for your hardware to determine how to enable them as it varies depending on version.
+It's recommended to use twisted pair and/or shielded wire for this connection, but your results may vary. `CAN H`on one board is connected to `CAN H` on the other and `CAN L` on one to `CAN L` on the other. 
