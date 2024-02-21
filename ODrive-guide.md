@@ -40,7 +40,7 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 
  ![](img/odrive/zadig_buttons.png)
 
- Once you see the success dialog box, click close and the Zadig window should look like the image below with the driver matching in both boxes. Close Zadig and continue to installing ODrive firmware
+ 9. Once you see the success dialog box, click close and the Zadig window should look like the image below with the driver matching in both boxes. Close Zadig and continue to installing ODrive firmware
 
  ![](img/odrive/zadig_success.png)
 
