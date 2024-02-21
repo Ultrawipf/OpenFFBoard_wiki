@@ -16,8 +16,10 @@ If you have an ODrive clone (found often on AliExpress from Makerbase or Flipsky
 
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
 2. Set ODrive to DFU mode. This will vary depending on the board you have. Some have 2 DIP switches, one marked `DFU` and `RUN`, some have jumpers. If you have DIP switches, flip the switch to `DFU`. If you have jumpers, generally you'll need to remove the DFU jumper. If neither of these work, you'll need to find out from the manufacturer how DFU mode works on your device. Common switches and jumpers are pictured below.  
+
 [<img src="img/odrive/OD_DFU_Jumper.jpg" width="600" />
 [<img src="img/odrive/OD_DFU_Switch.jpg" width="600" />
+
 3. These devices are not powered by the USB port, so you will need to apply power to the board from your power supply to continue. Make sure your polarity is correct as there is no reverse polarity protection. Reverse polarity will damage the board. Please use a [USB isolator](https://odriverobotics.com/shop/usb-isolator) if possible to reduce the chance of damage to your computer.
 4. Connect ODrive to PC.
 5. Open Zadig
@@ -50,13 +52,17 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 2. Download the firmware for your drive. All clones currently on the market are based on ODrive 3.5, but the firmware for 3.6 will work. Make sure to use the correct version for the voltage of your board (24V or 56V). Use the most recent version available. As of this writing, that is 0.5.6 and should be the final release of the firmware for this version of the hardware. The `Getting Started` guide is outdated in this portion and says you need a `.hex` file if you're on Windows. They no longer build `.hex` files, but the `.bin` files work just the same for this process. [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 3. Put the Odrive into DFU mode as described in the DFU driver installation and connect to your computer. 
 4. Open the STM32CubeProgrammer and connect to the ODrive. In the following image, you'll see the type of connection is set to `USB` and the port is set to `USB1`. The serial number will be unique for each device. Once you have your device selected, click `Connect`.
+
 ![](img/odrive/cube_usb.png)
+
 5. Your window should now look similar to the following. Click on the 3 lines to expand the menu on the left and select `Erasing & Programming`. 
 
 ![](img/odrive/cube_connected.png)
+
 6. Click `Browse` to find the firmware file you've downloaded and select it. Make sure `Verify programming` and `Full chip erase` are checked and the other boxes are unchecked. Click the `Start Programming` button and wait for the process to complete.
 
 ![](img/odrive/cube_program.png)
+
 7. Disconnect power, set the ODrive to the `Run` position (the reverse of the procedure to set it to DFU mode), and connect power again.
    
 
@@ -99,6 +105,7 @@ You will also want to make sure to set the ODrive to torque control mode. In the
 `odrv0.axis0.controller.config.control_mode = CONTROL_MODE_TORQUE_CONTROL`
 
 ODrive is set by default to limit velocity in torque control mode, which will greatly reduce the torque commanded, even at 0 RPM. To disable this, enter
+
 `dev0.axis0.controller.config.enable_torque_mode_vel_limit = false`
 
  ## FFBoard Setup
@@ -120,4 +127,5 @@ ODrive is set by default to limit velocity in torque control mode, which will gr
 
 ## Wiring CAN
 To properly wire CAN, you will need to connect 3 wires between the two boards. ODrive reccomends having a ground wire connected between the two boards along with the `CAN H` and `CAN L` wires. Both the ODrive and USB interface should have CAN termination resistors on them, but you will need to refer to the documentation for your hardware to determine how to enable them as it varies depending on version.
+
 It's recommended to use twisted pair and/or shielded wire for this connection, but your results may vary. `CAN H`on one board is connected to `CAN H` on the other and `CAN L` on one to `CAN L` on the other. 
