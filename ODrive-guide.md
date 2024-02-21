@@ -2,19 +2,23 @@
 
 ## Genuine ODrive Setup
 
-If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/index.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/index.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to 
+If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/index.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/index.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to [FFBoard Setup](./ODrive-guide.md#ffboard-setup).
 
 
-## Clone ODrive Setup
+
+# Clone ODrive Setup
 
 If you have an ODrive clone (found often on AliExpress from Makerbase or Flipsky), it is based on ODrive 3.5 and comes with a very old version of the firmware. You'll need to use [the old version of the guide](https://docs.odriverobotics.com/v/0.5.6/index.html). ODrive does not offer support for these devices, so your best bet is probably to ask in the [OpenFFBoard discord server](https://discord.com/servers/openffboard-704355326291607614).
 
-### ODrive DFU Driver Setup 
+## ODrive DFU Driver Setup 
 
 **Before getting started, make sure correct drivers are installed for DFU interface. If you have ever installed Thrustmaster force feedback drivers, you will need to uninstall them to be able to update firmware on your ODrive or OpenFFBoard USB interface**
 
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
-2. Set ODrive to DFU mode. This will vary depending on the board you have. Some have 2 DIP switches, one marked `DFU` and `RUN`, some have jumpers. If you have DIP switches, flip the switch to `DFU`. If you have jumpers, generally you'll need to remove the DFU jumper. If neither of these work, you'll need to find out from the manufacturer how DFU mode works on your device.
+2. Set ODrive to DFU mode. This will vary depending on the board you have. Some have 2 DIP switches, one marked `DFU` and `RUN`, some have jumpers. If you have DIP switches, flip the switch to `DFU`. If you have jumpers, generally you'll need to remove the DFU jumper. If neither of these work, you'll need to find out from the manufacturer how DFU mode works on your device. Common switches and jumpers are pictured below.  
+![](img/odrive/OD_DFU_Jumper.jpg)
+![](img/odrive/OD_DFU_Switch.jpg)
+
 3. Connect ODrive to PC.
 4. Open Zadig
 
@@ -41,11 +45,10 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 
 ## ODrive Firmware
 
-### <ins>**If you have a non-genuine/fake ODrive with an old firmware or shows v0.0.0 please do this part!!**</ins>
 
 1. Download and install STM32CubeProgrammer: [STM32CubeProg - STM32CubeProgrammer software for all STM32 - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
-2. Download the firmware for your drive (I'm currently using v0.5.4 for a v3.6 56v Odrive): [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
-3. Put the Odrive into DFU mode and plug it in. (Remove the DFU jumper if you have jumpers otherwise put the dipswitch to the DFU side and power it up)<br><br>
+2. Download the firmware for your drive. All clones currently on the market are based on ODrive 3.5, but the firmware for 3.6 will work. Make sure to use the correct version for the voltage of your board (24V or 56V). Use the most recent version available. As of this writing, that is 0.5.6 and should be the final release of the firmware for this version of the hardware [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
+3. Put the Odrive into DFU mode as described in the DFU driver installation and connect to your computer. 
    <img src="img/ODrive Setup Images/OD_DFU_Jumper.jpg"  width="897"/><br>
    <img src="img/ODrive Setup Images/OD_DFU_Switch.jpg"  width="897"/>
 
