@@ -1,0 +1,15 @@
+
+Prefix,Class ID, Class description
+ssienc.0,0x64,SSI: SPI SSI Encoder
+
+Command name,CMD ID, Description, Flags
+id,0x80000001,ID of class, R
+name,0x80000002,name of class, R (STR)
+help,0x80000003,Prints help for commands, R I (STR)
+cmduid,0x80000005,Command handler index, R
+instance,0x80000004,Command handler instance number, R
+cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
+bits,0x0,Bits of resolution, R W
+speed,0x2,SPI speed preset 0-2, R W I
+errors,0x3,Error count, R
+mode,0x4,SPI mode, R W I

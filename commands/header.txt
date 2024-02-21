@@ -1,0 +1,113 @@
+## Commands:
+
+### Syntax for string based Interfaces. (CDC and UART):
+
+#### Baudrate
+* Default baudrate for UART: 115200 or 500000 (previous to 1.9)
+* For CDC (USB) baudrate setting has no effect. It will send as fast as possible.
+
+#### Request format:
+Get: `cls.(instance.)cmd?` or `cls.(instance.)cmd?adr`
+
+Set: `cls.(instance.)cmd=val` or `cls.(instance.)cmd=val?adr`
+
+Info `cls.(instance.)cmd!` sometimes used for generating a list of supported options. Check source code for mode info.
+
+Values can be supplied as hex (`x4d2`) or base 10 (`1234`). 
+
+Commands with 2 values are rarely used. One example is setting a register in the TMC or passing a CAN frame with a target address and value.
+
+#### Reply format:
+`[cls.instance.cmd?|val]` or `[cls.instance.cmd?|val:adr]` for get commands
+
+`[cls.instance.cmd=val|OK]` or `[cls.instance.cmd=val?adr|OK]`  for set commands
+
+Some commands return strings in a custom format (Like help commands) and do not work with the HID command system.
+
+### Syntax for HID:
+Structure for the vendor defined reports:
+
+report ID: 0xA1
+type(0x01 8b): `{write = 0, request = 1, info = 2, writeAddr = 3, requestAddr = 4,ACK = 10, notFound = 13, notification = 14, err = 15}`
+use write or request or info depending on the command. Write will SET an internal field to the value (Like the `=val` commands).
+
+For commands that accept 2 values use writeAddr and supply value and address.
+The lsactive command will report a list of active classes.
+
+- classID(0x02 16b): id of the targeted class. 0 = system, 1 = main... 
+- instance(0x03 8b): instance of the targeted class. Often 0 but for example there can be multiple axes or drivers.
+- cmd(0x04 32b): command ID
+- data(0x05 64b): the first data value to send
+- addr(0x06 64b): the second data value to send
+
+HID commands only work when the HID command interface is active and the according fields present in the HID report.
+This is by default the case for the FFB class but not in the failsafe fallback and other non HID classes.
+
+Replies to request commands will reply as a request as well as any other broadcast of changed values.
+
+<details>
+    <summary>Python example</summary>
+    <code class="language-python">
+
+    import pywinusb.hid as hid
+    import time
+    import struct
+
+    # Receive and print data
+    def readData(data):
+        if(data[0] == 0xA1):
+            t = data[1]
+            cls = struct.unpack('<H', bytes(data[2:4]))
+            instance = data[4]
+            cmd = struct.unpack('<L', bytes(data[5:9]))
+            val = struct.unpack('<q', bytes(data[9:17]))
+            addr = struct.unpack('<q', bytes(data[17:25]))
+            print(f"Type: {t}, Class: {cls}.{instance}: cmd: {cmd}, val: {val}, addr: {addr}")
+
+
+    def sendCommand(report,type,cls,inst,cmd,data=0,adr=0):
+        report[hid.get_full_usage_id(0xff00, 0x01)]=type # type. (0 = write, 1 = read)
+        report[hid.get_full_usage_id(0xff00, 0x02)]=cls # cls (axis)
+        report[hid.get_full_usage_id(0xff00, 0x03)]=inst # instance
+        report[hid.get_full_usage_id(0xff00, 0x04)]=cmd # cmd (power)
+        report[hid.get_full_usage_id(0xff00, 0x05)]=data # data
+        report[hid.get_full_usage_id(0xff00, 0x06)]=adr # adr
+        report.send()
+
+    def main():
+        device = hid.HidDeviceFilter(vendor_id = 0x1209,product_id = 0xFFB0).get_devices()[0]
+        device.open()
+
+        device.set_raw_data_handler(readData)
+
+        reports = device.find_output_reports(0xff00,0x01)
+        if(reports):
+            report = reports[0]
+            print("Found",report)
+            sendCommand(report,1,0xA01,0,0x00,0) # get power
+            sendCommand(report,0,0xA01,0,0x00,1337) # set power
+            sendCommand(report,1,0xA01,0,0x00,0) # get power
+
+        while device.is_plugged():
+            time.sleep(0.5)
+        device.close()
+
+    if __name__ == '__main__':
+        main()
+</code></details>
+
+
+## Command list
+
+Commands marked as "Debug" are treated as invalid if the sys.debug variable is not set to 1 first.
+They can be (even more) dangerous and possibly damage hardware if misused. That does not mean all others are safe! 
+Commands marked as "STR" or "I" type requests are not available for HID as they return a string.
+Be careful when changing motor parameters. Incorrect settings can damage the hardware or cause injury.
+
+|Flag     |Description|Example   |
+|---------|-----------|----------|
+|R        |Read or Execute|cls.cmd?  |
+|W        |Write value|cls.cmd=10|
+|RA       |Read with address|cls.cmd?20|
+|WA       |Write with address|cls.cmd=10?20|
+|I        |Get special info string (Not available for HID)|cls.cmd!  |

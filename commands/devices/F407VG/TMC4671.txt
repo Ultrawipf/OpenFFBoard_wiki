@@ -1,0 +1,51 @@
+
+Prefix,Class ID, Class description
+tmc.0,0x81,TMC4671: TMC4671 interface
+Command name,CMD ID, Description, Flags
+id,0x80000001,ID of class, R
+name,0x80000002,name of class, R (STR)
+help,0x80000003,Prints help for commands, R I (STR)
+cmduid,0x80000005,Command handler index, R
+instance,0x80000004,Command handler instance number, R
+cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
+cpr,0x0,CPR in TMC, R W
+mtype,0x1,Motor type, R W I
+encsrc,0x2,Encoder source, R W I
+tmcHwType,0x3,Version of TMC board, R W I
+encalign,0x4,Align encoder, R
+poles,0x5,Motor pole pairs, R W
+acttrq,0x6,Measure torque and flux, R
+pwmlim,0x7,PWM limit, R W (DEBUG)
+torqueP,0x8,Torque P, R W
+torqueI,0x9,Torque I, R W
+fluxP,0xA,Flux P, R W
+fluxI,0xB,Flux I, R W
+velocityP,0xC,Velocity P, R W
+velocityI,0xD,Velocity I, R W
+posP,0xE,Pos P, R W
+posI,0xF,Pos I, R W
+tmctype,0x10,Version of TMC chip, R
+pidPrec,0x11,PID precision bit0=I bit1=P. 0=Q8.8 1= Q4.12, R W
+phiesrc,0x12,PhiE source, R W (DEBUG)
+fluxoffset,0x13,Offset flux scale for field weakening, R W
+seqpi,0x14,Sequential PI, R W
+iScale,0x15,Counts per A, (STR)
+encdir,0x16,Encoder dir, R W (DEBUG)
+abnpol,0x1F,Encoder polarity, R W
+temp,0x17,Temperature in C * 100, R
+reg,0x18,Read or write a TMC register at adr, WA RA (DEBUG)
+svpwm,0x19,Space-vector PWM, R W
+autohome,0x1D,Find abn index, R
+abnindex,0x1C,Enable ABN index, R W
+calibrate,0x1A,Full calibration, R
+calibrated,0x1B,Calibration valid, R
+state,0x1E,Get state, R
+combineEncoder,0x20,Use TMC for movement. External encoder for position, R W
+invertForce,0x21,Invert incoming forces, R W
+vm,0x22,VM in mV, R
+extphie,0x23,external phie, R
+trqbq_mode,0x24,Torque filter mode: none;lowpass;notch;peak, R W I
+trqbq_f,0x25,Torque filter freq 1000 max. 0 to disable. (Stored f/2), R W
+trqbq_q,0x26,Torque filter q*100, R W
+pidautotune,0x27,Start PID autoruning, R
+fluxbrake,0x28,Prefer energy dissipation in motor, R W
