@@ -1,4 +1,4 @@
-# ODrive Configuration to Work with a Hoverboard Motor and MT6835 Encoder
+# ODrive Configuration
 
 ## Genuine ODrive Setup
 
