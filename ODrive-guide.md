@@ -108,9 +108,11 @@ ODrive is set by default to limit velocity in torque control mode, which will gr
 ![](img/odrive/FFB_Motor_Controller.png)
 
 4. Then go to the ODrive tab that appeared and click on Change CAN Settings and set it baudrate to 500K. Apply it and press Ok.
-![](img/ODrive Setup Images/FFB_CAN_Settings.png)
-![](img/ODrive Setup Images/FFB_CAN_Baudrate.png)
+![](img/odrive/FFB_CAN_Settings.png)
+![](img/odrive/FFB_CAN_Baudrate.png)
 
-5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.<br><img src="img/ODrive Setup Images/FFB_Motor_Settings.png"/>
+5. Set max torque range to your motor specs and Axis CAN ID to 0 and hit Submit. Then you will see some values in the info segment of this tab after a few seconds.
+![](img/odrive/FFB_Motor_Settings.png)
 
-6. Hit Save to Flash at the bottom right corner on any tab.<br><img src="img/ODrive Setup Images/FFB_Save.png"/>
+6. Hit Save to Flash at the bottom right corner on any tab.
+![](img/odrive/FFB_Save.png)
