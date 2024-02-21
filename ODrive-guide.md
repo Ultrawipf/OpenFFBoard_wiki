@@ -1,26 +1,43 @@
 # ODrive Configuration to Work with a Hoverboard Motor and MT6835 Encoder
 
+## Genuine ODrive Setup
 
-## ODrive Driver Setup
+If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/index.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/index.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to 
 
-**Before getting started, change the ODrive drivers to libusb-win32:**
+
+## Clone ODrive Setup
+
+If you have an ODrive clone (found often on AliExpress from Makerbase or Flipsky), it is based on ODrive 3.5 and comes with a very old version of the firmware. You'll need to use [the old version of the guide](https://docs.odriverobotics.com/v/0.5.6/index.html). ODrive does not offer support for these devices, so your best bet is probably to ask in the [OpenFFBoard discord server](https://discord.com/servers/openffboard-704355326291607614).
+
+### ODrive DFU Driver Setup 
+
+**Before getting started, make sure correct drivers are installed for DFU interface. If you have ever installed Thrustmaster force feedback drivers, you will need to uninstall them to be able to update firmware on your ODrive or OpenFFBoard USB interface**
 
 1. **Download Zadig**: [Zadig - USB driver installation made easy](https://zadig.akeo.ie/)
-2. Connect ODrive to PC.
-3. Follow this (you might need to do the same in DFU mode too maybe. It will show up as STM Bootloader):
-   
+2. Set ODrive to DFU mode. This will vary depending on the board you have. Some have 2 DIP switches, one marked `DFU` and `RUN`, some have jumpers. If you have DIP switches, flip the switch to `DFU`. If you have jumpers, generally you'll need to remove the DFU jumper. If neither of these work, you'll need to find out from the manufacturer how DFU mode works on your device.
+3. Connect ODrive to PC.
+4. Open Zadig
 
+![](img/odrive/zadig_window.png)
 
+5. In the `Options` menu, select `List All Devices`
 
-   https://github.com/GameRiot6408/OpenFFBoard_wiki/assets/159271841/e8a9591a-c153-422c-8b9d-389c7076eba7
+![](img/zadig_listall.png)
 
-   
+6. Find the Device called `STM32 BOOTLOADER`
 
-## ODrivetool Setup
+![](img/odrive/zadig_drop_down.png)
 
-1. **Install Python**: [Download Python](https://www.python.org/)
-2. Open up command prompt (CMD) and type `pip install odrive`.
-3. Initialize the odrive tool by typing `odrivetool` (one word) in the CMD.
+If the `Driver` box on the left reads `WinUSB` with a version number, you can move to updating the firmware, otherwise proceed to step 7
+
+7. Use the buttons to scroll through the driver options and select WinUSB and click the `Replace Driver` button. This will install the correct driver and can take a while. 
+
+ ![](img/odrive/zadig_buttons.png)
+
+ Once you see the success dialog box, click close and the Zadig window should look like the image below with the driver matching in both boxes. Close Zadig and continue to installing ODrive firmware
+
+ ![](img/odrive/zadig_success.png)
+
 
 ## ODrive Firmware
 
@@ -120,6 +137,8 @@
    <span style="color:green;"># Save config</span>
 
    ### It should reboot itself now and go to Closed Loop Control mode.
+ 
+ 
  ## FFBoard Setup
 
 1. Download and Open the Open FFBoard Configurator.exe: [OpenFFBoard releases](https://github.com/Ultrawipf/OpenFFBoard/releases)
