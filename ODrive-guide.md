@@ -61,13 +61,13 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
    
 
 # ODrive Configuration
-##Getting started
+## Getting started
 You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life.
 
 ## `odrv0` vs `dev0`
 As your hardware isn't a genuine ODrive, `odrivetool` will display a warning about that and it will connect as `dev0` instead of `odrv0`. For any commands in the guide, you will need to replace `odrv0` with `dev0`.
 
-##Hoverboard motors
+## Hoverboard motors
 There is a section on setting up hoverboard motors. For our purposes, the only settings information you should use on this page pertains to the motor configuration. The configuration they suggest is as below.
 
 ```
@@ -79,7 +79,7 @@ dev0.axis0.motor.config.torque_constant = 1
 
 If you're using a different type of motor, you'll need to enter values from the datasheet.
 
-##Warnings
+## Warnings
 1. Do not put the ODrive into closed loop mode without a brake resistor installed. If you purchased one without the brake resistor output, you will need to buy or build a circuit to add to control a brake resistor.
 2. Configure and test the motor with nothing attached to the shaft. If something does go wrong, having a steering wheel or adapter mounted to the motor can catch your hands or make it more likely for the motor to move.
 3. Clamp the motor down before attempting to enter closed loop control of the motor so it isn't able to move.
