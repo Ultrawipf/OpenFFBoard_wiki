@@ -1,14 +1,18 @@
 # ODrive Configuration
 
+## Important information
+
+This guide is meant to help you set up an ODrive for use with OpenFFBoard. This is a DIY project and your exact settings are going to depend on the hardware you have. There is no way this guide can give you all the information you need to get it working, so it's important that you ask for help if you need it. 
+
 ## Genuine ODrive Setup
 
-If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/index.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/index.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to [FFBoard Setup](./ODrive-guide.md#ffboard-setup).
+If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/getting-started.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/guides/getting-started.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to [FFBoard Setup](./ODrive-guide.md#ffboard-setup).
 
 
 
 # Clone ODrive Setup
 
-If you have an ODrive clone (found often on AliExpress from Makerbase or Flipsky), it is based on ODrive 3.5 and comes with a very old version of the firmware. You'll need to use [the old version of the guide](https://docs.odriverobotics.com/v/0.5.6/index.html). ODrive does not offer support for these devices, so your best bet is probably to ask in the [OpenFFBoard discord server](https://discord.com/servers/openffboard-704355326291607614). This version of the hardware is at end of life and the documentation is broken in some places. If there's something that doesn't make sense, please ask for clarification on Discord.
+If you have an ODrive clone (found often on AliExpress from Makerbase or Flipsky), it is based on ODrive 3.5 and comes with a very old version of the firmware. You'll need to use [the old version of the guide](https://docs.odriverobotics.com/v/0.5.6/getting-started.html). Please follow the guide from the start and work your way through step by step. If you don't understand what a setting should be, please ask for help. ODrive does not offer support for these devices, so your best bet is probably to ask in the [OpenFFBoard discord server](https://discord.com/servers/openffboard-704355326291607614). This version of the hardware is at end of life and the documentation is broken in some places. If there's something that doesn't make sense, please ask for clarification on Discord.
 
 ## ODrive DFU Driver Setup 
 
@@ -68,7 +72,9 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 
 # ODrive Configuration
 ## Getting started
-You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life.
+You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life. Asking questions will help prevent runnig into dead ends with configuration, or possibly even equipment damage.
+
+Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `false` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = IDLE` and then saving the configuration.
 
 ## `odrv0` vs `dev0`
 As your hardware isn't a genuine ODrive, `odrivetool` will display a warning about that and it will connect as `dev0` instead of `odrv0`. For any commands in the guide, you will need to replace `odrv0` with `dev0`.
@@ -108,7 +114,18 @@ ODrive is set by default to limit velocity in torque control mode, which will gr
 
 `dev0.axis0.controller.config.enable_torque_mode_vel_limit = false`
 
- ## FFBoard Setup
+# Configuring for automatic startup
+
+Once you're able to control your motor with the ODrive, you'll want to configure it to be able to enter closed loop control directly at startup. This is not enabled by default and you would be required to connect to the ODrive and do a full calibration sequence before being able to enter closed loop control. [This section](https://docs.odriverobotics.com/v/0.5.6/encoders.html#encoder-with-index-signal) of ODrive's documentation covers this process. 
+
+If you have an incremental encoder without an index pulse (or if you're using a gear reduction on your encoder), you won't be able to use the index. In that case, you'll need to take some extra steps.
+
+1. Perform a motor calibration with `dev0.axis0.axisstate = MOTOR_CALIBRATION`
+2. Save the motor calibration with `dev0.axis0.motor.config.precalibrated = true`
+3. Enable a startup encoder offset with `dev0.axis0.config.startup_encoder_offset_calibration`
+4. Save the configuration with `dev0.save_configuration()`
+
+ # FFBoard Setup
 
 1. Download and the Open FFBoard Configurator from [OpenFFBoard releases](https://github.com/Ultrawipf/OpenFFBoard/releases). Unzip the archive and start `OpenFFBoard.exe`.
 2. Select the FFBoard and click `Connect`.
