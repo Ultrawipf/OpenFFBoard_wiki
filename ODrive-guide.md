@@ -4,6 +4,8 @@
 
 This guide is meant to help you set up an ODrive for use with OpenFFBoard. This is a DIY project and your exact settings are going to depend on the hardware you have. There is no way this guide can give you all the information you need to get it working, so it's important that you ask for help if you need it. 
 
+# ***YOU WILL NEED TO FOLLOW THE `Getting Started` GUIDE FOR YOUR VERSION OF ODRIVE AS LINKED BELOW TO CONFIGURE YOUR ODRIVE. DO NOT SKIP THIS PART.***
+
 ## Genuine ODrive Setup
 
 If using a genuine ODrive (only available directly from ODrive, not sold on AliExpress or the like), you can follow the instructions in the appropriate ODrive Getting Started guide in their documentation. For ODrive 3.6 and earlier, [use this one](https://docs.odriverobotics.com/v/0.5.6/getting-started.html). For ODrive S1 and ODrive Pro, [use the latest version of the guide](https://docs.odriverobotics.com/v/latest/guides/getting-started.html). In either case, you should follow the instructions to update the firmware to the latest version before proceeding. Please follow the guide from the start and work your way through step by step. If you have trouble configuring your ODrive, the best option for support is the [ODrive Discord server](https://discord.gg/k3ZZ3mS). The ODrive team is active and helpful. Once you have the ODrive able to control your motor, contine to [FFBoard Setup](./ODrive-guide.md#ffboard-setup).
