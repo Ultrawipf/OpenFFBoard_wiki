@@ -120,7 +120,7 @@ Once you're able to control your motor with the ODrive, you'll want to configure
 
 If you have an incremental encoder without an index pulse (or if you're using a gear reduction on your encoder), you won't be able to use the index. In that case, you'll need to take some extra steps.
 
-1. Perform a motor calibration with `dev0.axis0.requested_state = FULL_CALIBRATION_SEQUENCE`
+1. Perform a motor calibration with `dev0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION`
 2. Save the motor calibration with `dev0.axis0.motor.config.pre_calibrated = True`
 3. Enable a startup encoder offset with `dev0.axis0.config.startup_encoder_offset_calibration = True`
 4. Save the configuration with `dev0.save_configuration()`
