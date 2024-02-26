@@ -74,7 +74,7 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 ## Getting started
 You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life. Asking questions will help prevent runnig into dead ends with configuration, or possibly even equipment damage.
 
-Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `false` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = IDLE` and then saving the configuration.
+Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `False` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = IDLE` and then saving the configuration.
 
 ## `odrv0` vs `dev0`
 As your hardware isn't a genuine ODrive, `odrivetool` will display a warning about that and it will connect as `dev0` instead of `odrv0`. For any commands in the guide, you will need to replace `odrv0` with `dev0`.
@@ -112,7 +112,7 @@ You will also want to make sure to set the ODrive to torque control mode. In the
 
 ODrive is set by default to limit velocity in torque control mode, which will greatly reduce the torque commanded, even at 0 RPM. To disable this, enter
 
-`dev0.axis0.controller.config.enable_torque_mode_vel_limit = false`
+`dev0.axis0.controller.config.enable_torque_mode_vel_limit = False`
 
 # Configuring for automatic startup
 
@@ -120,9 +120,9 @@ Once you're able to control your motor with the ODrive, you'll want to configure
 
 If you have an incremental encoder without an index pulse (or if you're using a gear reduction on your encoder), you won't be able to use the index. In that case, you'll need to take some extra steps.
 
-1. Perform a motor calibration with `dev0.axis0.axisstate = MOTOR_CALIBRATION`
-2. Save the motor calibration with `dev0.axis0.motor.config.precalibrated = true`
-3. Enable a startup encoder offset with `dev0.axis0.config.startup_encoder_offset_calibration`
+1. Perform a motor calibration with `dev0.axis0.requested_state = FULL_CALIBRATION_SEQUENCE`
+2. Save the motor calibration with `dev0.axis0.motor.config.pre_calibrated = True`
+3. Enable a startup encoder offset with `dev0.axis0.config.startup_encoder_offset_calibration = True`
 4. Save the configuration with `dev0.save_configuration()`
 
  # FFBoard Setup
