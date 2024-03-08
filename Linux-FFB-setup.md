@@ -9,7 +9,7 @@ set deadzone and fuzz to 0 for all available axes.  The contents of `RUN` below 
 1. Create the file `/etc/udev/rules.d/98-openffboard.rules`.
 2. Add the following in that file:
     ```
-    SUBSYSTEM=="input", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="ffb0", RUN+="/usr/sbin/evdev-joystick --s '%E{DEVNAME}' --f 0 --d 0"
+    SUBSYSTEM=="input", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="ffb0", RUN+="/usr/bin/evdev-joystick --s '%E{DEVNAME}' --f 0 --d 0"
     ```
 3. Reload the udev rules.
     ```
