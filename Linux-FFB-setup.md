@@ -4,7 +4,8 @@
 
 OpenFFBoard uses the builtin hid-generic driver.  Unfortunately this has some undesirable
 defaults such has a default deadzone and a fuzz setting of 255. Here is a udev rule to
-set deadzone and fuzz to 0 for all available axes.  The contents of `RUN` below will be run automatically when OpenFFBoard is connected.
+set deadzone and fuzz to 0 for all available axes.  The contents of `RUN` below will be
+run automatically when OpenFFBoard is connected.
 
 1. Create the file `/etc/udev/rules.d/98-openffboard.rules`.
 2. Add the following in that file:
@@ -36,5 +37,6 @@ OpenFFBoard and plug it back in.
 
 #### Glossary:
 * "fuzz" - Per the python-evdev documentation, this is a value used to filter noise from
- the event input stream resulting in a reduced resolution or "choppy" feel when changing direction, or sometimes continuously.
+ the event input stream resulting in a reduced resolution or "choppy" feel when changing
+ direction, or sometimes continuously.
 * "deadzone" - A range, usually at the center or beginning of an axis, where input in ignored
