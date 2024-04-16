@@ -49,6 +49,10 @@ Formula:
 The OpenFFBoard STM board must be stacked on top of the TMC4671 driver board to ensure short connections and good grounding.
 Use conductive standoffs on the connector side and if you experience instability with driver versions up to v1.2.2 it is recommended to use non conductive nylon standoffs for the inner 2 screws close to the mosfets to reduce noise coupling through the groundplane.
 
+Power connection diagram:
+
+![TMC4671_Power_Diagram](wiring/tmc4671-wiring-bldc.png)
+
 Setup steps:
 - Short the SPI CS1 address pad on the underside of the TMC4671 board and add the 5V jumper next to the interconnect if not done
 - Stack the STM and TMC boards

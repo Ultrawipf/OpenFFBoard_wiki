@@ -1,0 +1,9 @@
+Id	Description	Qty	Unit	Designators
+1	Cable, 2 wires	0	m	Power cable, Resistor wires
+2	Cable, 3 wires	0	m	Mains cable
+3	Cable, 4 wires shielded	2	m	Motor cable
+4	Connector, 10ohm 50W, 2 pins	1		Power resistor
+5	Connector, 3 pins	1		Mains plug
+6	Connector, 48V PSU, 5 pins	1		Power supply
+7	Connector, Mige Servo, 4 pins	1		Motor 3 phase
+8	Connector, Plugin terminal 4p 7.62mm, 4 pins	2		TMC4671 Motor, TMC4671 Power

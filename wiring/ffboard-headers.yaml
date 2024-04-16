@@ -1,0 +1,25 @@
+connectors:
+  FFBoard-EXT:
+    type: Pinheader 2-row
+    subtype: male
+    pinlabels: [ESTOP, GND, GP3, GP2, GP4, GP1, 3V3, GND, SDA,RX,SCL,TX,CS3,MOSI3,CS2,MISO3,CS1,SCK3,5V,GND,CANH,CANL]
+  ODrive:
+    type: Pinheader
+    subtype: male
+    pinlabels: [GND, CANH, CANL]
+
+cables:
+  W1:
+    color_code: DIN
+    wirecount: 3
+    shield: true
+    length: 0.1
+
+connections:
+  -
+    - FFBoard-EXT: [CANH,CANL,20]
+    - W1: [1,2,3]
+    - ODrive: [CANH,CANL,GND]
+  -
+    - FFBoard-EXT: 20
+    - W1: s

@@ -1,0 +1,65 @@
+connectors:
+  FFBoard-DIN:
+    type: Pinheader Digital
+    subtype: male
+    pinlabels: [D0,D1,D2,D3,D4,D5,D6,D7,GND]
+  B0: &btn
+    type: Button
+    # subtype: male
+    pinlabels: [P1,P2]
+    show_pincount: false
+    show_name: false
+  B1:
+    <<: *btn
+  B2:
+    <<: *btn
+  B3:
+    <<: *btn
+  B4:
+    <<: *btn
+  B5:
+    <<: *btn
+  B6:
+    <<: *btn
+  B7:
+    <<: *btn
+cables:
+  W1:
+    color_code: DIN
+    wirecount: 9
+    #length: 0.1
+    
+
+connections:
+  -
+    - FFBoard-DIN: [D0,GND]
+    - W1: [1,9]
+    - B0: [1,2]
+  -
+    - FFBoard-DIN: [D1,GND]
+    - W1: [2,9]
+    - B1: [1,2]
+  -
+    - FFBoard-DIN: [D2,GND]
+    - W1: [3,9]
+    - B2: [1,2]
+  -
+    - FFBoard-DIN: [D3,GND]
+    - W1: [4,9]
+    - B3: [1,2]
+  -
+    - FFBoard-DIN: [D4,GND]
+    - W1: [5,9]
+    - B4: [1,2]
+  -
+    - FFBoard-DIN: [D5,GND]
+    - W1: [6,9]
+    - B5: [1,2]
+  -
+    - FFBoard-DIN: [D6,GND]
+    - W1: [7,9]
+    - B6: [1,2]
+  -
+    - FFBoard-DIN: [D7,GND]
+    - W1: [8,9]
+    - B7: [1,2]

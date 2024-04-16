@@ -1,0 +1,89 @@
+connectors:
+  TMC4671 Motor:
+    type: Plugin terminal 4p 7.62mm
+    pinlabels: [A,B,C,D]
+    image:
+      src: terminalblock4p.png
+      width: 150
+
+  TMC4671 Power:
+    type: Plugin terminal 4p 7.62mm
+    pinlabels: [GND,PB+,VM,PB-]
+    image:
+      src: terminalblock4p.png
+      width: 150
+
+  Power supply:
+    type: 48V PSU
+    pins: [GND,48V+,L,N,PE]
+    image:
+      src: lrspsu.png
+      width: 100
+
+  Mains plug:
+    pins: [L,N,PE]
+    image:
+      src: Schuko-Stecker.png
+      width: 150
+
+  Power resistor:
+    type: 10ohm 50W
+    pins: [1,2]
+    image:
+      src: powerres.png
+      width: 100
+
+  Motor 3 phase:
+    type: Mige Servo
+    pinlabels: [PE,U,V,W]
+    image:
+      src: 130st.png
+      width: 100
+
+
+cables:
+  Motor cable:
+    wirecount: 4
+    shield: true
+    length: 2
+    colors: [YEGN,BN,BU,BK]
+
+  Resistor wires:
+    wirecount: 2
+
+  Power cable:
+    wirecount: 2
+    colors: [BK,RD]
+
+  Mains cable:
+    wirecount: 3
+    colors: [BN,BU,YEGN]
+
+connections:
+  -
+    - TMC4671 Motor: [A,B,C]
+    - Motor cable: [2,3,4]
+    - Motor 3 phase: [U,V,W]
+  -
+    - Motor cable: s
+    - Motor 3 phase: 1
+    
+  - 
+    - Power supply: [PE]
+    - Motor cable: [1]
+    - Motor 3 phase: [PE]
+    
+  -
+    - Power resistor: [1,2]
+    
+    - Resistor wires: [1-2]
+    - TMC4671 Power: [PB+,PB-]
+  -
+    - Power supply: [GND,48V+]
+    - Power cable: [1-2]
+    - TMC4671 Power: [GND,VM]
+    
+  -
+    - Mains plug: [L,N,PE]
+    - Mains cable: [1-3]
+    - Power supply: [L,N,PE]
