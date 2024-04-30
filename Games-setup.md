@@ -164,7 +164,7 @@ Warning: This may change the behaviour in other games.
 ## Forza Horizon 5 (or others)
 The OpenFFBoard works with Forza in theory but might be more stable with emuwheel.
 
-Invert FFB force direction in game or use emu wheel.
+After FW 1.14.3: Forza motorsport supported and direction does not need to be inverted.
 
 Recommended settings:
 |Setting  |Value|
