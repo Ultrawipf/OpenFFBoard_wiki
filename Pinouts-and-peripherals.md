@@ -120,6 +120,9 @@ PWM pins are on TIM1
 * PWM3 (PWM2 for disco): Direction (left, inverted to PWM4)
 * PWM4: Direction (right)
 
+#### 10V analog (AASD)
+The PWM output in centered PWM mode can be used with a PWM -> 10V DAC (GP8101 on PW1VA01, PW2VB01 modules...) for industrial servo drivers like the common AASD.
+
 
 ### MT6825 encoder
 Use SPI3 on EXT header
