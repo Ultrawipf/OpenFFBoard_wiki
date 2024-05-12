@@ -71,6 +71,13 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 
 7. Disconnect power, set the ODrive to the `Run` position (the reverse of the procedure to set it to DFU mode), and connect power again.
    
+# ODrive Native Interface Driver
+
+ In some cases, the driver for the interface `odrivetool` uses isn't installed properly. If this happens, you'll see an error like the below image when trying to use `odrivetool`:
+ ![](img/odrive/odrive_driver_error.png)
+
+ To install the correct driver, you'll follow the same steps as above, but with the ODrive in `RUN` mode instead of `DFU` mode. The device you need to select is the `ODrive Native Interface` and the driver is the same `WinUSB` driver as before. Do not change the driver for the `ODrive CDC Interface`.
+
 
 # ODrive Configuration
 ## Getting started
