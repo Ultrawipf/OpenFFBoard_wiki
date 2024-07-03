@@ -172,7 +172,7 @@ Recommended settings:
 |CF Filter  |60-200hz|
 |CF Filter q|0.3-0.7|
 |Range      |540    |
-
+|Spring     |2-4    |
 <details>
 <summary>Config file</summary>
 

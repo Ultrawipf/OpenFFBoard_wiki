@@ -15,6 +15,8 @@ zeroenc,0x3,Zero axis, R
 invert,0x4,Invert axis, R W
 idlespring,0x5,Idle spring strength, R W
 axisdamper,0x6,Independent damper effect, R W
+axisfriction,0x16,Independent friction effect, R W
+axisinertia,0x17,Independent inertia effect, R W
 enctype,0x7,Encoder type get/set/list, R W I
 drvtype,0x8,Motor driver type get/set/list, R W I
 pos,0x9,Encoder position, R

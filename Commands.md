@@ -132,7 +132,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |main|0x7|Query or change mainclass| R W|
 |swver|0x4|Firmware version| R|
 |hwtype|0x5|Hardware type| R|
-|flashraw|0xD|Write value to flash address| WA|
+|flashraw|0xD|Write value to flash address| WA RA|
 |flashdump|0xC|Read all flash variables (val:adr)| R|
 |errors|0xA|Read error states| R|
 |errorsclr|0xB|Reset errors| R|
@@ -229,6 +229,8 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |invert|0x4|Invert axis| R W|
 |idlespring|0x5|Idle spring strength| R W|
 |axisdamper|0x6|Independent damper effect| R W|
+|axisfriction|0x16|Independent friction effect| R W|
+|axisinertia|0x17|Independent inertia effect| R W|
 |enctype|0x7|Encoder type get/set/list| R W I|
 |drvtype|0x8|Motor driver type get/set/list| R W I|
 |pos|0x9|Encoder position| R|
@@ -309,6 +311,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |polarity|0x1|Pin polarity| R W|
 |pins|0x2|Available pins| R W|
 |values|0x3|pin values| R|
+|pulse|0x4|Toggle to pulse mode mask| R W|
 
 ---
 
@@ -625,6 +628,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |trqbq_q|0x26|Torque filter q*100| R W|
 |pidautotune|0x27|Start PID autoruning| R|
 |fluxbrake|0x28|Prefer energy dissipation in motor| R W|
+|pwmfreq|0x29|Get/set pwm frequency| R W (DEBUG)|
 
 ---
 
@@ -670,6 +674,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |vbus|0x5|ODrive Vbus| R|
 |anticogging|0x6|Set 1 to start anticogging calibration| W|
 |connected|0x7|ODrive connection state| R|
+|storepos|0x8|Store encoder offset| R W|
 
 ---
 
@@ -902,4 +907,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.14.0
+State: v1.15.0

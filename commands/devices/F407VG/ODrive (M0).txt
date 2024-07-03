@@ -16,3 +16,4 @@ maxtorque,0x4,Max torque to send for scaling, R W
 vbus,0x5,ODrive Vbus, R
 anticogging,0x6,Set 1 to start anticogging calibration, W
 connected,0x7,ODrive connection state, R
+storepos,0x8,Store encoder offset, R W

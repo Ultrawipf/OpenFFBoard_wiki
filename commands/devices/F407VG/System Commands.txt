@@ -13,7 +13,7 @@ vext,0xF,External voltage(mV), R
 main,0x7,Query or change mainclass, R W
 swver,0x4,Firmware version, R
 hwtype,0x5,Hardware type, R
-flashraw,0xD,Write value to flash address, WA
+flashraw,0xD,Write value to flash address, WA RA
 flashdump,0xC,Read all flash variables (val:adr), R
 errors,0xA,Read error states, R
 errorsclr,0xB,Reset errors, R
