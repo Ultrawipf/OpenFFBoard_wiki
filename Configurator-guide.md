@@ -100,9 +100,10 @@ The endstop gain changes how stiff the virtual endstop effect feels. When set to
 This scales the output range of the gamepad axis and requires proper CPR and prescaler settings.
 The range is how far a steering wheel can move before hitting the virtual endstop. 
 
-#### Mechanical damper
+#### Permanent damper, inertia and friction
 
-This is an always active virtual damper effect making it feel heavier. It can prevent oscillations and make the system feel more stable when increased or lighter when decreased. Tune this to taste.
+Damper is an always active virtual damper effect making it feel heavier. It can prevent oscillations and make the system feel more stable when increased or lighter when decreased. Inertia also makes the wheel feel heavier but may cause more overshoot. Tune this to taste.
+Friction can be used to fine tune the feel as well but should usually not be required.
 
 #### Set center position
 
