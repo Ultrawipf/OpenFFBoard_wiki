@@ -55,7 +55,7 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 
 
 1. Download and install [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html). You will need to provide your email address.
-2. Download the firmware for your drive. All clones currently on the market are based on ODrive 3.5, but the firmware for 3.6 will work. Make sure to use the correct version for the voltage of your board (24V or 56V). Use the most recent version available. As of this writing, that is 0.5.6 and should be the final release of the firmware for this version of the hardware. The `Getting Started` guide is outdated in this portion and says you need a `.hex` file if you're on Windows. They no longer build `.hex` files, but the `.bin` files work just the same for this process. [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
+2. Download the firmware for your drive. All clones currently on the market are based on ODrive 3.5, but the firmware for 3.6 will work. Make sure to use the correct version for the voltage of your board (24V or 56V). Use the most recent version available. As of this writing, that is 0.5.6 and should be the final release of the firmware for this version of the hardware. The `Getting Started` guide is outdated in this portion and says you need a `.hex` file if you're on Windows. They no longer build `.hex` files, but the `.elf` files work just the same for this process. [Releases · odriverobotics/ODrive](https://github.com/odriverobotics/ODrive/releases)
 3. Put the Odrive into DFU mode as described in the DFU driver installation and connect to your computer. 
 4. Open the STM32CubeProgrammer and connect to the ODrive. In the following image, you'll see the type of connection is set to `USB` and the port is set to `USB1`. The serial number will be unique for each device. Once you have your device selected, click `Connect`.
 
@@ -83,7 +83,7 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 ## Getting started
 You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life. Asking questions will help prevent runnig into dead ends with configuration, or possibly even equipment damage.
 
-Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `False` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = IDLE` and then saving the configuration.
+Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `False` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = AXIS_STATE_IDLE` and then saving the configuration.
 
 ## `odrv0` vs `dev0`
 As your hardware isn't a genuine ODrive, `odrivetool` will display a warning about that and it will connect as `dev0` instead of `odrv0`. For any commands in the guide, you will need to replace `odrv0` with `dev0`.
