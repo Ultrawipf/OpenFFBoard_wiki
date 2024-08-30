@@ -35,8 +35,15 @@ OpenFFBoard and plug it back in.
       Absolute axis 0x07 (7) (Rudder) (value: 0, min: -32767, max: 32767, flatness: 0 (=0.00%), fuzz: 0)
     ```
 
+### Known issues
+
+* "Desktop Spring" does not work in linux as the hid-generic driver appears to send FFB data all of the time so the
+ "No FFB" condition is never met.  The status indicator at the bottom right of the configurator will show `FFB 0hz (CF 0hz)`
+ even when not in a game rather than changing color to indicate an idle state.  This has no impact on in-game performance.
+
 #### Glossary:
 * "fuzz" - Per the python-evdev documentation, this is a value used to filter noise from
  the event input stream resulting in a reduced resolution or "choppy" feel when changing
  direction, or sometimes continuously.
 * "deadzone" - A range, usually at the center or beginning of an axis, where input in ignored
+* "configurator" - The application used to adjust firmware settings for the openFFBoard, available [here](https://github.com/Ultrawipf/OpenFFBoard-configurator)
