@@ -3,7 +3,7 @@
 ### udev rules
 
 OpenFFBoard uses the builtin hid-generic driver.  Unfortunately this has some undesirable
-defaults such has a default deadzone and a fuzz setting of 255. Here is a udev rule to
+defaults such as a default deadzone, and a fuzz setting of 255. Here is a udev rule to
 set deadzone and fuzz to 0 for all available axes.  The contents of `RUN` below will be
 run automatically when OpenFFBoard is connected.
 
