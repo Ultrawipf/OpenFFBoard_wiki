@@ -7,21 +7,21 @@ defaults such as a default deadzone, and a fuzz setting of 255. Here is a udev r
 set deadzone and fuzz to 0 for all available axes.  The contents of `RUN` below will be
 run automatically when OpenFFBoard is connected.
 
-1. Create the file `/etc/udev/rules.d/98-openffboard.rules`.
-2. Add the following in that file:
+1. Make sure the the joyutils package is installed for your distribution
+2. Create the file `/etc/udev/rules.d/98-openffboard.rules`.
+3. Add the following in that file:
     ```
     SUBSYSTEM=="input", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="ffb0", RUN+="/usr/bin/evdev-joystick --s '%E{DEVNAME}' --f 0 --d 0"
     ```
-3. Reload the udev rules.
+4. Reload the udev rules.
     ```
     sudo udevadm control --reload-rules
     ```
-4. Trigger udev to run on currently connected devices.  Alternatively unplug the
-OpenFFBoard and plug it back in.
+5. Trigger udev to run on currently connected devices.  Alternatively unplug the OpenFFBoard and plug it back in.
     ```
     sudo udevadm trigger
     ```
-5. Check to make sure the udev rule was applied, openffboard should report 0 for `flatness` and `fuzz`. (Requires the joyutils package)
+6. Check to make sure the udev rule was applied, openffboard should report 0 for `flatness` and `fuzz`.
     ```
     $ evdev-joystick --s /dev/input/by-id/usb-Open_FFBoard_FFBoard_*-event-joystick
 
