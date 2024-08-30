@@ -21,7 +21,7 @@ OpenFFBoard and plug it back in.
     ```
     sudo udevadm trigger
     ```
-5. Check to make sure the udev rule was applied, openffboard should report 0 for `flatness` and `fuzz`.
+5. Check to make sure the udev rule was applied, openffboard should report 0 for `flatness` and `fuzz`. (Requires the joyutils package)
     ```
     $ evdev-joystick --s /dev/input/by-id/usb-Open_FFBoard_FFBoard_*-event-joystick
 
