@@ -138,17 +138,32 @@ Recommended settings:
 
 ## rFactor 2
 
-Game appears to use Sine and Damper effects.
+Game appears to use Sine and Damper effects only, no constant force.
 
-It *might* be necessary to reverse the FFB forces. This was necessary on Linux when running the game through Proton.  According to [this post](https://forum.studio-397.com/index.php?threads/reversed-ffb-and-how-do-i-fix-it.50426/#post-834785) it may also be necessary on windows in some circumstances.
+### Incorrect range or rotation limit
+
+The default for a new steering device is "Rotation limit mode: Device Driver" however RF2 does not
+support OpenFFB so we must set the rotation limit manually instead.
+
+1. Set "Rotation limit mode" to "Software"
+2. Set "Max wheel angle mode" to "Custom"
+3. Set "Default max wheel angle" to the range you have set in Open FFBoard Configurator Axis tab
+4. Set "Range set by vehicle" to "On"
+
+### Reversed FFB effects
+It *might* be necessary to reverse the FFB forces. This was necessary on Linux when running the
+game through Proton as well as at least one Windows user.  According to [this post](https://forum.studio-397.com/index.php?threads/reversed-ffb-and-how-do-i-fix-it.50426/#post-834785)
+it may also be necessary on windows in some circumstances.
 
 There are two ways to do this:
 
-### In game controls menu
+#### In game controls menu
 
-Go to Settings -> Calibrate Controls.  In the "Force Feedback Settings" section click and hold the "Force feedback strength" down arrow until you reach the negative value of the percentage currently set.
+Go to Settings -> Calibrate Controls.  In the "Force Feedback Settings"
+section click and hold the "Force feedback strength" down arrow until
+you reach the negative value of the percentage currently set.
 
-### In the game configuration files
+#### In the game configuration files
 
 In `rFactor 2\UserData\player\Controller.JSON`
 
