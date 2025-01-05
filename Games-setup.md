@@ -26,7 +26,7 @@ All fully directinput compatible games should work but some games may use whitel
 | EA WRC |:ballot_box_with_check: :memo: (config mod)|
 | F1 2020 |:white_check_mark: :memo: (See note)|
 | F1 2022 |:white_check_mark: :memo: (See note)|
-| rFactor 2 |:white_check_mark:|
+| rFactor 2 |:white_check_mark: :memo: ([See note](#rfactor-2))|
 | BeamNG |:white_check_mark:|
 | KartKraft |:white_check_mark:|
 | Project Cars 1 |:white_check_mark:|
@@ -135,6 +135,46 @@ Recommended settings:
 |Setting  |Value|
 |-----------|-------|
 |Range      |360    |
+
+## rFactor 2
+
+Game appears to use Sine and Damper effects only, no constant force.
+
+### Incorrect range or rotation limit
+
+The default for a new steering device is "Rotation limit mode: Device Driver" however RF2 does not
+support OpenFFB so we must set the rotation limit manually instead.
+
+1. Set "Rotation limit mode" to "Software"
+2. Set "Max wheel angle mode" to "Custom"
+3. Set "Default max wheel angle" to the range you have set in Open FFBoard Configurator Axis tab
+4. Set "Range set by vehicle" to "On"
+
+### Reversed FFB effects
+It *might* be necessary to reverse the FFB forces. This was necessary on Linux when running the
+game through Proton as well as at least one Windows user.  According to [this post](https://forum.studio-397.com/index.php?threads/reversed-ffb-and-how-do-i-fix-it.50426/#post-834785)
+it may be necessary on windows in some circumstances.
+
+There are two ways to do this:
+
+#### In game controls menu
+
+Go to Settings -> Calibrate Controls.  In the "Force Feedback Settings"
+section click and hold the "Force feedback strength" down arrow until
+you reach the negative value of the percentage currently set.
+
+#### In the game configuration files
+
+In `rFactor 2\UserData\player\Controller.JSON`
+
+change the following 80% example:
+```
+"Steering effects strength":8000,
+```
+To:
+```
+"Steering effects strength":-8000,
+```
 
 ## WRC Games
 
