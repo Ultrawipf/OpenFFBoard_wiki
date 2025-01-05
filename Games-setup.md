@@ -41,12 +41,12 @@ All fully directinput compatible games should work but some games may use whitel
 | Live for Speed |:white_check_mark:|
 | Wreckfest |:white_check_mark:|
 | F1 CHALLENGE 99-02 |:white_check_mark:|
+| Trackmania 2020 |:white_check_mark:|
 | Mud Runner |:white_check_mark:|
 | Snow Runner |:x: (Whitelisted vendors<br/>Registry hack possible)|
 | Moto GP 22 |:x: (xinput only)|
 | Richard Burns Rally |:warning: :memo: (Registry mod)|
 | CarX | :warning: (Bad FFB in general reported)|
-| Garfield Kart | :warning: (No FFB :smirk:)|
 | Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
 | Dakar Desert Rally|:warning: (FFBoard works but other devices may interfere)|
 
