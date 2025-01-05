@@ -153,7 +153,7 @@ support OpenFFB so we must set the rotation limit manually instead.
 ### Reversed FFB effects
 It *might* be necessary to reverse the FFB forces. This was necessary on Linux when running the
 game through Proton as well as at least one Windows user.  According to [this post](https://forum.studio-397.com/index.php?threads/reversed-ffb-and-how-do-i-fix-it.50426/#post-834785)
-it may also be necessary on windows in some circumstances.
+it may be necessary on windows in some circumstances.
 
 There are two ways to do this:
 
