@@ -1,0 +1,18 @@
+
+Prefix,Class ID, Class description
+rmd.0,0x8B,RMD MyActuator (1)
+Command name,CMD ID, Description, Flags
+id,0x80000001,ID of class, R
+name,0x80000002,name of class, R (STR)
+help,0x80000003,Prints help for commands, R I (STR)
+cmduid,0x80000005,Command handler index, R
+instance,0x80000004,Command handler instance number, R
+cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
+canid,0x0,CAN id of motor, R W
+errors,0x1,Error flags, R
+maxtorque,0x2,Maximum motor current in 0.01A (When activerequests on), R W
+curr,0x3,Current in 0.01A (When activerequests on), R
+temp,0x4,Temperature in °C (When activerequests on), R
+vbus,0x5,Voltage in 0.1V (When activerequests on), R
+requestpos,0x6,1 to send active position requests for higher rates, R W
+model,0x7,Name of motor, R (STR)
