@@ -50,6 +50,7 @@ All fully directinput compatible games should work but some games may use whitel
 | CarX | :warning: (Bad FFB in general reported)|
 | Sébastien Loeb Rally EVO |:x: :warning: (Crashes in control mapper<br/>Maybe fixable or unrelated?)|
 | Dakar Desert Rally|:warning: (FFBoard works but other devices may interfere)|
+| XPForce (XPlane, MSFS...)|:white_check_mark:|
 
 # Setup procedures for specific games and recommended settings
 
