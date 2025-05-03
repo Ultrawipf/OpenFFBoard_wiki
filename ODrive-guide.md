@@ -1,5 +1,28 @@
 # ODrive Configuration
 
+## What to know before you start
+
+You should know the following things about your hardware before you get started. You'll need to know all these things to be able to configure your ODrive to work with your motor
+
+* The number of pole pairs your motors has. The number of pole pairs is half the number of magnets in the rotor. This number is not the same as the number of coils in the stator.
+* The resolution of your encoder in CPR (counts per revolution). It's common for encoders to list their resolution in PPR, and CPR is 4 times PPR. An encoder listed as 2500 PPR would be 10,000 CPR. Some encoders are configurable for different resolutions, so make sure you know how it's configured if that's the case.
+* The current limits of your motor. If you're using a servo, you can usually find them on the name plate or datasheet. For other motors, you may need to make an educated guess or rely on other people's guidance.
+* The resistance of your brake resistor. ODrive ships 2 ohm resistors with all their products. Most clones I've seen also ship with a 2 ohm resistor, but you'll need to know what you have to avoid potential damage.
+* It is strongly advised to use a USB isolator any time you have the ODrive connected to your computer.
+
+## What steps you'll take following this guide
+
+1. Connect your motor, brake resistor, and encoder to the ODrive. The motor leads connect to the A, B, and C terminals in any order; the brake resistor connects to the Aux terminals; and the encoder connects to the encoder pins.
+2. Connect your power supply to the power terminals on the ODrive. Make sure to get the polarity correct.
+3. Connect the ODrive to your computer via USB through a USB isolator
+4. Turn on your power supply
+5. Install odrivetool
+6. Update to the most recent ODrive firmware for your device
+7. Configure the ODrive for your hardware
+8. Once the ODrive is able to control your motor, configure it to use a CAN connection
+9. Connect the ODrive to the OpenFFBoard via CAN
+10. Configure OpenFFBoard to use the ODrive
+
 ## Important information
 
 This guide is meant to help you set up an ODrive for use with OpenFFBoard. This is a DIY project and your exact settings are going to depend on the hardware you have. There is no way this guide can give you all the information you need to get it working, so it's important that you ask for help if you need it. 
@@ -83,7 +106,7 @@ If the `Driver` box on the left reads `WinUSB` with a version number, you can mo
 ## Getting started
 You should configure your ODrive to be able to control your motor before connecting to the OpenFFBoard USB interface. The [Getting Started](https://docs.odriverobotics.com/v/0.5.6/index.html) guide will step you through this configuration. You should go through the guide step by step and ask questions in discord or refer to the rest of the documentation if you run into issues. This documentation does have issues and is no longer in active development since this hardware is at end of life. Asking questions will help prevent runnig into dead ends with configuration, or possibly even equipment damage.
 
-Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `False` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.axisstate = AXIS_STATE_IDLE` and then saving the configuration.
+Any time you're required to save your configuration, it's important to remember the ODrive needs to be in idle. If you call `dev0.save_configuration()` and `odrivetool` returns `False` instead of rebooting the ODrive, you'll need to put it into idle by calling `dev0.axis0.requested_state = AXIS_STATE_IDLE` and then saving the configuration.
 
 ## `odrv0` vs `dev0`
 As your hardware isn't a genuine ODrive, `odrivetool` will display a warning about that and it will connect as `dev0` instead of `odrv0`. For any commands in the guide, you will need to replace `odrv0` with `dev0`.
@@ -123,11 +146,13 @@ ODrive is set by default to limit velocity in torque control mode, which will gr
 
 `dev0.axis0.controller.config.enable_torque_mode_vel_limit = False`
 
-# Configuring for automatic startup
+# Configuring for automatic startup with an encoder that has an index pulse
 
 Once you're able to control your motor with the ODrive, you'll want to configure it to be able to enter closed loop control directly at startup. This is not enabled by default and you would be required to connect to the ODrive and do a full calibration sequence before being able to enter closed loop control. [This section](https://docs.odriverobotics.com/v/0.5.6/encoders.html#encoder-with-index-signal) of ODrive's documentation covers this process. 
 
-If you have an incremental encoder without an index pulse (or if you're using a gear reduction on your encoder), you won't be able to use the index. In that case, you'll need to take some extra steps.
+# Configuring for automatic startup with an encoder that does not have an index pulse or with a gear reduction on the encoder
+
+If you have an incremental encoder without an index pulse (or if you're using a gear reduction on your encoder), you won't be able to use the index. In that case, you'll need to take some extra steps. Skip this part if you have an encoder with an index pulse and are not using a gear reduction for the encoder.
 
 1. Perform a motor calibration with `dev0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION`
 2. Save the motor calibration with `dev0.axis0.motor.config.pre_calibrated = True`
