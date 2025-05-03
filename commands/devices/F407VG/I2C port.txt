@@ -8,4 +8,4 @@ help,0x80000003,Prints help for commands, R I (STR)
 cmduid,0x80000005,Command handler index, R
 instance,0x80000004,Command handler instance number, R
 cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
-speed,0x0,I2C speed preset (0:100k;1:400k), R W I
+speed,0x0,I2C speed preset, R W I

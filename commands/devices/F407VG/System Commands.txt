@@ -24,3 +24,4 @@ devid,0x14,Get chip dev id and rev id, R
 name,0x80000002,name of class, R (STR)
 cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
 uid,0x15,Get 96b chip uid. Adr0-2 sel blk, R RA
+temp,0x16,Chip temperature in C, R

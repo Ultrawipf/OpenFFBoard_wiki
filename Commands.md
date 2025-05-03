@@ -143,6 +143,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |name|0x80000002|name of class| R (STR)|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
 |uid|0x15|Get 96b chip uid. Adr0-2 sel blk| R RA|
+|temp|0x16|Chip temperature in C| R|
 
 ---
 
@@ -263,7 +264,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmduid|0x80000005|Command handler index| R|
 |instance|0x80000004|Command handler instance number| R|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|speed|0x0|I2C speed preset (0:100k;1:400k)| R W I|
+|speed|0x0|I2C speed preset| R W I|
 
 ---
 
@@ -281,7 +282,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmduid|0x80000005|Command handler index| R|
 |instance|0x80000004|Command handler instance number| R|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|speed|0x0|CAN speed preset (0:50k;1:100k;2:125k;3:250k;4:500k;5:1M)| R W I|
+|speed|0x0|CAN speed preset (! for list)| R W I|
 |send|0x1|Send CAN frame. Adr&Value required| WA|
 |len|0x2|Set length of next frames| R W|
 
@@ -541,6 +542,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |bits|0x0|Bits of resolution| R W|
 |speed|0x2|SPI speed preset 1-3| R W|
 |errors|0x3|CRC error count| R|
+|dir|0x4|Invert direction| R W|
 
 ---
 
@@ -571,6 +573,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 - ODrive (M0)
 - VESC 1
 - Simplemotion 1
+- RMD MyActuator (1)
 ---
 
 ### TMC4671
@@ -694,7 +697,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
 |offbcanid|0x0|CAN id of OpenFFBoard Axis| R W|
 |vesccanid|0x1|CAN id of VESC| R W|
-|canspd|0x2|CAN baud (3=250k 4=500k 5=1M)| R W|
+|canspd|0x2|CAN baud ! for info| R W|
 |errorflags|0x3|VESC error state| R|
 |vescstate|0x4|VESC state| R|
 |voltage|0x5|VESC supply voltage (mV)| R|
@@ -729,6 +732,31 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |restart|0x5|Restart driver| R|
 |reg|0x6|Read/Write raw register| WA RA (DEBUG)|
 |devtype|0x7|Device type| R|
+
+---
+
+### RMD MyActuator (1)
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|rmd.0|0x8B|RMD MyActuator (1)|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|canid|0x0|CAN id of motor| R W|
+|errors|0x1|Error flags| R|
+|maxtorque|0x2|Maximum motor current in 0.01A (When activerequests on)| R W|
+|curr|0x3|Current in 0.01A (When activerequests on)| R|
+|temp|0x4|Temperature in °C (When activerequests on)| R|
+|vbus|0x5|Voltage in 0.1V (When activerequests on)| R|
+|requestpos|0x6|1 to send active position requests for higher rates| R W|
+|model|0x7|Name of motor| R (STR)|
 
 ---
 ### Other mainclasses.
@@ -907,4 +935,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.15.0
+State: v1.16.0

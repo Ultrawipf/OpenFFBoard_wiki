@@ -11,3 +11,4 @@ cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
 bits,0x0,Bits of resolution, R W
 speed,0x2,SPI speed preset 1-3, R W
 errors,0x3,CRC error count, R
+dir,0x4,Invert direction, R W

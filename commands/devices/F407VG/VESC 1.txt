@@ -10,7 +10,7 @@ instance,0x80000004,Command handler instance number, R
 cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
 offbcanid,0x0,CAN id of OpenFFBoard Axis, R W
 vesccanid,0x1,CAN id of VESC, R W
-canspd,0x2,CAN baud (3=250k 4=500k 5=1M), R W
+canspd,0x2,CAN baud ! for info, R W
 errorflags,0x3,VESC error state, R
 vescstate,0x4,VESC state, R
 voltage,0x5,VESC supply voltage (mV), R
