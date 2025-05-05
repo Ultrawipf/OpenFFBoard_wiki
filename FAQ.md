@@ -16,7 +16,7 @@
 
 **When/where will it be available?**
 
-Check out the [Elecrow store page](https://www.elecrow.com/open-ffboard-stm32f407-usb-interface-only.html).
+Check out the [Elecrow store page](https://www.elecrow.com/store/OpenFFBoard).
 
 Smaller batches and prototype TMC kits will be announced on the [Discord](https://discord.com/servers/openffboard-704355326291607614)
 
@@ -29,10 +29,15 @@ The known fix is to do a full chip erase (using GUI  or STM32CubeProgrammer) and
 
 Its designed for around 20-25A (Most motors are fine with under 10A and plenty strong). A different current sensor can allow for a larger or smaller range.
 
-** Can i use a stepper driver (TS6600, HB860, or similar...) **
+**Can i use a stepper driver (TS6600, HB860, or similar...)**
 
 No. These drivers are not actual FOC drivers even if they use an encoder to correct missed steps.
 They are not capable of driving the motor with a constant force. You will need the TMC4671 driver for steppers or a different supported driver.
+
+**The board does not properly power up/USB not connecting when the TMC4671 is connected but off**
+
+In some cases the voltage drop of the cable, connectors and input diode can be so high that it will not function properly anymore.
+A different USB cable or port usually fixes this as it is only relevant for unpowered setup. You can also do the setup on just the STM32 main board without the motor driver and connect it later. Once the TMC4671 driver board has power it will take over the 5V supply and no current will flow on the USB port.
 
 **I want it super cheap and don't need servos. Is that possible without the TMC?**
 
