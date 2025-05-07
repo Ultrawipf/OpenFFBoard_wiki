@@ -91,6 +91,24 @@ Convert to hex and both should be close to 0x7fff.
 If one value is stuck high there is a broken. I0 is phase A, I1 phase C.
 
 
+### Remote CAN analog/digital forwarding
+Available since v1.16.3
+
+The CAN remote mainclass sends out analog axes and digital button values as CAN packets to a second device running the FFBoard firmware. This allows to extend the system over a longer distance or less wires for example from pedals or a steering wheel.
+All the regular analog/digital source selections are available in this mode.
+On the sending and receiving device the CAN rates must match, the termination resistors present and the CAN packet IDs must match in both the sending device and in the CAN analog/digital sources of the receiving device.
+
+The amount of buttons or axes applied to the gamepad output on the receiving device is entered in the source selection config menu and should match the amount supplied by the remote device.
+
+![Can remote sender](img/gui/canremote_sender.png)
+
+Sending device
+
+![CAN remote receiver](img/gui/canremote_receiver.png)
+
+Receiving device
+
+
 ### ODrive setup
 
 #### Quick overview
