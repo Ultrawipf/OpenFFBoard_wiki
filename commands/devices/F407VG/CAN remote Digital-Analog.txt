@@ -1,0 +1,21 @@
+
+Prefix,Class ID, Class description
+main.0,0x1,CAN remote Digital/Analog: Remote CAN Analog/Digital source
+Command name,CMD ID, Description, Flags
+id,0x80000001,ID of class, R
+name,0x80000002,name of class, R (STR)
+help,0x80000003,Prints help for commands, R I (STR)
+cmduid,0x80000005,Command handler index, R
+instance,0x80000004,Command handler instance number, R
+cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
+canidbtn,0x0,Button output CAN ID, R W
+canidain,0x1,Analog output start CAN ID, R W
+btntypes,0x2,Enabled button sources, R W
+addbtn,0x4,Enable button source, W
+lsbtn,0x3,Get available button sources, R (STR)
+aintypes,0x5,Enabled analog sources, R W
+lsain,0x6,Get available analog sources, R (STR)
+addain,0x7,Enable analog source, W
+rate,0x8,CAN interval rate, R W I
+dvals,0x9,Current digital outputs, R
+avals,0xA,Current analog outputs, R

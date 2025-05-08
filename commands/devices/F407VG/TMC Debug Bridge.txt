@@ -11,6 +11,7 @@ cmdinfo,0x80000007,Flags of a command id (adr). -1 if cmd id invalid, RA
 reg,0x5,Read or write a TMC register at adr, WA RA
 torque,0x0,Change torque and enter torque mode, R W
 pos,0x1,Change pos and enter pos mode, R W
-openloopspeed,0x2,Move openloop. adr=strength;val=speed, W WA
+openloopspeed,0x2,Move openloop (current controlled). adr=strength;val=speed, W WA
 velocity,0x3,Change velocity and enter velocity mode, R W
 mode,0x4,Change motion mode, R W
+openloopspeedpwm,0x6,Move openloop raw PWM. adr=strength;val=speed, W WA

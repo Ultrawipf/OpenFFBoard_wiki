@@ -92,6 +92,8 @@ class CommandHelpReader:
         if writefile:
             filepath = os.path.join(OUTPATH,self.devicename)
             os.makedirs(filepath,exist_ok=True)
+            classname = re.sub(r"[/\\?%*:|\"<>\x7F\x00-\x1F]", "-", classname)
+            
             with open(os.path.join(filepath,f"{classname}.txt"),"w") as f:
                 f.write(reply)
 

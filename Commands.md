@@ -287,12 +287,6 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |len|0x2|Set length of next frames| R W|
 
 ---
-### Button sources
-- D-Pins
-- SPI Buttons 1
-- Shifter Analog
-- I2C PCF8574
-- CAN Buttons
 
 ### D-Pins
 
@@ -315,6 +309,37 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |pulse|0x4|Toggle to pulse mode mask| R W|
 
 ---
+
+### AIN-Pins
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|apin.0|0x41|AIN-Pins: Analog pins source|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|filter|0xAA2|Enable lowpass filters| R W|
+|autocal|0xAA3|Autoranging| R W|
+|values|0xAA0|Analog output values| R|
+|rawval|0xAA1|All raw values| R|
+|min|0xAA4|Min value limit (adr=chan)| WA RA|
+|max|0xAA5|Max value limit (adr=chan)| WA RA|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mask|0x0|Enabled pins| R W|
+|pins|0x2|Available pins| R W|
+
+---
+### Button sources
+- D-Pins
+- SPI Buttons 1
+- Shifter Analog
+- I2C PCF8574
+- CAN Buttons
 
 ### SPI Buttons 1
 
@@ -404,31 +429,6 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |btnnum|0x0|Amount of buttons| R W|
 |invert|0x1|Invert buttons| R W|
 |canid|0x2|CAN frame ID| R W|
-
----
-
-### AIN-Pins
-
-|Prefix|Class ID| Class description|
-|------|--------|------------------|
-|apin.0|0x41|AIN-Pins: Analog pins source|
-
-|Command name|CMD ID| Description| Flags|
-|------------|------|------------|------|
-|filter|0xAA2|Enable lowpass filters| R W|
-|autocal|0xAA3|Autoranging| R W|
-|values|0xAA0|Analog output values| R|
-|rawval|0xAA1|All raw values| R|
-|min|0xAA4|Min value limit (adr=chan)| WA RA|
-|max|0xAA5|Max value limit (adr=chan)| WA RA|
-|id|0x80000001|ID of class| R|
-|name|0x80000002|name of class| R (STR)|
-|help|0x80000003|Prints help for commands| R I (STR)|
-|cmduid|0x80000005|Command handler index| R|
-|instance|0x80000004|Command handler instance number| R|
-|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|mask|0x0|Enabled pins| R W|
-|pins|0x2|Available pins| R W|
 
 ---
 
@@ -768,6 +768,7 @@ Use `sys.main=<id>` to change mainclass
 - TMC Debug Bridge = id 11
 - MIDI (TMC) = id 13
 - CAN Bridge (GVRET) = id 12
+- CAN remote Digital/Analog = id 5
 ---
 
 ### Basic (Failsafe)
@@ -890,9 +891,10 @@ Use `sys.main=<id>` to change mainclass
 |reg|0x5|Read or write a TMC register at adr| WA RA|
 |torque|0x0|Change torque and enter torque mode| R W|
 |pos|0x1|Change pos and enter pos mode| R W|
-|openloopspeed|0x2|Move openloop. adr=strength;val=speed| W WA|
+|openloopspeed|0x2|Move openloop (current controlled). adr=strength;val=speed| W WA|
 |velocity|0x3|Change velocity and enter velocity mode| R W|
 |mode|0x4|Change motion mode| R W|
+|openloopspeedpwm|0x6|Move openloop raw PWM. adr=strength;val=speed| W WA|
 
 ---
 
@@ -934,5 +936,33 @@ Use `sys.main=<id>` to change mainclass
 |spd|0x2|Change or get CAN baud| R W|
 
 ---
+
+### CAN remote Digital-Analog
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|main.0|0x1|CAN remote Digital/Analog: Remote CAN Analog/Digital source|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|canidbtn|0x0|Button output CAN ID| R W|
+|canidain|0x1|Analog output start CAN ID| R W|
+|btntypes|0x2|Enabled button sources| R W|
+|addbtn|0x4|Enable button source| W|
+|lsbtn|0x3|Get available button sources| R (STR)|
+|aintypes|0x5|Enabled analog sources| R W|
+|lsain|0x6|Get available analog sources| R (STR)|
+|addain|0x7|Enable analog source| W|
+|rate|0x8|CAN interval rate| R W I|
+|dvals|0x9|Current digital outputs| R|
+|avals|0xA|Current analog outputs| R|
+
+---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.16.0
+State: v1.16.3
