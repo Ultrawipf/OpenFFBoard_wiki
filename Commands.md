@@ -247,6 +247,8 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |filterSpeed|0x12|Biquad filter freq and q*100 for speed| R|
 |filterAccel|0x13|Biquad filter freq and q*100 for accel| R|
 |cpr|0x15|Reported encoder CPR| R|
+|expo|0x18|Exponential curve correction (x^(val/exposcale)+1)| R W|
+|exposcale|0x19|Scaler constant for expo| R|
 
 ---
 
@@ -965,4 +967,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.16.3
+State: v1.16.4
