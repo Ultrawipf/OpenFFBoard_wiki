@@ -40,6 +40,7 @@ All fully directinput compatible games should work but some games may use whitel
 | Euro Truck Simulator 2 |:white_check_mark:|
 | Raceroom |:white_check_mark:|
 | Live for Speed |:white_check_mark:|
+| Le Mans Ultimate |:white_check_mark:|
 | Wreckfest |:white_check_mark:|
 | Wreckfest 2 |:white_check_mark:|
 | FlatOut 2 |:white_check_mark:|
