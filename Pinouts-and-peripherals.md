@@ -121,7 +121,7 @@ PWM pins are on TIM1
 * PWM4: Direction (right)
 
 #### 10V analog (AASD)
-The PWM output in centered PWM mode can be used with a PWM -> 10V DAC (GP8101 on PW1VA01, PW2VB01 modules...) for industrial servo drivers like the common AASD.
+The PWM output in centered PWM mode can be used with a PWM -> 10V DAC (GP8101 on [PW1VA01](https://s.click.aliexpress.com/e/_c4UV3RhH), [PW2VB01](https://s.click.aliexpress.com/e/_c4qJzPOR) modules...) for industrial servo drivers like the common AASD.
 
 
 ### MT6825 encoder
