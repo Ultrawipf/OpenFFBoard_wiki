@@ -3,29 +3,29 @@
 ### Digital buttons
 
 Up to 8 gamepad buttons are mapped if all 8 pins are enabled.
-|FFBoard pin|STM pin|
-|--|--|
-|D0 (1) | PC15|
-|D1 (2) | PC14|
-|D2 (3)| PC13|
-|D3 (4)| PE6|
-|D4 (5)| PE5|
-|D5 (6)| PE4|
-|D6 (7)| PE3|
-|D7 (8)| PE2|
+|FFBoard pin|STM pin F407| STM pin DISCO F407
+|--|--|--|
+|D0 (1) | PC15| PC15|
+|D1 (2) | PC14| PC14|
+|D2 (3)| PC13| PC13|
+|D3 (4)| PE6| PE6|
+|D4 (5)| PE5| PE5|
+|D5 (6)| PE4| PE4|
+|D6 (7)| PE3| PE3|
+|D7 (8)| PE2| PE2|
 
 ### Analog inputs
 
 Up to 6 analog pins are mapped to gamepad axes with 12 bit ADC resolution.
 
-|FFBoard pin|STM pin|
-|--|--|
-|A0 (1)| PA3|
-|A1 (2)| PA2|
-|A2 (3)| PC3|
-|A3 (4)| PC2|
-|A4 (5)| PC1|
-|A5 (6)| PC0|
+|FFBoard pin|STM pin| STM pin DISCO F407 |
+|--|--|--|
+|A0 (1)| PA3| PB0|
+|A1 (2)| PA2| PB1|
+|A2 (3)| PC3| PC4|
+|A3 (4)| PC2| |
+|A4 (5)| PC1| |
+|A5 (6)| PC0| |
 
 ### Analog shifter
 
