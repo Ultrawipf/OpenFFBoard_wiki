@@ -12,6 +12,9 @@ Having the HID PID implemented in a modular way allows it to be used in differen
 
 ## Detailed Features
 
+**Info**: All features (Number of channels, interfaces...) are based on the official fully featured interface boards.
+Different firmwares may have different features depending on the hardware.
+
 ### Main modes:
 See [other mainclasses](https://github.com/Ultrawipf/OpenFFBoard/wiki/Commands#other-mainclasses) for full list.
 * **FFB Wheel**: 	USB 1 Axis force feedback device with HID FFB support, multiple analog axis inputs (see analog sources) and digital buttons (see digital sources)
@@ -44,6 +47,22 @@ Can be forwarded to TMC4671 using external encoder forwarding
 |BISS-C|SPI w. Adapter⚠️|yes✅|
 |MagnTek (MT6825,MT6835)|SPI + ABZ|yes✅|
 |SSI|SPI|yes✅|
+
+### Digital inputs
+|Name|Interface|Channels|
+|-|-|-|
+|Digital pins|gpio pins|8|
+|CAN|CAN|64|
+|Analog shifter (G29)|Analog pins|6+1R gears
+|SPI shift registers<br>TM wheels|SPI|64|
+|PCF8574|I²C|64|
+
+### Analog inputs
+|Name|Interface|Channels|
+|-|-|-|
+|Analog pins|gpio pins|6|
+|CAN|CAN|6|
+|ADS111X ADC|I²C|4|
 
 ### Contributing to the Wiki
 If you want to create a pull request for the wiki you need to do so on the [OpenFFBoard_wiki](https://github.com/Ultrawipf/OpenFFBoard_wiki) repo which mirrors this wiki because Github does not allow public PR access to the wiki repo directly.
