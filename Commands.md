@@ -142,8 +142,10 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |devid|0x14|Get chip dev id and rev id| R|
 |name|0x80000002|name of class| R (STR)|
 |cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|uid|0x15|Get 96b chip uid. Adr0-2 sel blk| R RA|
+|uid|0x15|Get 96b chip uid. Adr0-2 sel blk| R RA I|
 |temp|0x16|Chip temperature in C| R|
+|otp|0x17|Access OTP memory| WA RA (DEBUG)|
+|signature|0x18|Chip signature in OTP. setadr to write data. set=1 to lock| R WA RA I|
 
 ---
 
@@ -289,6 +291,12 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |len|0x2|Set length of next frames| R W|
 
 ---
+### Button sources
+- D-Pins
+- SPI Buttons 1
+- Shifter Analog
+- I2C PCF8574
+- CAN Buttons
 
 ### D-Pins
 
@@ -311,37 +319,6 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |pulse|0x4|Toggle to pulse mode mask| R W|
 
 ---
-
-### AIN-Pins
-
-|Prefix|Class ID| Class description|
-|------|--------|------------------|
-|apin.0|0x41|AIN-Pins: Analog pins source|
-
-|Command name|CMD ID| Description| Flags|
-|------------|------|------------|------|
-|filter|0xAA2|Enable lowpass filters| R W|
-|autocal|0xAA3|Autoranging| R W|
-|values|0xAA0|Analog output values| R|
-|rawval|0xAA1|All raw values| R|
-|min|0xAA4|Min value limit (adr=chan)| WA RA|
-|max|0xAA5|Max value limit (adr=chan)| WA RA|
-|id|0x80000001|ID of class| R|
-|name|0x80000002|name of class| R (STR)|
-|help|0x80000003|Prints help for commands| R I (STR)|
-|cmduid|0x80000005|Command handler index| R|
-|instance|0x80000004|Command handler instance number| R|
-|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
-|mask|0x0|Enabled pins| R W|
-|pins|0x2|Available pins| R W|
-
----
-### Button sources
-- D-Pins
-- SPI Buttons 1
-- Shifter Analog
-- I2C PCF8574
-- CAN Buttons
 
 ### SPI Buttons 1
 
@@ -434,6 +411,31 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 ---
 
+### AIN-Pins
+
+|Prefix|Class ID| Class description|
+|------|--------|------------------|
+|apin.0|0x41|AIN-Pins: Analog pins source|
+
+|Command name|CMD ID| Description| Flags|
+|------------|------|------------|------|
+|filter|0xAA2|Enable lowpass filters| R W|
+|autocal|0xAA3|Autoranging| R W|
+|values|0xAA0|Analog output values| R|
+|rawval|0xAA1|All raw values| R|
+|min|0xAA4|Min value limit (adr=chan)| WA RA|
+|max|0xAA5|Max value limit (adr=chan)| WA RA|
+|id|0x80000001|ID of class| R|
+|name|0x80000002|name of class| R (STR)|
+|help|0x80000003|Prints help for commands| R I (STR)|
+|cmduid|0x80000005|Command handler index| R|
+|instance|0x80000004|Command handler instance number| R|
+|cmdinfo|0x80000007|Flags of a command id (adr). -1 if cmd id invalid| RA|
+|mask|0x0|Enabled pins| R W|
+|pins|0x2|Available pins| R W|
+
+---
+
 ### CAN Analog
 
 |Prefix|Class ID| Class description|
@@ -483,7 +485,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 ### Encoders
 - None
 - Local ABN
-- MT6825 SPI3
+- MagnTek SPI
 - BISS-C
 - SSI
 ---
@@ -507,11 +509,11 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 
 ---
 
-### MT6825 SPI3
+### MagnTek SPI
 
 |Prefix|Class ID| Class description|
 |------|--------|------------------|
-|mtenc.0|0x62|MT6825 SPI3|
+|mtenc.0|0x62|MagnTek SPI|
 
 |Command name|CMD ID| Description| Flags|
 |------------|------|------------|------|
@@ -524,6 +526,7 @@ Be careful when changing motor parameters. Incorrect settings can damage the har
 |cs|0x0|CS pin| R W|
 |pos|0x1|Position| R W|
 |errors|0x2|Parity error count| R|
+|mode|0x3|Encoder mode (MT6825=0;MT6835=1)| R W I|
 
 ---
 
@@ -967,4 +970,4 @@ Use `sys.main=<id>` to change mainclass
 
 ---
 Automatically generated list by [makecommands.py](commands/makecommands.py)
-State: v1.16.4
+State: v1.16.5
