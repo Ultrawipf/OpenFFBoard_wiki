@@ -146,7 +146,7 @@ The encoder data can be forwarded to the TMC. Select the external encoder in the
 
 Discovery board connections are based on mmos/osw pinouts but not completely identical.
 The PWM DIR pin is changed to PWM 2 (PE11) for mmos compatibility.
-A CAN transceiver (TJA1051/3) could be connected for vesc and odrive support.
+A CAN transceiver (nucleo f303/3) could be connected for vesc and odrive support.
 
 ![Pinout](img/f407discopinout1.png)
 
@@ -156,7 +156,7 @@ You need to connect a 10k/294k voltage divider to the vint (internal motor volta
 
 
 ### CAN bus
-The CAN bus is designed to use a TJA1501/3 transceiver with the silent pin connected to PD4.
+The CAN bus is designed to use a TJA1051/3 transceiver with the silent pin connected to PD4.
 
 On the official board this is included as well as a 120 ohm termination which can be disconnected or connected using a solder jumper. By default it is connected on most boards with a cuttable trace that can be reconnected if required.
 Most CAN devices require this resistor to stay connected but certain devices like a BMW E90 instrument cluster i tested will only work reliably with it disconnected.
