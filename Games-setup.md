@@ -18,6 +18,7 @@ All fully directinput compatible games should work but some games may use whitel
 | Assetto corsa |:white_check_mark:|
 | Assetto corsa competizione|:white_check_mark:|
 | Assetto corsa EVO|:white_check_mark:|
+| Assetto corsa Rally|:warning:(16b axes only)|
 | Automobilista 2 |:white_check_mark:|
 | Forza horizon 4 |:ballot_box_with_check: :memo:  (See below)|
 | Forza horizon 5 |:ballot_box_with_check: :memo:  (See below)|
