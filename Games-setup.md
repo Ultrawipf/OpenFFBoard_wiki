@@ -22,6 +22,7 @@ All fully directinput compatible games should work but some games may use whitel
 | Automobilista 2 |:white_check_mark:|
 | Forza horizon 4 |:ballot_box_with_check: :memo:  (See below)|
 | Forza horizon 5 |:ballot_box_with_check: :memo:  (See below)|
+| Forza horizon 6 |:ballot_box_with_check: :memo:  (See below)|
 | Dirt Rally 2.0 |:ballot_box_with_check: :memo: (config mod)|
 | Dirt Rally |:ballot_box_with_check: :memo: (config mod)|
 | Dirt 4 |:ballot_box_with_check: :memo: (config mod)|
@@ -197,8 +198,10 @@ Recommended settings:
 |Spring gain |10 - max|
 
 
-## Forza Horizon 5 (or others)
-The OpenFFBoard works with Forza in theory but might be more stable with emuwheel.
+## Forza
+The OpenFFBoard generally works with Forza games but the input system is very problematic any may not support other devices or require workarounds.
+
+**Try to restart the wheel if you have no FFB at all (or reconnect whatever device is not responding)**
 
 After FW 1.14.3: Forza motorsport supported and direction does not need to be inverted.
 
@@ -209,28 +212,18 @@ Recommended settings:
 |CF Filter q|0.3-0.7|
 |Range      |540    |
 |Spring     |2-4    |
-<details>
-<summary>Config file</summary>
 
-Adding a file `DefaultRawGameControllerMappingProfileOpenFFBoard.xml` to the media/inputmappingprofiles.zip might force it to be the primary steering device. 
+### Forza Horizon 6
+You may need to rebind the steering wheel when all other devices are disconnected to force it to be device 1 otherwise it may not send FFB data to the wheel. 
+Afterwards it is fine to add other devices back.
 
-**It is not confirmed if this actually helps at all so you may not need that.**
+#### Performance issues
+Due to the 1ms usb packet timesteps and FH6 sending way too many redundant packets and waiting for that using a fullspeed device like the F407 FFBoard will limit the game to around 60Hz.
+Make sure the wheel does not share a busy hub with other input devices to reduce jitter.
 
-```
-<Profiles>
-<RawGameControllerInputMappingProfile Version="1" Id="a5dcbf10-6530-11d2-901f-00c04fb951ed" UserFacingName="IDS_DefaultWheelProfile_OpenFFBoard_Name" IsDefaultProfile="1" PrimaryDeviceVidPid="0x1209FFB0" FFBDeviceVidPid="0x1209FFB0" FFBMotorIndex="0">
+Current Workaround:
+Use a software device like vjoy+emuwheel (see below) to forward data so the game doesn't need to wait for the USB queue.
 
-  <!-- Race -->
-  <Context Version="1" Context="INPUTCONTEXT_RACING">
-    <Value Version="1" Key="INPUTCMD_GAS" VidPid="0x044fb67f" InputType="Axis" Index="1" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
-    <Value Version="1" Key="INPUTCMD_BRAKE" VidPid="0x044fb67f" InputType="Axis" Index="2" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
-    <Value Version="1" Key="INPUTCMD_CLUTCH" VidPid="0x044fb67f" InputType="Axis" Index="3" InvertAxis="false" InnerDeadzone="0." OuterDeadzone="1.00" />
-    <Value Version="1" Key="INPUTCMD_STEERING" VidPid="0x044fb67f" InputType="Axis" Index="0" InvertAxis="false" DeadzonesAroundCenter="false" InnerDeadzone="0.00" OuterDeadzone="1.00" />  
-  </Context> 
-  <Context Version="1" Context="INPUTCONTEXT_RACING_UI">
-  </Context>
-```
-</details>
 
 ## Games working with vjoy emuwheel
 ### Forza
@@ -239,6 +232,8 @@ Also confirmed working if you still have other issues is [emuwheel](https://forz
 
 Emuwheel will merge and hide multiple devices into one virtual one getting around some of the issues forza has with incompatible devices.
 It will also forward FFB effects to the steering wheel device.
+
+In Forza (Mainly Horizon 6) you may get better FPS using a software device.
 
 This tool works for games that have steering wheel whitelists blocking unknown devices but supporting vjoy.
 
